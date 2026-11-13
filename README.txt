@@ -1,0 +1,1 @@
+index.html을 더블클릭하면 로컬 미리보기로 작동합니다. GitHub Pages에 업로드하면 Firebase 실시간 공유를 시도합니다. Firestore 규칙은 기존 설정을 사용합니다. Firebase 연결 실패 시 화면 상단 메시지를 확인하세요.
