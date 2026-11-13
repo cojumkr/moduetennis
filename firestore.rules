@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function signedIn() { return request.auth != null && request.auth.token.email_verified == true; }
+  function isAdmin(season) { return signedIn() && request.auth.token.email in get(/databases/$(database)/documents/seasons/$(season)).data.adminEmails; }
+  match /seasons/{season} {
+   allow read: if signedIn();
+   allow create: if false; // 시즌 문서는 Firebase Console에서 생성
+   allow update: if isAdmin(season) && resource.data.closed != true
+      && request.resource.data.adminEmails == resource.data.adminEmails
+      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['closed','closedAt','closedBy'])
+      && request.resource.data.closed == true;
+   match /members/{member} {
+    allow read: if signedIn();
+    allow create, update: if isAdmin(season) && get(/databases/$(database)/documents/seasons/$(season)).data.closed != true;
+    allow delete: if false;
+   }
+   match /games/{game} {
+    allow read: if signedIn();
+    allow create, update, delete: if isAdmin(season) && get(/databases/$(database)/documents/seasons/$(season)).data.closed != true;
+   }
+   match /attendance/{attendanceId} {
+    allow read: if signedIn();
+    allow create, update: if isAdmin(season) && get(/databases/$(database)/documents/seasons/$(season)).data.closed != true;
+    allow delete: if false;
+   }
+   match /days/{dayId} {
+    allow read: if signedIn();
+    allow create, update: if isAdmin(season) && get(/databases/$(database)/documents/seasons/$(season)).data.closed != true;
+    allow delete: if false;
+   }
+   match /events/{event} {
+    allow read: if signedIn();
+    allow create: if isAdmin(season) && get(/databases/$(database)/documents/seasons/$(season)).data.closed != true;
+    allow update, delete: if false;
+   }
+  }
+ }
+}
