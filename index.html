@@ -102,12 +102,177 @@ input:focus,select:focus,button:focus-visible{outline:2px solid #c6a36d;outline-
 .member-hof-badges span{display:inline-block;filter:drop-shadow(0 1px 1px #00000015)}
 
 .mtc-version{display:inline-block;margin-left:9px;padding:2px 7px;border:1px solid #d8bd8355;border-radius:99px;color:#ddc38c;font-size:10px;font-weight:700;letter-spacing:.05em;vertical-align:middle}
-</style></head><body><main class="wrap"><header class="clubhouse-header"><div class="clubhouse-top"><span class="clubhouse-season">2026 SECOND HALF · MTC</span><span class="mtc-version" title="사이트 버전">v40</span><span class="clubhouse-live"><span class="live-dot"></span> CLUB LIVE</span></div><div class="clubhouse-hero"><div class="clubhouse-logo"><img src="mtc-emblem.png" alt="MTC 모두의테니스클럽 공식 엠블럼: 테니스공 마차와 말, 테니스 선수"></div><div class="clubhouse-intro"><span class="clubhouse-kicker">WELCOME TO OUR CLUBHOUSE</span><h1>모두의<br>테니스클럽<span class="clubhouse-period">.</span></h1><p>함께 치고, 함께 성장하는 우리들의 테니스</p><div class="clubhouse-sub">MATCH · RANKING · COMMUNITY</div></div></div><div class="clubhouse-bottom"><span>MODUE TENNIS CLUB</span><span>EST. MTC · 2026 하반기</span></div></header><div id="appArea"><div class="hof" id="hallOfFame">
+
+/* v43 — compact TOP 3 inside each hall-of-fame tile */
+.hof-card{display:flex;flex-direction:column;align-items:stretch}
+.hof-runners{margin-top:11px;padding-top:8px;border-top:1px solid #ffffff2a;display:flex;flex-direction:column;gap:6px;text-align:left;min-height:58px}
+.hof-runner{display:grid;grid-template-columns:43px minmax(0,1fr);gap:2px 5px;align-items:center;font-size:11px;line-height:1.4}
+.hof-rank{color:#e8d5a7;font-weight:800;white-space:nowrap}
+.hof-runner-name{color:#fff;font-weight:750;overflow-wrap:anywhere}
+.hof-runner-score{grid-column:2;color:#cbd9d0;font-size:10px;overflow-wrap:anywhere}
+.hof-runner-placeholder{color:#cbd9d0;font-size:10px;text-align:center;margin:auto}
+@media(max-width:600px){.hof-runner{grid-template-columns:43px minmax(0,1fr)}}
+.season-board{margin:10px 0 17px;padding:13px;border:1px solid #d4c396;border-radius:13px;background:#faf6e9;color:#283b2c}.season-board h3{margin:0 0 10px;font-size:15px}.season-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.season-tile{background:white;border-radius:9px;padding:9px;font-size:11px;min-width:0}.season-tile>b{display:block;margin-bottom:6px}.season-tile>div{padding:3px 0;overflow-wrap:anywhere}.season-tile small{color:#667b70}.monthly-champion{margin:10px 0;color:#f3e2b7;font-size:13px;font-weight:700}.tour-people{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0}.tour-people label{padding:8px;border:1px solid #ddd;border-radius:8px}.tour-people input{width:auto}.tour-teams{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.tour-teams>div,.tour-match{padding:10px;border:1px solid #dce7dd;border-radius:9px;margin:7px 0}.tour-round{margin-top:16px;padding-top:7px;border-top:1px solid #ddd}.tour-match .row input{max-width:90px}.tour-champion{padding:16px;background:#f4e8b9;border-radius:12px;font-size:18px;font-weight:800;margin-top:14px}@media(max-width:650px){.season-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tour-people{grid-template-columns:repeat(2,1fr)}}
+
+/* v46 — mobile-first compact dashboard, no changes to match/coin/rating logic */
+.hof-expand{margin-top:7px}
+.hof-expand>summary{list-style:none;cursor:pointer;border:1px solid #ffffff35;background:#ffffff12;border-radius:9px;padding:9px 11px;font-weight:750;font-size:12px;display:flex;justify-content:space-between;align-items:center}
+.hof-expand>summary::-webkit-details-marker{display:none}
+.hof-expand[open]>summary span{transform:rotate(180deg)}
+.hof-expand .season-board{margin-top:10px}
+.hof-expand .hof-grid{margin-top:10px}
+.hof{margin-bottom:8px}
+.tabs{margin-top:8px}
+@media(max-width:650px){
+ .wrap{padding:7px 9px 20px}
+ .clubhouse-header{padding:7px 11px;border-radius:13px}
+ .clubhouse-top{font-size:9px}
+ .clubhouse-hero{gap:9px;padding:4px 0 6px}
+ .clubhouse-logo{flex-basis:58px;max-width:58px;padding:0 7px 0 0}
+ .clubhouse-logo img{max-height:54px}
+ .clubhouse-intro h1{font-size:17px;line-height:1.1;margin:0}
+ .clubhouse-intro h1 br{display:none}
+ .clubhouse-intro p{font-size:9px;margin:3px 0 0}
+ .clubhouse-kicker,.clubhouse-sub,.clubhouse-bottom{display:none}
+ .hof{padding:9px 11px;border-radius:12px;margin:7px 0 7px;box-shadow:none}
+ .hof-title{margin-bottom:0;gap:5px;flex-wrap:nowrap}
+ .hof-title small,.hof-title p{display:none}
+ .hof-title h2{font-size:14px;margin:0;white-space:nowrap}
+ .hof-actions{gap:3px;font-size:10px}
+ .hof-actions button{height:26px;width:25px}
+ .hof-expand>summary{font-size:11px;padding:7px 9px}
+ .hof-note{display:none}
+ .monthly-champion{font-size:11px;margin:5px 0 0}
+ .tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;gap:5px;padding:4px 0 8px;margin:3px 0 4px;scrollbar-width:thin}
+ .tabs button{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start;padding:9px 11px;font-size:12px;border-radius:9px;min-height:39px}
+ .stats{gap:5px;margin:3px 0 7px}
+ .stat{padding:6px 7px;border-radius:9px}
+ .stat strong{font-size:17px}
+ .stat small{font-size:9px}
+ .hof-grid,.season-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hof-card{padding:8px 6px}
+ .hof-card .hof-emoji{font-size:20px}
+ .hof-card .hof-name{font-size:14px;margin:3px 0}
+}
+
+/* v46: compact always-visible monthly top 3 */
+.hof-quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:6px 0 8px}
+.hof-quick-item{border:1px solid #ffffff2a;background:#ffffff12;border-radius:9px;padding:7px 6px;min-width:0}
+.hof-quick-title{font-size:11px;font-weight:850;color:#ead29b;margin-bottom:4px;white-space:nowrap}
+.hof-quick-line{font-size:11px;line-height:1.45;display:flex;justify-content:space-between;gap:3px;min-width:0}
+.hof-quick-person{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}
+.hof-quick-record{color:#cbd9d0;font-size:10px;white-space:nowrap}
+@media(max-width:600px){.hof-quick{grid-template-columns:repeat(2,minmax(0,1fr))}.hof-quick-item{padding:6px}.hof-quick-line{font-size:10px}.hof-quick-title{font-size:11px}}
+
+.mtc-news{margin:7px 0 10px;background:#12372b;color:#f7fff9;border-radius:13px;padding:8px 11px;box-shadow:0 2px 12px #092d1c12}
+.mtc-news-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:11px;letter-spacing:.3px;margin-bottom:5px}
+.mtc-news-manage{background:#ffffff1c!important;border:1px solid #ffffff3b!important;color:#fff!important;border-radius:8px!important;font-size:10px!important;padding:4px 8px!important}
+.mtc-news-items{display:flex;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:3px;scroll-behavior:smooth;overscroll-behavior-x:contain}.mtc-news-items::-webkit-scrollbar{display:none}
+.mtc-news-item{flex:0 0 100%;max-width:100%;min-width:0;background:#ffffff12;border:1px solid #ffffff20;border-radius:9px;padding:7px 9px;scroll-snap-align:start}
+.mtc-news-item b{display:block;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mtc-news-item small{display:block;font-size:10px;color:#d4e6da;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.mtc-news-editor{margin-top:8px;background:#fff;color:#1c2e26;border-radius:10px;padding:12px}
+.mtc-news-editor input,.mtc-news-editor select{max-width:100%;min-width:0}.mtc-news-editor h3{font-size:14px;margin:0 0 5px}
+.mtc-news-remove{padding:3px 7px!important;font-size:11px!important}
+@media(max-width:650px){.mtc-news{margin:5px 0 8px;padding:7px 9px}.mtc-news-item{min-width:0;max-width:100%;padding:6px 8px}}
+.mtc-news-progress{display:flex;justify-content:center;gap:5px;margin-top:5px}.mtc-news-dot{width:5px;height:5px;border-radius:50%;background:#ffffff55}.mtc-news-dot.active{width:15px;border-radius:5px;background:#bce7bd}@media(prefers-reduced-motion:reduce){.mtc-news-items{scroll-behavior:auto}}
+
+/* v51 weekly attendance dashboard */
+.mtc-week{background:#fff;border:1px solid #dbe7dd;border-radius:13px;padding:11px;margin:7px 0 10px;box-shadow:0 2px 9px #103c2410}
+.mtc-week-head{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:8px}.mtc-week-head strong{font-size:14px;color:#164630}.mtc-week-nav{display:flex;align-items:center;gap:5px}.mtc-week-nav button{padding:4px 9px;font-size:14px}.mtc-week-range{font-size:11px;font-weight:700;white-space:nowrap}
+.mtc-week-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.mtc-week-day{min-width:0;border:1px solid #e2eae4;background:#f5f8f5;border-radius:9px;padding:7px 1px 5px;text-align:center;cursor:pointer;color:#1d3428}
+.mtc-week-day span{display:block;font-size:11px}.mtc-week-day b{display:block;font-size:19px;margin:3px 0}.mtc-week-day small{display:block;font-size:9px;color:#66796b;white-space:nowrap}
+.mtc-week-day.club{border-color:#6b9a7b}.mtc-week-day.monthly{border:2px solid #c89b32;background:#fff9e8;padding:6px 0 4px}.mtc-week-day.selected{background:#18513c;color:white}.mtc-week-day.selected small{color:#e2efe7}.mtc-week-day.monthly.selected{background:#6a4c15}
+.mtc-week-detail{margin-top:8px;background:#f2f7f3;border-radius:9px;padding:9px 10px;font-size:12px;line-height:1.6}.mtc-week-detail b{font-size:12px}.mtc-week-detail button{font-size:11px;padding:5px 9px;margin-top:5px}.mtc-week-note{font-size:10px;color:#667b6b;margin-top:5px}
+@media(max-width:430px){.mtc-week{padding:8px}.mtc-week-days{gap:3px}.mtc-week-day b{font-size:17px}.mtc-week-day span{font-size:10px}.mtc-week-day small{font-size:8px}.mtc-week-head strong{font-size:12px}}
+
+/* v51 mobile-first: weekly attendance and primary actions above compact awards */
+@media(max-width:650px){
+ .wrap{padding:5px 7px 18px}
+ .clubhouse-header{padding:5px 10px 4px;border-radius:10px;box-shadow:none}
+ .clubhouse-top{font-size:8px;line-height:1}
+ .clubhouse-hero{gap:6px;padding:1px 0 2px}
+ .clubhouse-logo{flex:0 0 32px;max-width:32px;padding:0}
+ .clubhouse-logo img{max-height:32px;width:32px;object-fit:contain}
+ .clubhouse-intro h1{font-size:15px;line-height:1.15;margin:0}
+ .clubhouse-intro p{display:none}
+ .clubhouse-bottom,.clubhouse-kicker,.clubhouse-sub{display:none}
+ .mtc-week{margin:5px 0 4px;padding:7px 8px;border-radius:10px;box-shadow:none}
+ .mtc-week-head{margin-bottom:5px}
+ .mtc-week-head strong{font-size:12px}
+ .mtc-week-nav button{padding:2px 7px;min-height:26px}
+ .mtc-week-range{font-size:10px}
+ .mtc-week-days{gap:3px}
+ .mtc-week-day{padding:5px 0 3px;border-radius:7px}
+ .mtc-week-day span{font-size:10px}
+ .mtc-week-day b{font-size:17px;margin:1px 0}
+ .mtc-week-day small{font-size:8px}
+ .mtc-week-day.monthly{padding:4px 0 2px}
+ .mtc-week-detail{margin-top:5px;padding:5px 7px;font-size:11px;line-height:1.35}
+ .mtc-week-detail b{font-size:11px}
+ .mtc-week-detail button{margin-top:3px;padding:3px 8px}
+ .mtc-week-note{display:none}
+ .mtc-news{margin:4px 0;padding:5px 8px;border-radius:9px}
+ .mtc-news-top{margin-bottom:2px;font-size:10px}
+ .mtc-news-item{padding:4px 7px;border-radius:7px}
+ .mtc-news-item b{font-size:10px}
+ .mtc-news-item small{font-size:9px;margin-top:1px}
+ .mtc-news-progress{margin-top:3px}
+ .tabs{margin:4px 0 3px;padding:1px 0 4px;gap:4px}
+ .tabs button{min-height:34px;padding:7px 9px;font-size:11px}
+ .hof{padding:6px 8px;margin:4px 0;border-radius:10px}
+ .hof-title h2{font-size:12px}
+ .hof-actions button{height:23px;width:22px}
+ .hof-quick{gap:3px;margin:4px 0}
+ .hof-quick-item{padding:4px 5px;border-radius:6px}
+ .hof-quick-title{font-size:10px;margin-bottom:2px}
+ .hof-quick-line{font-size:9px;line-height:1.35}
+ .hof-quick-record{font-size:9px}
+ .hof-expand>summary{padding:4px 7px;font-size:10px}
+ .monthly-champion{font-size:10px;margin:3px 0}
+ .stats{margin:3px 0 4px;gap:4px}
+ .stat{padding:4px 5px}.stat strong{font-size:15px}.stat small{font-size:9px}
+}
+
+/* v51: monthly hall-of-fame ticker; one compact category at a time */
+.hof-quick{display:block!important;margin:4px 0 2px!important;min-height:60px;overflow:hidden}
+.hof-quick-item{display:none!important;animation:hofSlide .28s ease both;padding:7px 10px!important;border-radius:9px}
+.hof-quick-item.is-active{display:block!important}
+.hof-quick-title{font-size:12px!important;margin-bottom:3px!important}
+.hof-quick-line{font-size:11px!important;line-height:1.4!important}
+.hof-quick-record{font-size:10px!important}
+.hof-quick-dots{display:flex;justify-content:center;gap:7px;margin:3px 0 5px}
+.hof-quick-dot{height:7px;width:7px;border-radius:100px;padding:0;border:0;background:#ffffff55;cursor:pointer;min-height:0}
+.hof-quick-dot.is-active{width:21px;background:#f4cf7e}
+@keyframes hofSlide{from{opacity:.25;transform:translateX(13px)}to{opacity:1;transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.hof-quick-item{animation:none}}
+
+/* v52: truly compact, two-line Hall of Fame ticker */
+.hof{padding:8px 10px!important;margin:7px 0 9px!important;border-radius:11px!important;box-shadow:none!important}
+.hof-title{margin:0!important;gap:5px!important}
+.hof-title h2{font-size:12px!important;line-height:1.2!important;margin:0!important}
+.hof-actions{gap:3px!important;font-size:10px!important}
+.hof-actions button{width:23px!important;height:23px!important;border-radius:5px!important}
+.hof-quick{min-height:0!important;margin:3px 0 0!important}
+.hof-quick-item{padding:5px 7px!important;border-radius:6px!important}
+.hof-quick-title{font-size:10px!important;margin:0 0 3px!important;line-height:1.1!important}
+.hof-quick-line{font-size:10px!important;line-height:1.25!important;display:flex!important;flex-wrap:nowrap!important}
+.hof-quick-record{font-size:9px!important}
+.hof-quick-dots{margin:3px 0!important;gap:5px!important}
+.hof-quick-dot{height:5px!important;width:5px!important}
+.hof-quick-dot.is-active{width:15px!important}
+.hof-expand{margin-top:2px!important}
+.hof-expand>summary{padding:3px 5px!important;font-size:10px!important;background:transparent!important;border:0!important;color:#d7e4db!important}
+.hof-note{display:none!important}
+.monthly-champion:empty{display:none!important}
+@media(max-width:600px){.hof-title h2{font-size:11px!important}.hof-actions{font-size:9px!important}.hof-quick-line{font-size:9px!important}.hof-quick-record{font-size:9px!important}}
+</style></head><body><main class="wrap"><header class="clubhouse-header"><div class="clubhouse-top"><span class="clubhouse-season">2026 SECOND HALF · MTC</span><span class="mtc-version" title="사이트 버전">v52</span><span class="clubhouse-live"><span class="live-dot"></span> CLUB LIVE</span></div><div class="clubhouse-hero"><div class="clubhouse-logo"><img src="mtc-emblem.png" alt="MTC 모두의테니스클럽 공식 엠블럼: 테니스공 마차와 말, 테니스 선수"></div><div class="clubhouse-intro"><span class="clubhouse-kicker">WELCOME TO OUR CLUBHOUSE</span><h1>모두의<br>테니스클럽<span class="clubhouse-period">.</span></h1><p>최근 경기 · 클럽 공지 · 주요 일정</p><div class="clubhouse-sub">MATCH · RANKING · COMMUNITY</div></div></div><div class="clubhouse-bottom"><span>MODUE TENNIS CLUB</span><span>EST. MTC · 2026 하반기</span></div></header><section class="mtc-week" id="weeklyAttendance" aria-label="주간 참가 현황"><div class="mtc-week-head"><strong>📅 이번 주 참가 현황</strong><div class="mtc-week-nav"><button type="button" id="weekPrev" aria-label="이전 주">‹</button><span class="mtc-week-range" id="weekRange"></span><button type="button" id="weekNext" aria-label="다음 주">›</button></div></div><div id="weekDays" class="mtc-week-days"></div><div id="weekDetail" class="mtc-week-detail"></div><div class="mtc-week-note">기존 출석·게스트 탭의 날짜별 참가 체크를 자동 집계합니다. 미래 날짜는 참석 예정으로 표시됩니다.</div></section><section class="mtc-news" aria-label="클럽 소식 전광판"><div class="mtc-news-top"><strong>📢 MTC LIVE NEWS</strong><button type="button" id="newsManage" class="mtc-news-manage">공지·일정 관리</button></div><div id="newsItems" class="mtc-news-items" aria-label="자동으로 전환되는 클럽 소식"></div><div id="newsProgress" class="mtc-news-progress" aria-hidden="true"></div><div id="newsEditor" class="mtc-news-editor hide"><h3>클럽 공지 · 일정 등록</h3><p class="muted">모든 회원에게 공유됩니다. 공지는 날짜 없이도 등록할 수 있고, 일정은 날짜를 지정하세요.</p><div class="row"><select id="newsKind" aria-label="소식 유형"><option value="notice">📣 공지</option><option value="event">📅 일정</option></select><input id="newsDate" type="date" aria-label="일정 날짜"></div><input id="newsTitle" maxlength="90" placeholder="공지 제목 또는 일정명"><input id="newsDetail" maxlength="240" placeholder="간단한 안내 (선택)"><div class="row"><button type="button" class="primary" id="newsAdd">공지·일정 저장</button><button type="button" id="newsClose">닫기</button></div><div id="newsManageRows"></div></div></section><div id="appArea"><nav class="tabs"><button data-tab="attendance" class="active">📅 출석·게스트</button><button data-tab="games">🎾 자동 대진</button><button data-tab="rank">🏆 순위</button><button data-tab="attendanceRank">📊 출석 순위</button><button data-tab="rating">📈 실력 레이팅</button><button data-tab="pairAnalysis">🤝 파트너·상대 분석</button><button data-tab="ledger">📒 대출·정산</button><button data-tab="allLogs">📜 전체 코인 기록</button><button data-tab="monthlyTournament">🏆 월례대회</button><button data-tab="clubIntro">🏡 클럽 소개</button></nav><div class="hof" id="hallOfFame">
 <div class="hof-title"><div><small>MTC HALL OF FAME</small><h2>👑 이달의 명예의 전당</h2><p>우리 클럽의 빛나는 주인공들</p></div><div class="hof-actions"><button id="hofPrev" type="button">‹</button><span id="hofMonth"></span><button id="hofNext" type="button">›</button></div></div>
-<div class="hof-grid" id="hofGrid"><div class="hof-empty">기록을 불러오는 중...</div></div>
-<p class="hof-note">실제 경기·출석 기록으로 자동 집계 · 친선전은 출석에만 반영 · 월간 기록은 현재 저장된 데이터를 기준으로 재계산됩니다.</p>
-</div><div class="stats"><div class="stat"><small>활동 회원</small><br><strong id="n">0</strong></div><div class="stat"><small>오늘 출석</small><br><strong id="a">0</strong></div><div class="stat"><small>완료 경기</small><br><strong id="g">0</strong></div></div><nav class="tabs"><button data-tab="attendance" class="active">📅 출석·게스트</button><button data-tab="games">🎾 자동 대진</button><button data-tab="rank">🏆 순위</button><button data-tab="attendanceRank">📊 출석 순위</button><button data-tab="rating">📈 실력 레이팅</button><button data-tab="pairAnalysis">🤝 파트너·상대 분석</button><button data-tab="ledger">📒 대출·정산</button><button data-tab="allLogs">📜 전체 코인 기록</button><button data-tab="clubIntro">🏡 클럽 소개</button></nav><div id="message" class="error"></div>
-<section id="clubIntro" class="card club-intro-card hide"><div class="club-intro-heading"><span class="eyebrow">MODUE TENNIS CLUB · SINCE 2022</span><h2>모두의테니스클럽 소개</h2><p>테니스, 함께라서 더 즐겁다!<br>함께 치고, 함께 웃고, 함께 성장하는 우리 클럽</p><img class="club-intro-logo" src="mtc-clubhouse-logo.webp" alt="테니스 코트와 클럽하우스가 그려진 모두의테니스클럽 MTC 로고" loading="lazy"></div><div class="club-intro-content"><img class="club-intro-poster" src="mtc-2026-intro.webp" alt="2026년 모두의테니스클럽 소개 및 회원 모집 안내 포스터: 정기 모임, 클럽 시설, 회비 및 가입 안내" loading="lazy"><p class="club-intro-notice">2026년 클럽 소개 자료입니다. 회비·모임 일정·가입 문의 등은 변경될 수 있으므로 최신 공지와 클럽 운영진 안내를 함께 확인해 주세요.</p><div class="club-rules"><div class="rules-head"><div><span class="eyebrow">CLUB GUIDELINES · 2026</span><h3>📖 클럽 규정집</h3><p>2026년 6월 17일 보관된 규정집을 장별로 펼쳐 볼 수 있습니다.</p></div><a class="rules-download" href="MTC_2026_규정집_원본.docx" download>원본 규정집 ↓</a></div><p class="rules-warning">※ 보관된 최종본에는 이전 가칭 ‘[무명] 테니스클럽’, 중복 조항과 일부 상충하는 문구가 남아 있습니다. 아래는 원문을 그대로 옮긴 참고용 자료이며, 운영진의 최신 공지를 우선 확인해 주세요.</p><details class="rules-chapter"><summary>문서 제목 및 안내</summary><div class="rules-chapter-body"><p>[무명] 테니스클럽 규정집 (통합 개정안 / 2026 시즌)  260608수정</p></div></details><details class="rules-chapter"><summary>제1장 총칙</summary><div class="rules-chapter-body"><p>제1조(명칭 및 연혁)</p><p>1. 본 클럽의 공식 명칭은 「[무명] 테니스클럽」으로 한다.<br>약칭은 추후 운영진 협의를 통해 정한다.<br><br>2. 본 클럽은 2022년 6월 1일 개설된 「모두의테니스」(구 모테클)의 운영 체계와 활동을 기반으로 개편·운영되는 클럽이다.<br><br>3. 기존 「모두의테니스」의 회원 활동 이력, 운영 경험 및 클럽 문화는 본 클럽에 승계된다.<br><br>4. 본 규정집에서 “클럽”이라 함은 「[무명] 테니스클럽(구 모두의테니스)」을 의미한다.</p><p>제2조(회기)</p><p>1. 클럽의 회기는 매년 6월 1일부터 다음 해 5월 31일까지로 한다.<br><br>2. 최초 회기는 2022년 6월 1일부터 시작한다.<br><br>3. 회기 기준은 아래와 같다.<br><br>- 제1기 : 2022.06.01 ~ 2023.05.31<br>- 제2기 : 2023.06.01 ~ 2024.05.31<br>- 제3기 : 2024.06.01 ~ 2025.05.31<br>- 제4기 : 2025.06.01 ~ 2026.05.31<br>- 제5기 : 2026.06.01 ~ 2027.05.31</p><p>제3조(목적)</p><p>이 규정은 [무명] 테니스클럽(구 모두의테니스)의 대회 출전 지원, 회원제 및 회비 운영, 출석 코인 제도, 클럽 자산 관리 및 운영 원칙을 명확히 하여 건강하고 즐거운 클럽 문화를 조성하는 것을 목적으로 한다.</p><p>제4조(적용 대상)</p><p>1. 클럽 정회원 및 휴회 중이 아닌 회원<br>2. 클럽이 주관하거나 클럽 이름을 사용하는 대회·행사·모임에 참여하는 자</p></div></details><details class="rules-chapter"><summary>제2장 회원 및 운영</summary><div class="rules-chapter-body"><p>제5조(회원 자격)</p><p>1. 클럽 회원은 정회원으로 구성한다.<br><br>2. 정회원은 클럽 활동, 대회 지원, 코인 제도 및 각종 행사 참여 권한을 가진다.<br><br>3. 기존 일반회원 제도는 제5기부터 운영하지 않는다.</p><p>제6조(회비 및 연납)<br>1. 월 회비는 40,000원으로 한다.<br>2. 가입비는 100,000원으로 한다.<br>3. 여성회원 및 가족회원은 가입비의 50%를 적용한다. (가입비 50,000원)<br>4. 가입일이 속한 달과 그 다음 달까지는 월 회비 1회 납부로 갈음한다.<br>(예: 1월 가입 시 1~2월 회비 1회 납부)<br>5. 회원은 월 회비를 연 단위로 선납할 수 있다.<br>6. 연 단위 선납 시 1개월 회비를 면제한다.<br>(예: 월 4만원 기준 연 44만원)<br>7. 임원(회장, 총무, 경기이사, 문화이사 및 기타 운영진)의 월 회비는 20,000원으로 한다.<br>8. 회비는 코트 대관료, 공 구입, 소모품, 운영비, 행사비 및 클럽 자산 유지 등에 사용한다.<br>9. 회계연도는 매년 1월 1일부터 12월 31일까지로 한다.</p><p>1. 월 회비는 40,000원으로 한다.<br><br>2. 가입비는 100,000원으로 하며, 최초 1인 가입 후 가족가입 시 50%를 적용할 수 있다.<br><br>3. 가입일이 속한 달과 그 다음 달까지는 월 회비 1회 납부로 갈음한다.<br>(예: 1월 가입 시 1~2월 회비 1회 납부)<br><br>4. 회원은 월 회비를 연 단위로 선납할 수 있다.<br><br>5. 연 단위 선납 시 1개월 회비를 면제한다.<br>(예: 월 4만원 기준 연 44만원)<br><br>6. 회비는 코트 대관료, 공 구입, 소모품, 운영비, 행사비 및 클럽 자산 유지 등에 사용한다.<br><br>7. 회계연도는 매년 1월 1일부터 12월 31일까지로 한다.</p><p>제7조(회원 소개 할인)<br>1. 추천인과 신규 가입 회원은 각각 해당 월 회비 20,000원을 1회 감면한다.<br>2. 동일 회원이 다수의 신규 회원을 추천한 경우 감면 금액은 차월 이후 이월할 수 있다.<br>3. 세부 운영 방식은 운영진이 정한다.(추천받은사람은 추천한사람을 지명하여 할인혜택을 받는다.)</p><p>1. 기존 회원의 소개로 신규 회원이 가입할 경우, 신규 가입 회원과 소개 회원에게 각각 해당 월 회비에서 20,000원을 차감할 수 있다.<br><br>2. 동일 월에 다수의 신규 회원을 소개한 경우, 소개 회원의 할인 금액은 차월 이후로 이월하여 적용할 수 있다.<br><br>3. 할인 적용 기준 및 세부 운영 방식은 운영진이 정한다.</p><p>제8조(게스트)<br>1. 게스트는 회원의 초청을 통해 참가할 수 있다.<br>2. 클럽데이외 게스트 참가비는 5,000원으로 한다.<br>3. 클럽데이 게스트 참가비는 10,000원으로 한다.<br>4. 회원의 지인은 최초 1회에 한하여 참가비를 면제한다.<br>5. 게스트 운영 방식은 운영진이 정한다.<br><br>제9조(운영진)<br>1. 운영진은 회장, 총무, 경기이사, 문화이사 및 필요 시 지정된 임원으로 구성한다.<br>2. 운영진은 클럽 운영, 행사 진행, 재무 관리 및 규정 해석 권한을 가진다.<br>3. 세부 운영 사항은 운영진 회의를 통해 결정한다.</p><p>1. 운영진은 회장, 총무, 경기이사, 문화이사 및 필요 시 지정된 임원으로 구성한다.<br><br>2. 운영진은 클럽 운영, 행사 진행, 재무 관리 및 규정 해석 권한을 가진다.<br><br>3. 세부 운영 사항은 운영진 회의를 통해 결정한다.</p><p>제9조(휴회)</p><p>1. 회원은 아래 사유에 해당할 경우 운영진에게 사전 고지 후 휴회를 신청할 수 있다.<br><br>- 장기 출장 및 해외 체류<br>- 개인 질병 및 부상<br>- 출산·육아<br>- 학업·시험·생업 등으로 장기간 활동이 어려운 경우<br>- 기타 운영진이 인정하는 사유<br><br>2. 휴회는 기본 6개월 단위로 하며 필요 시 운영진 협의를 통해 연장할 수 있다.<br><br>3. 휴회 기간 중 회비는 부과되지 않는다.<br><br>4. 휴회 기간 중 클럽 행사·대회 지원·출석 코인 제도 대상에서는 제외된다.<br><br>5. 휴회 종료 후 복귀 시 기존 회원 자격은 유지된다.<br><br>6. 장기 미참여 회원은 운영진 협의를 통해 휴회 처리될 수 있다.</p><p>제10조(회비 미납)</p><p>1. 회비는 매월 지정일까지 납부하는 것을 원칙으로 한다.<br><br>2. 장기간 회비 미납 시 운영진 협의를 통해 회원 자격이 제한될 수 있다.<br><br>3. 특별한 사유가 있는 경우 운영진과 협의할 수 있다.</p></div></details><details class="rules-chapter"><summary>제3장 대회 출전 및 페이백 규정</summary><div class="rules-chapter-body"><p>제11조(대회 출전 원칙)</p><p>1. 클럽을 메인 클럽명으로 달고 출전한다.<br><br>2. 클럽 인지도 제고 및 회원 대회 참가 독려를 위해 일정 조건 충족 시 페이백을 실시한다.</p><p>제12조(페이백 대상 대회)</p><p>1. 시·구 단위 공인대회 및 이에 준하는 대회를 우선 대상에 둔다.<br><br>2. 클럽 재무상황에 따라 주요 대회는 포함하고 일부 사설 대회는 제외할 수 있다.<br><br>3. 구체 대상은 운영진 회의 후 공지한다.</p><p>제13조(페이백 기준 및 금액)</p><p>1. 우승·준우승·입상 시 전액 또는 50% 페이백을 원칙으로 한다.<br><br>2. 1인 참가비 상한은 3~3.5만원 수준으로 한다.<br><br>3. 동일 구력 반복 입상은 제한될 수 있으며 상위 레벨 첫 입상 시 다시 대상에 포함할 수 있다.</p><p>제14조(기타 지원)</p><p>주요 대회에서 클럽명으로 입상 시 포스터·축하 게시물 제작 등 홍보 지원을 할 수 있다.</p></div></details><details class="rules-chapter"><summary>제4장 소모임 운영 규정</summary><div class="rules-chapter-body"><p>제15조(소모임 운영 원칙)</p><p>1. 주말 단식 리그, 이벤트 경기, 소규모 모임 등은 공식 행사이나 세부 규정은 상황에 따라 운영진이 조정할 수 있다.<br><br>2. 소모임 공지 내용은 즉시 효력을 가진다.</p><p>제16조(단식 리그 운영 가이드라인)</p><p>※ 아래 내용은 가이드라인이며 상황에 따라 변경 가능함.<br><br>- 일요일 16:00~19:00<br>- 코트 2면<br>- 선착순 6명<br>- 리그전 + 토너먼트<br>- 인당 최소 4게임 목표<br>- 중도 포기 시 0:6 패 처리<br>- 공 분실 시 3,000원 부담 가능</p></div></details><details class="rules-chapter"><summary>제5장 출석 코인 제도</summary><div class="rules-chapter-body"><p>제17조(출석 코인 제도)</p><p>1. 꾸준한 참여를 장려하기 위해 출석 코인 제도를 운영한다.<br><br>2. 코인은 시즌별 랭킹 및 상품 교환에 활용할 수 있다.</p></div></details><details class="rules-chapter"><summary>제6장 클럽 자산 관리</summary><div class="rules-chapter-body"><p>제18조(클럽 자산)</p><p>1. 볼머신 및 클럽 비품은 회원 공동 자산으로 관리한다.<br><br>2. 회원은 자산 사용 시 파손·분실이 발생하지 않도록 주의 의무를 가진다.</p><p>제19조(볼머신 사용)</p><p>1. 볼머신은 운영진 또는 지정된 관리자의 승인 후 사용할 수 있다.<br><br>2. 사용 후 배터리, 공 정리 및 보관 상태를 원상복구하여야 한다.<br><br>3. 고의 또는 중대한 과실로 인한 파손 발생 시 운영진 협의를 통해 책임 범위를 정할 수 있다.<br><br>4. 세부 운영 방식은 별도 공지로 정한다.</p></div></details><details class="rules-chapter"><summary>제7장 경기 매너 및 회원 질서</summary><div class="rules-chapter-body"><p>제20조(경기 매너)</p><p>1. 회원 간 존중과 배려를 기본 원칙으로 한다.<br><br>2. 신규 회원을 위한 기본 매너(인사, 라인콜, 시간 준수 등)를 안내한다.<br><br>3. 풋폴트 지적은 대회 대비 차원에서 상호 매너 있게 전달한다.</p><p>제21조(영상 촬영)</p><p>1. 경기 녹화는 폼 교정 및 기록용으로 장려한다.<br><br>2. 영상 업로드 시 관련 당사자 동의를 받는다.</p><p>제22조(회원 질서)</p><p>1. 회원 간 지속적인 분쟁, 폭언, 비매너 행위, 클럽 명예 훼손 등이 반복될 경우 운영진 협의를 통해 경고 또는 활동 제한 조치를 할 수 있다.<br><br>2. 중대한 문제 발생 시 운영진 회의를 통해 회원 자격을 제한하거나 종료할 수 있다.</p></div></details><details class="rules-chapter"><summary>제8장 부칙</summary><div class="rules-chapter-body"><p>제23조(규정 개정)</p><p>운영진 회의 및 회원 의견을 반영해 규정을 수시로 개정할 수 있다.<br><br>개정사항은 단톡방 공지 후 즉시 또는 공지된 날짜부터 적용한다.</p><p>제24조(기타)</p><p>명시되지 않은 사항은 기존 관행, 상식 및 운영진 판단에 따른다.</p></div></details></div></div></section><section id="attendance" class="card"><div id="rosterPatch" class="card" style="background:#f0f8f2"><b>회원 명단 보완</b><p class="muted">기존 기록을 유지하면서 누락된 고영훈 회원을 추가합니다. 이미 등록되어 있으면 중복 추가하지 않습니다.</p><button class="primary" id="addGoYoungHoon">고영훈 회원 추가</button></div><h3>오늘 참석자 관리</h3><p class="muted">회원 출석을 체크하고, 게스트는 이름만 입력해 즉시 참가시킬 수 있습니다.</p><div class="row"><label>모임 날짜<input type="date" id="meetingDate"></label><select id="meetingHistory" aria-label="지난 모임 선택"></select></div><div class="row"><input id="guestName" placeholder="게스트 이름"><select id="guestNtrp" aria-label="게스트 NTRP"></select><button class="primary" id="guestAdd">게스트 추가</button></div><p class="muted">회원별 NTRP를 선택하면 모든 날짜에 유지됩니다. 미설정 선수는 대진 시 별도로 취급됩니다.</p><h4>클럽 회원</h4><p class="muted">개인별 코인은 아래 🟢 +1 / 🔴 -1로 조정합니다. 신규 회원의 시작 코인 3개도 +1을 세 번 눌러 지급할 수 있습니다. 수동 조정은 날짜별 정산 이력에 남습니다.</p><div id="attendanceRows"></div><h4>당일 게스트</h4><p class="muted">정회원 전환 시 기존 게스트 경기 기록은 그대로 남고 새 회원 계정이 만들어집니다. 게스트 코인은 자동 이월하지 않습니다.</p><div id="guestRows"></div><h3>🪙 출석 코인 별도 지급</h3><p class="muted">실제 출석 체크된 정회원만 해당 날짜에 +1개 지급할 수 있습니다. 출석 체크만으로 자동 지급되지 않습니다. 토요일 투표 대상자 중 실제 출석한 사람만 아래에서 지급하세요. 같은 날 중복 지급은 차단됩니다.</p><div id="attendanceBonusRows"></div></section>
+<div id="hofQuick" class="hof-quick" aria-label="3초마다 바뀌는 이달의 명예의 전당" aria-live="off"></div><div id="hofQuickDots" class="hof-quick-dots" aria-label="전광판 부문 선택"></div><details class="hof-expand" id="hofExpand"><summary>▾ 전체 순위 자세히 보기 <span>▾</span></summary><div class="season-board"><h3 id="seasonTitle">🏅 시즌 누적 명예의 전당</h3><div id="seasonGrid" class="season-grid"></div></div><div class="hof-grid" id="hofGrid"><div class="hof-empty">기록을 불러오는 중...</div></div>
+<div id="monthlyChampion" class="monthly-champion"></div></details><p class="hof-note">실제 경기·출석 기록으로 자동 집계 · 친선전은 출석에만 반영 · 월간 기록은 현재 저장된 데이터를 기준으로 재계산됩니다.</p>
+</div><div class="stats"><div class="stat"><small>활동 회원</small><br><strong id="n">0</strong></div><div class="stat"><small>오늘 출석</small><br><strong id="a">0</strong></div><div class="stat"><small>완료 경기</small><br><strong id="g">0</strong></div></div><div id="message" class="error"></div>
+<section id="monthlyTournament" class="card hide"><h2>🏆 월례 복식 토너먼트</h2><p class="muted">당일 출석 회원으로 2인 지정팀을 구성합니다. 2코트 경기순서표 · 승자 진출 · 월별 우승팀 자동 기록. 월례대회 코인은 일반 코인전의 2배(6:0은 ±4), Elo 레이팅은 동일합니다.</p><div class="row"><label>대회 날짜<input type="date" id="tourDate"></label><label>대회 선택<select id="tourPicker"></select></label></div><div id="tourSetup"></div><div id="tourSchedule"></div></section><section id="clubIntro" class="card club-intro-card hide"><div class="club-intro-heading"><span class="eyebrow">MODUE TENNIS CLUB · SINCE 2022</span><h2>모두의테니스클럽 소개</h2><p>테니스, 함께라서 더 즐겁다!<br>함께 치고, 함께 웃고, 함께 성장하는 우리 클럽</p><img class="club-intro-logo" src="mtc-clubhouse-logo.webp" alt="테니스 코트와 클럽하우스가 그려진 모두의테니스클럽 MTC 로고" loading="lazy"></div><div class="club-intro-content"><img class="club-intro-poster" src="mtc-2026-intro.webp" alt="2026년 모두의테니스클럽 소개 및 회원 모집 안내 포스터: 정기 모임, 클럽 시설, 회비 및 가입 안내" loading="lazy"><p class="club-intro-notice">2026년 클럽 소개 자료입니다. 회비·모임 일정·가입 문의 등은 변경될 수 있으므로 최신 공지와 클럽 운영진 안내를 함께 확인해 주세요.</p><div class="club-rules"><div class="rules-head"><div><span class="eyebrow">CLUB GUIDELINES · 2026</span><h3>📖 클럽 규정집</h3><p>2026년 6월 17일 보관된 규정집을 장별로 펼쳐 볼 수 있습니다.</p></div><a class="rules-download" href="MTC_2026_규정집_원본.docx" download>원본 규정집 ↓</a></div><p class="rules-warning">※ 보관된 최종본에는 이전 가칭 ‘[무명] 테니스클럽’, 중복 조항과 일부 상충하는 문구가 남아 있습니다. 아래는 원문을 그대로 옮긴 참고용 자료이며, 운영진의 최신 공지를 우선 확인해 주세요.</p><details class="rules-chapter"><summary>문서 제목 및 안내</summary><div class="rules-chapter-body"><p>[무명] 테니스클럽 규정집 (통합 개정안 / 2026 시즌)  260608수정</p></div></details><details class="rules-chapter"><summary>제1장 총칙</summary><div class="rules-chapter-body"><p>제1조(명칭 및 연혁)</p><p>1. 본 클럽의 공식 명칭은 「[무명] 테니스클럽」으로 한다.<br>약칭은 추후 운영진 협의를 통해 정한다.<br><br>2. 본 클럽은 2022년 6월 1일 개설된 「모두의테니스」(구 모테클)의 운영 체계와 활동을 기반으로 개편·운영되는 클럽이다.<br><br>3. 기존 「모두의테니스」의 회원 활동 이력, 운영 경험 및 클럽 문화는 본 클럽에 승계된다.<br><br>4. 본 규정집에서 “클럽”이라 함은 「[무명] 테니스클럽(구 모두의테니스)」을 의미한다.</p><p>제2조(회기)</p><p>1. 클럽의 회기는 매년 6월 1일부터 다음 해 5월 31일까지로 한다.<br><br>2. 최초 회기는 2022년 6월 1일부터 시작한다.<br><br>3. 회기 기준은 아래와 같다.<br><br>- 제1기 : 2022.06.01 ~ 2023.05.31<br>- 제2기 : 2023.06.01 ~ 2024.05.31<br>- 제3기 : 2024.06.01 ~ 2025.05.31<br>- 제4기 : 2025.06.01 ~ 2026.05.31<br>- 제5기 : 2026.06.01 ~ 2027.05.31</p><p>제3조(목적)</p><p>이 규정은 [무명] 테니스클럽(구 모두의테니스)의 대회 출전 지원, 회원제 및 회비 운영, 출석 코인 제도, 클럽 자산 관리 및 운영 원칙을 명확히 하여 건강하고 즐거운 클럽 문화를 조성하는 것을 목적으로 한다.</p><p>제4조(적용 대상)</p><p>1. 클럽 정회원 및 휴회 중이 아닌 회원<br>2. 클럽이 주관하거나 클럽 이름을 사용하는 대회·행사·모임에 참여하는 자</p></div></details><details class="rules-chapter"><summary>제2장 회원 및 운영</summary><div class="rules-chapter-body"><p>제5조(회원 자격)</p><p>1. 클럽 회원은 정회원으로 구성한다.<br><br>2. 정회원은 클럽 활동, 대회 지원, 코인 제도 및 각종 행사 참여 권한을 가진다.<br><br>3. 기존 일반회원 제도는 제5기부터 운영하지 않는다.</p><p>제6조(회비 및 연납)<br>1. 월 회비는 40,000원으로 한다.<br>2. 가입비는 100,000원으로 한다.<br>3. 여성회원 및 가족회원은 가입비의 50%를 적용한다. (가입비 50,000원)<br>4. 가입일이 속한 달과 그 다음 달까지는 월 회비 1회 납부로 갈음한다.<br>(예: 1월 가입 시 1~2월 회비 1회 납부)<br>5. 회원은 월 회비를 연 단위로 선납할 수 있다.<br>6. 연 단위 선납 시 1개월 회비를 면제한다.<br>(예: 월 4만원 기준 연 44만원)<br>7. 임원(회장, 총무, 경기이사, 문화이사 및 기타 운영진)의 월 회비는 20,000원으로 한다.<br>8. 회비는 코트 대관료, 공 구입, 소모품, 운영비, 행사비 및 클럽 자산 유지 등에 사용한다.<br>9. 회계연도는 매년 1월 1일부터 12월 31일까지로 한다.</p><p>1. 월 회비는 40,000원으로 한다.<br><br>2. 가입비는 100,000원으로 하며, 최초 1인 가입 후 가족가입 시 50%를 적용할 수 있다.<br><br>3. 가입일이 속한 달과 그 다음 달까지는 월 회비 1회 납부로 갈음한다.<br>(예: 1월 가입 시 1~2월 회비 1회 납부)<br><br>4. 회원은 월 회비를 연 단위로 선납할 수 있다.<br><br>5. 연 단위 선납 시 1개월 회비를 면제한다.<br>(예: 월 4만원 기준 연 44만원)<br><br>6. 회비는 코트 대관료, 공 구입, 소모품, 운영비, 행사비 및 클럽 자산 유지 등에 사용한다.<br><br>7. 회계연도는 매년 1월 1일부터 12월 31일까지로 한다.</p><p>제7조(회원 소개 할인)<br>1. 추천인과 신규 가입 회원은 각각 해당 월 회비 20,000원을 1회 감면한다.<br>2. 동일 회원이 다수의 신규 회원을 추천한 경우 감면 금액은 차월 이후 이월할 수 있다.<br>3. 세부 운영 방식은 운영진이 정한다.(추천받은사람은 추천한사람을 지명하여 할인혜택을 받는다.)</p><p>1. 기존 회원의 소개로 신규 회원이 가입할 경우, 신규 가입 회원과 소개 회원에게 각각 해당 월 회비에서 20,000원을 차감할 수 있다.<br><br>2. 동일 월에 다수의 신규 회원을 소개한 경우, 소개 회원의 할인 금액은 차월 이후로 이월하여 적용할 수 있다.<br><br>3. 할인 적용 기준 및 세부 운영 방식은 운영진이 정한다.</p><p>제8조(게스트)<br>1. 게스트는 회원의 초청을 통해 참가할 수 있다.<br>2. 클럽데이외 게스트 참가비는 5,000원으로 한다.<br>3. 클럽데이 게스트 참가비는 10,000원으로 한다.<br>4. 회원의 지인은 최초 1회에 한하여 참가비를 면제한다.<br>5. 게스트 운영 방식은 운영진이 정한다.<br><br>제9조(운영진)<br>1. 운영진은 회장, 총무, 경기이사, 문화이사 및 필요 시 지정된 임원으로 구성한다.<br>2. 운영진은 클럽 운영, 행사 진행, 재무 관리 및 규정 해석 권한을 가진다.<br>3. 세부 운영 사항은 운영진 회의를 통해 결정한다.</p><p>1. 운영진은 회장, 총무, 경기이사, 문화이사 및 필요 시 지정된 임원으로 구성한다.<br><br>2. 운영진은 클럽 운영, 행사 진행, 재무 관리 및 규정 해석 권한을 가진다.<br><br>3. 세부 운영 사항은 운영진 회의를 통해 결정한다.</p><p>제9조(휴회)</p><p>1. 회원은 아래 사유에 해당할 경우 운영진에게 사전 고지 후 휴회를 신청할 수 있다.<br><br>- 장기 출장 및 해외 체류<br>- 개인 질병 및 부상<br>- 출산·육아<br>- 학업·시험·생업 등으로 장기간 활동이 어려운 경우<br>- 기타 운영진이 인정하는 사유<br><br>2. 휴회는 기본 6개월 단위로 하며 필요 시 운영진 협의를 통해 연장할 수 있다.<br><br>3. 휴회 기간 중 회비는 부과되지 않는다.<br><br>4. 휴회 기간 중 클럽 행사·대회 지원·출석 코인 제도 대상에서는 제외된다.<br><br>5. 휴회 종료 후 복귀 시 기존 회원 자격은 유지된다.<br><br>6. 장기 미참여 회원은 운영진 협의를 통해 휴회 처리될 수 있다.</p><p>제10조(회비 미납)</p><p>1. 회비는 매월 지정일까지 납부하는 것을 원칙으로 한다.<br><br>2. 장기간 회비 미납 시 운영진 협의를 통해 회원 자격이 제한될 수 있다.<br><br>3. 특별한 사유가 있는 경우 운영진과 협의할 수 있다.</p></div></details><details class="rules-chapter"><summary>제3장 대회 출전 및 페이백 규정</summary><div class="rules-chapter-body"><p>제11조(대회 출전 원칙)</p><p>1. 클럽을 메인 클럽명으로 달고 출전한다.<br><br>2. 클럽 인지도 제고 및 회원 대회 참가 독려를 위해 일정 조건 충족 시 페이백을 실시한다.</p><p>제12조(페이백 대상 대회)</p><p>1. 시·구 단위 공인대회 및 이에 준하는 대회를 우선 대상에 둔다.<br><br>2. 클럽 재무상황에 따라 주요 대회는 포함하고 일부 사설 대회는 제외할 수 있다.<br><br>3. 구체 대상은 운영진 회의 후 공지한다.</p><p>제13조(페이백 기준 및 금액)</p><p>1. 우승·준우승·입상 시 전액 또는 50% 페이백을 원칙으로 한다.<br><br>2. 1인 참가비 상한은 3~3.5만원 수준으로 한다.<br><br>3. 동일 구력 반복 입상은 제한될 수 있으며 상위 레벨 첫 입상 시 다시 대상에 포함할 수 있다.</p><p>제14조(기타 지원)</p><p>주요 대회에서 클럽명으로 입상 시 포스터·축하 게시물 제작 등 홍보 지원을 할 수 있다.</p></div></details><details class="rules-chapter"><summary>제4장 소모임 운영 규정</summary><div class="rules-chapter-body"><p>제15조(소모임 운영 원칙)</p><p>1. 주말 단식 리그, 이벤트 경기, 소규모 모임 등은 공식 행사이나 세부 규정은 상황에 따라 운영진이 조정할 수 있다.<br><br>2. 소모임 공지 내용은 즉시 효력을 가진다.</p><p>제16조(단식 리그 운영 가이드라인)</p><p>※ 아래 내용은 가이드라인이며 상황에 따라 변경 가능함.<br><br>- 일요일 16:00~19:00<br>- 코트 2면<br>- 선착순 6명<br>- 리그전 + 토너먼트<br>- 인당 최소 4게임 목표<br>- 중도 포기 시 0:6 패 처리<br>- 공 분실 시 3,000원 부담 가능</p></div></details><details class="rules-chapter"><summary>제5장 출석 코인 제도</summary><div class="rules-chapter-body"><p>제17조(출석 코인 제도)</p><p>1. 꾸준한 참여를 장려하기 위해 출석 코인 제도를 운영한다.<br><br>2. 코인은 시즌별 랭킹 및 상품 교환에 활용할 수 있다.</p></div></details><details class="rules-chapter"><summary>제6장 클럽 자산 관리</summary><div class="rules-chapter-body"><p>제18조(클럽 자산)</p><p>1. 볼머신 및 클럽 비품은 회원 공동 자산으로 관리한다.<br><br>2. 회원은 자산 사용 시 파손·분실이 발생하지 않도록 주의 의무를 가진다.</p><p>제19조(볼머신 사용)</p><p>1. 볼머신은 운영진 또는 지정된 관리자의 승인 후 사용할 수 있다.<br><br>2. 사용 후 배터리, 공 정리 및 보관 상태를 원상복구하여야 한다.<br><br>3. 고의 또는 중대한 과실로 인한 파손 발생 시 운영진 협의를 통해 책임 범위를 정할 수 있다.<br><br>4. 세부 운영 방식은 별도 공지로 정한다.</p></div></details><details class="rules-chapter"><summary>제7장 경기 매너 및 회원 질서</summary><div class="rules-chapter-body"><p>제20조(경기 매너)</p><p>1. 회원 간 존중과 배려를 기본 원칙으로 한다.<br><br>2. 신규 회원을 위한 기본 매너(인사, 라인콜, 시간 준수 등)를 안내한다.<br><br>3. 풋폴트 지적은 대회 대비 차원에서 상호 매너 있게 전달한다.</p><p>제21조(영상 촬영)</p><p>1. 경기 녹화는 폼 교정 및 기록용으로 장려한다.<br><br>2. 영상 업로드 시 관련 당사자 동의를 받는다.</p><p>제22조(회원 질서)</p><p>1. 회원 간 지속적인 분쟁, 폭언, 비매너 행위, 클럽 명예 훼손 등이 반복될 경우 운영진 협의를 통해 경고 또는 활동 제한 조치를 할 수 있다.<br><br>2. 중대한 문제 발생 시 운영진 회의를 통해 회원 자격을 제한하거나 종료할 수 있다.</p></div></details><details class="rules-chapter"><summary>제8장 부칙</summary><div class="rules-chapter-body"><p>제23조(규정 개정)</p><p>운영진 회의 및 회원 의견을 반영해 규정을 수시로 개정할 수 있다.<br><br>개정사항은 단톡방 공지 후 즉시 또는 공지된 날짜부터 적용한다.</p><p>제24조(기타)</p><p>명시되지 않은 사항은 기존 관행, 상식 및 운영진 판단에 따른다.</p></div></details></div></div></section><section id="attendance" class="card"><div id="rosterPatch" class="card" style="background:#f0f8f2"><b>회원 명단 보완</b><p class="muted">기존 기록을 유지하면서 누락된 고영훈 회원을 추가합니다. 이미 등록되어 있으면 중복 추가하지 않습니다.</p><button class="primary" id="addGoYoungHoon">고영훈 회원 추가</button></div><h3>오늘 참석자 관리</h3><p class="muted">회원 출석을 체크하고, 게스트는 이름만 입력해 즉시 참가시킬 수 있습니다.</p><div class="row"><label>모임 날짜<input type="date" id="meetingDate"></label><select id="meetingHistory" aria-label="지난 모임 선택"></select></div><div class="row"><input id="guestName" placeholder="게스트 이름"><select id="guestNtrp" aria-label="게스트 NTRP"></select><button class="primary" id="guestAdd">게스트 추가</button></div><p class="muted">회원별 NTRP를 선택하면 모든 날짜에 유지됩니다. 미설정 선수는 대진 시 별도로 취급됩니다.</p><h4>클럽 회원</h4><p class="muted">개인별 코인은 아래 🟢 +1 / 🔴 -1로 조정합니다. 신규 회원의 시작 코인 3개도 +1을 세 번 눌러 지급할 수 있습니다. 수동 조정은 날짜별 정산 이력에 남습니다.</p><div id="attendanceRows"></div><h4>당일 게스트</h4><p class="muted">정회원 전환 시 기존 게스트 경기 기록은 그대로 남고 새 회원 계정이 만들어집니다. 게스트 코인은 자동 이월하지 않습니다.</p><div id="guestRows"></div><h3>🪙 출석 코인 별도 지급</h3><p class="muted">실제 출석 체크된 정회원만 해당 날짜에 +1개 지급할 수 있습니다. 출석 체크만으로 자동 지급되지 않습니다. 토요일 투표 대상자 중 실제 출석한 사람만 아래에서 지급하세요. 같은 날 중복 지급은 차단됩니다.</p><div id="attendanceBonusRows"></div></section>
 <section id="games" class="card hide"><h3>자동 대진 · 2면</h3><p class="muted">복식 출석자 8명 이상이면 빈 2코트를 한 번에 편성합니다. 당일 경기 횟수가 적은 8명을 우선 선발하고, 두 코트의 NTRP 팀 균형과 파트너 반복을 함께 최소화합니다. 4~7명이면 1코트만 편성합니다.</p><div class="row"><select id="mode"><option value="4">복식 2:2</option><option value="2">단식 1:1</option></select><button id="make" class="primary">다음 경기 자동 배정</button></div><div class="type-picker"><b>경기 유형</b><div class="type-buttons"><button type="button" class="type-btn active" data-type-select="autoType" data-type-value="coin" aria-pressed="true">🪙 코인전</button><button type="button" class="type-btn " data-type-select="autoType" data-type-value="official" aria-pressed="false">🏆 공식전</button><button type="button" class="type-btn " data-type-select="autoType" data-type-value="friendly" aria-pressed="false">🤝 친선전</button></div><select id="autoType" class="visually-hidden" aria-label="경기 유형"><option value="coin">🪙 코인전 (코인 + 레이팅 + 공식 전적)</option><option value="official">🏆 공식전 (레이팅 + 공식 전적)</option><option value="friendly">🤝 친선전 (출석 + 경기 기록만)</option></select><small class="muted">친선전: 출석만 · 공식전: 레이팅·전적 · 코인전: 코인·레이팅·전적</small></div><h3>✍️ 수동 대진 등록</h3><p><b>경기 유형</b> · 코인전은 레이팅 및 공식 상대 전적에도 자동 반영됩니다.</p><div class="type-picker"><b>경기 유형</b><div class="type-buttons"><button type="button" class="type-btn active" data-type-select="manualType" data-type-value="coin" aria-pressed="true">🪙 코인전</button><button type="button" class="type-btn " data-type-select="manualType" data-type-value="official" aria-pressed="false">🏆 공식전</button><button type="button" class="type-btn " data-type-select="manualType" data-type-value="friendly" aria-pressed="false">🤝 친선전</button></div><select id="manualType" class="visually-hidden" aria-label="경기 유형"><option value="coin">🪙 코인전 (코인 + 레이팅 + 공식 전적)</option><option value="official">🏆 공식전 (레이팅 + 공식 전적)</option><option value="friendly">🤝 친선전 (출석 + 경기 기록만)</option></select><small class="muted">친선전: 출석만 · 공식전: 레이팅·전적 · 코인전: 코인·레이팅·전적</small></div><p class="muted">지난 경기나 현장 수동 대진을 등록할 수 있습니다. 날짜를 먼저 선택하고 선수와 코트를 지정하세요. 승패가 미확정인 기록도 남길 수 있습니다.</p><div class="row"><select id="manualCourt"><option>코트 1</option><option>코트 2</option><option>기타</option></select><select id="manualMode"><option value="4">복식</option><option value="2">단식</option></select></div><div class="two"><div><b>A팀</b><div id="manualA"></div></div><div><b>B팀</b><div id="manualB"></div></div></div><button id="manualAdd" class="primary">수동 경기 등록 (미정산)</button><h4>진행 중 경기</h4><div id="ongoing"></div><h4>대기 인원</h4><div id="waiting" class="muted"></div><h4>선택 날짜 완료 기록</h4><div id="gameTypeCounts" class="muted"></div><div id="history"></div></section>
 <section id="rank" class="card hide"><h3>반기 회원 순위</h3><p class="muted">순보유 코인 = 현재 보유 − 누적 대출. 게스트는 순위에서 제외합니다.</p><div id="ranks"></div></section>
 <section id="attendanceRank" class="card hide"><h3>📊 클럽원 출석 순위표</h3><p class="muted">출석 코인 지급과 별도로, 날짜별 출석 체크 또는 완료된 경기 참가 기록을 기준으로 집계합니다. 같은 날짜는 1회만 인정하며 게스트는 제외합니다.</p><div class="row"><label>집계 기간 <select id="attendanceRankPeriod"><option value="all">전체 기간</option><option value="half">선택 날짜의 반기</option><option value="year">선택 날짜의 연도</option></select></label></div><div id="attendanceRankRows"></div><p class="muted">경기만 등록하고 승패를 확정하지 않은 대진은 출석으로 인정하지 않습니다. 출석 코인 지급 기록을 출석 횟수로 대체하지 않습니다.</p></section><section id="rating" class="card hide"><h3>📈 MTC 실력 레이팅</h3><p class="muted">레이팅전이 해제된 친선 경기는 실력 점수 및 승패 통계에 포함되지 않습니다.</p><p class="muted">모든 회원 5.00 출발 · Elo 방식 · 승패와 상대 팀 레이팅 및 게임 스코어 반영. 과거 경기의 스코어는 승패를 유지한 채 수정할 수 있습니다. 공식 NTRP가 아닌 MTC 자체 지표입니다. 과거 승패만 있는 경기는 점수 차이 가중치 없이 계산합니다.</p><div id="ratingRows"></div><h3>경기별 레이팅 변동</h3><div id="ratingHistory"></div></section><section id="pairAnalysis" class="card hide"><h3>🤝 파트너·상대 분석</h3><p class="muted">선수를 선택하면 전체 날짜의 완료된 단식·복식 경기로 파트너별 협력 전적, 상대별 맞대결 전적과 함께 출전한 상대팀 조합을 분석합니다. 승패가 미확정인 경기는 제외합니다.</p><div class="row"><label>분석 선수 <select id="analysisPlayer"></select></label><label>기간 <select id="analysisPeriod"><option value="all">전체 기록</option><option value="half">선택 날짜의 반기</option><option value="year">선택 날짜의 연도</option></select></label></div><div id="analysisSummary"></div><h3>① 가장 많이 함께한 파트너</h3><div id="analysisPartners"></div><h3>② 상대 선수별 맞대결</h3><div id="analysisOpponents"></div><h3>③ 상대팀 조합별 전적</h3><div id="analysisOpponentTeams"></div><h3>④ 복식 팀 조합별 누적 기록</h3><p class="muted">모든 복식 팀 조합의 승·패와 승률을 비교합니다. 선택한 선수와 관계없이 집계합니다.</p><div id="analysisTeamCombinations"></div><h3>⑤ 선택 선수의 경기별 상세 기록</h3><div id="analysisMatches"></div><p class="muted">동일 경기의 상대 선수는 각각 맞대결 1회로 집계됩니다. 상대팀 조합은 복식의 두 선수를 묶어 별도로 집계합니다. 게스트도 과거 경기의 파트너·상대로 표시될 수 있습니다.</p></section><section id="allLogs" class="card hide"><h3>📜 전체 코인전 기록</h3><p class="muted">날짜를 바꾸지 않아도 모든 날짜의 기록을 한눈에 확인합니다. 최신순이며 취소된 내역도 표시합니다. 각 경기에서 스코어·승패뿐 아니라 코인전/레이팅전 적용 여부도 바로 수정할 수 있습니다. 승패 변경 시 코인과 레이팅도 함께 갱신됩니다.</p><h3>① 🎾 승패 기록</h3><div id="allGameLogs"></div><h3>② 🪙 출석 코인 및 기타 지급·차감</h3><div id="allCoinLogs"></div><h3>③ 📒 대출 기록</h3><div id="allLoanLogs"></div></section><section id="ledger" class="card hide"><h3>코인 대출</h3><div class="row"><select id="loanMember"></select><input id="loanQty" type="number" value="3" min="1" max="100"><button class="primary" id="loan">대출 지급</button></div><h4>선택 날짜 정산 내역</h4><p class="muted">해당 날짜의 완료 경기, 코인 대출, 출석 코인 지급을 표시합니다. 잘못 입력한 내역은 취소하면 코인·승패가 원상복구됩니다.</p><div id="dailyLedger"></div><h4>시즌 정산</h4><div id="settlement"></div><div class="row"><button id="csv">CSV 다운로드</button><button id="reset">미리보기 초기화</button></div></section></div><section class="card" id="backup"><h3>💾 기록 백업</h3><p class="muted">업데이트 전 백업 파일을 내려받아 안전하게 보관하세요. 현재 Firebase에서 불러온 전체 회원·NTRP·날짜별 출석·경기·정산 기록을 JSON으로 저장합니다.</p><button id="exportBackup" class="primary">전체 기록 백업 다운로드</button><p class="muted">이 버튼은 기록을 변경하지 않습니다. 백업 파일을 공개 GitHub에 올리지 마세요.</p></section></main><div id="typeModal" class="type-modal hide" role="dialog" aria-modal="true" aria-labelledby="typeModalTitle"><div class="type-modal-card"><h3 id="typeModalTitle">🎾 경기 유형 수정</h3><p id="typeModalMatch" class="muted"></p><div id="typeModalButtons" class="type-buttons"></div><p class="muted">친선전은 공식 전적·레이팅·코인에서 제외됩니다. 기존 스코어와 출석은 유지됩니다.</p><div class="row"><button type="button" id="typeModalCancel">취소</button><button type="button" id="typeModalSave" class="primary">변경 저장</button></div></div></div><script type="module">
@@ -126,7 +291,7 @@ const ntrpOptions=v=>NTRP_OPTIONS.map(n=>`<option value="${n==null?'':n}" ${n===
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 $('guestNtrp').innerHTML=ntrpOptions(null);
 const dateLocal=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
-state.sessions ||= {};state.ledger ||= [];
+state.sessions ||= {};state.ledger ||= [];state.tournaments ||= [];
 let selectedDate=dateLocal();
 $('meetingDate').value=selectedDate;
 function snapshotSession(){state.sessions[selectedDate]={attendance:Object.fromEntries(state.members.filter(m=>!m.guest).map(m=>[m.id,!!m.present]))}}
@@ -144,18 +309,36 @@ const save=async()=>{snapshotSession();
  finally{writePending=false;render();}},msg=s=>$('message').textContent=s,person=id=>state.members.find(m=>m.id===id),names=ids=>ids.map(id=>person(id)?.name||'?').join(' / ');
 function bonusEntry(id,date=selectedDate){return state.ledger.find(x=>x.type==='attendance_bonus'&&x.memberId===id&&x.date===date&&!x.voided)}
 // 레이팅은 원본 경기 기록에서 매번 재계산: 취소/과거 경기 입력에도 일관성 유지
+// v43: Elo K=32, team-average expected win probability, symmetric score reduction.
+// 6:0=100%, 6:1=95%, ... 6:5=75%; missing/nonstandard scores use 100%.
+function mtcScoreFactor(g){
+ const sa=Number(g.scoreA),sb=Number(g.scoreB);
+ if(g.scoreA==null||g.scoreB==null||!Number.isInteger(sa)||!Number.isInteger(sb))return 1;
+ const high=Math.max(sa,sb),low=Math.min(sa,sb);
+ return high===6&&low>=0&&low<=5?1-.05*low:1;
+}
+function mtcCoinStake(g){
+ return Math.max(1,Number(g.coinStake)||1); // old settled matches default to original 1-coin settlement
+}
+function mtcNewCoinStake(a,b,g){return (Math.max(a,b)===6&&Math.min(a,b)===0?2:1)*(g?.tournamentId?2:1);}
+function mtcEloDelta(ra,rb,winner,scoreFactor){
+ const ea=1/(1+Math.pow(10,(rb-ra)/400));
+ return 32*((winner==='a'?1:0)-ea)*scoreFactor;
+}
 function computeRatings(){
- const r=Object.fromEntries(state.members.map(m=>[m.id,1500]));const w=Object.fromEntries(state.members.map(m=>[m.id,0]));const l=Object.fromEntries(state.members.map(m=>[m.id,0]));const details=[];
- const games=state.games.filter(g=>g.ratingEnabled!==false&&['a','b'].includes(g.winner)&&Array.isArray(g.a)&&Array.isArray(g.b)).slice().sort((a,b)=>String(a.date||'').localeCompare(String(b.date||''))||String(a.createdAt||a.settledAt||a.id||'').localeCompare(String(b.createdAt||b.settledAt||b.id||'')));
- for(const g of games){const a=g.a.filter(id=>r[id]!=null),b=g.b.filter(id=>r[id]!=null);if(!a.length||!b.length)continue;
-  const avg=ids=>ids.reduce((v,id)=>v+r[id],0)/ids.length;const ra=avg(a),rb=avg(b);const ea=1/(1+Math.pow(10,(rb-ra)/400));
-  const hasScore=Number.isFinite(Number(g.scoreA))&&Number.isFinite(Number(g.scoreB))&&g.scoreA!=null&&g.scoreB!=null;
-  const diff=hasScore?Math.abs(Number(g.scoreA)-Number(g.scoreB)):0;
-  const weight=hasScore?Math.min(1.25,0.75+diff*0.1):1;
-  const delta=32*weight*((g.winner==='a'?1:0)-ea);
+ const r=Object.fromEntries(state.members.map(m=>[m.id,1500]));
+ const w=Object.fromEntries(state.members.map(m=>[m.id,0]));
+ const l=Object.fromEntries(state.members.map(m=>[m.id,0]));
+ const details=[];
+ const games=state.games.filter(g=>g.ratingEnabled!==false&&['a','b'].includes(g.winner)&&!g.voided&&!g.cancelled&&Array.isArray(g.a)&&Array.isArray(g.b)).slice().sort((a,b)=>String(a.date||'').localeCompare(String(b.date||''))||String(a.createdAt||a.settledAt||a.id||'').localeCompare(String(b.createdAt||b.settledAt||b.id||'')));
+ for(const g of games){
+  const a=g.a.filter(id=>r[id]!=null),b=g.b.filter(id=>r[id]!=null);
+  if(!a.length||!b.length)continue;
+  const avg=ids=>ids.reduce((v,id)=>v+r[id],0)/ids.length;
+  const weight=mtcScoreFactor(g),delta=mtcEloDelta(avg(a),avg(b),g.winner,weight);
   for(const id of a){r[id]+=delta;g.winner==='a'?w[id]++:l[id]++;}
   for(const id of b){r[id]-=delta;g.winner==='b'?w[id]++:l[id]++;}
-  details.push({g,delta,hasScore,weight});
+  details.push({g,delta,hasScore:g.scoreA!=null&&g.scoreB!=null,weight});
  }
  return {r,w,l,details};
 }
@@ -211,6 +394,35 @@ function hofMonthString(){
  const now=new Date(), d=new Date(now.getFullYear(),now.getMonth()+hofOffset,1);
  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
 }
+function mtcSeasonBounds(date){const d=new Date((date||dateLocal())+'T12:00:00');const y=d.getFullYear()-(d.getMonth()<5?1:0);return [y+'-06-01',(y+1)+'-05-31',y];}
+function tourChampion(t){if(!t||!t.rounds?.length)return null;const last=t.rounds.at(-1);if(last.length!==1)return null;const m=last[0];if(m.bye)return t.teams.find(x=>x.id===m.winnerTeamId)||null;const g=state.games.find(g=>g.id===m.gameId);if(!g||!g.winner)return null;return t.teams.find(x=>x.id===m[g.winner==='a'?'teamA':'teamB'])||null;}
+function renderSeasonBoard(){const [start,end,y]=mtcSeasonBounds(dateLocal());$('seasonTitle').textContent=`🏅 ${y}~${y+1} 시즌 누적 TOP 3 (6월~5월)`;
+ const members=state.members.filter(m=>!m.guest&&m.status!=='탈퇴'),ids=new Set(members.map(m=>m.id));
+ const attendance=new Map(),played=new Map(),wins=new Map(),best=new Map(),streak=new Map();
+ const add=(d,id)=>{if(d<start||d>end||!ids.has(id))return;const k=attendance.get(id)||new Set();k.add(d);attendance.set(id,k)};
+ for(const [d,v] of Object.entries(state.sessions||{}))for(const [id,yes] of Object.entries(v?.attendance||{}))if(yes)add(d,id);
+ const games=state.games.filter(g=>g.date>=start&&g.date<=end&&['a','b'].includes(g.winner)&&!g.voided&&!g.cancelled).slice().sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.settledAt||a.id).localeCompare(String(b.settledAt||b.id)));
+ for(const g of games){for(const id of [...g.a,...g.b])add(g.date,id);if(g.ratingEnabled===false)continue;for(const side of ['a','b'])for(const id of g[side]){played.set(id,(played.get(id)||0)+1);if(g.winner===side){wins.set(id,(wins.get(id)||0)+1);streak.set(id,(streak.get(id)||0)+1);best.set(id,Math.max(best.get(id)||0,streak.get(id)||0));}else streak.set(id,0);}}
+ const r=Object.fromEntries(state.members.map(m=>[m.id,1500]));const history=state.games.filter(g=>g.date<=end&&g.ratingEnabled!==false&&['a','b'].includes(g.winner)&&!g.voided&&!g.cancelled).slice().sort((a,b)=>String(a.date).localeCompare(String(b.date))||String(a.settledAt||a.id).localeCompare(String(b.settledAt||b.id)));
+ const playedSeason=new Set(games.filter(g=>g.ratingEnabled!==false).flatMap(g=>[...g.a,...g.b]));
+ for(const g of history){const a=g.a.filter(id=>r[id]!=null),b=g.b.filter(id=>r[id]!=null);if(!a.length||!b.length)continue;const avg=x=>x.reduce((n,id)=>n+r[id],0)/x.length;const delta=mtcEloDelta(avg(a),avg(b),g.winner,mtcScoreFactor(g));a.forEach(id=>r[id]+=delta);b.forEach(id=>r[id]-=delta);}
+ const top=(fn,ok)=>members.filter(ok).sort((a,b)=>fn(b)-fn(a)||a.name.localeCompare(b.name,'ko')).slice(0,3);
+ const cards=[['👑 출석왕',top(m=>attendance.get(m.id)?.size||0,m=>(attendance.get(m.id)?.size||0)>0),m=>`${attendance.get(m.id).size}회`],['🏆 승률왕',top(m=>(wins.get(m.id)||0)/(played.get(m.id)||1),m=>(played.get(m.id)||0)>=10),m=>`${Math.round((wins.get(m.id)||0)/played.get(m.id)*100)}%`],['💎 레이팅왕',top(m=>r[m.id],m=>playedSeason.has(m.id)),m=>`${displayRating(r[m.id])}점`],['🔥 연승왕',top(m=>best.get(m.id)||0,m=>(best.get(m.id)||0)>0),m=>`${best.get(m.id)}연승`]];
+ $('seasonGrid').innerHTML=cards.map(([title,people,detail])=>`<div class="season-tile"><b>${title}</b>${people.length?people.map((m,i)=>`<div>${['🥇','🥈','🥉'][i]} ${esc(m.name)} <small>${detail(m)}</small></div>`).join(''):'<small>집계 기록 없음</small>'}</div>`).join('');
+}
+let hofQuickIndex=0;
+let hofQuickTimer=null;
+function showHofQuick(index){
+ const items=[...document.querySelectorAll('#hofQuick .hof-quick-item')];
+ if(!items.length)return;
+ hofQuickIndex=((index%items.length)+items.length)%items.length;
+ items.forEach((el,i)=>{el.classList.toggle('is-active',i===hofQuickIndex);el.setAttribute('aria-hidden',i===hofQuickIndex?'false':'true')});
+ document.querySelectorAll('#hofQuickDots .hof-quick-dot').forEach((el,i)=>{el.classList.toggle('is-active',i===hofQuickIndex);el.setAttribute('aria-pressed',i===hofQuickIndex?'true':'false')});
+}
+function startHofQuick(){
+ if(hofQuickTimer)clearInterval(hofQuickTimer);
+ hofQuickTimer=setInterval(()=>{if(document.hidden||document.getElementById('hofExpand')?.open)return;showHofQuick(hofQuickIndex+1)},3000);
+}
 function renderHallOfFame(){
  const month=hofMonthString(), prev=month < new Date().toISOString().slice(0,7);
  $('hofMonth').textContent=month.replace('-','년 ')+'월'+(prev?' · 지난 기록':' · 진행 중');
@@ -235,35 +447,160 @@ function renderHallOfFame(){
  const ratings=Object.fromEntries(people.map(m=>[m.id,1500]));
  const history=(state.games||[]).filter(g=>String(g.date||'')<=month+'-31'&&g.ratingEnabled!==false&&['a','b'].includes(g.winner)&&!g.voided&&!g.cancelled).slice().sort((a,b)=>String(a.date||'').localeCompare(String(b.date||''))||String(a.createdAt||a.settledAt||a.id||'').localeCompare(String(b.createdAt||b.settledAt||b.id||'')));
  for(const g of history){
-  const a=(g.a||[]).filter(id=>ratings[id]!=null),b=(g.b||[]).filter(id=>ratings[id]!=null);if(!a.length||!b.length)continue;
+  const a=(g.a||[]).filter(id=>ratings[id]!=null),b=(g.b||[]).filter(id=>ratings[id]!=null);
+  if(!a.length||!b.length)continue;
   const avg=arr=>arr.reduce((sum,id)=>sum+ratings[id],0)/arr.length;
-  const ea=1/(1+Math.pow(10,(avg(b)-avg(a))/400));
-  const scored=g.scoreA!=null&&g.scoreB!=null&&Number.isFinite(Number(g.scoreA))&&Number.isFinite(Number(g.scoreB));
-  const diff=scored?Math.abs(Number(g.scoreA)-Number(g.scoreB)):0;
-  const weight=scored?Math.min(1.25,.75+diff*.1):1;
-  const delta=32*weight*((g.winner==='a'?1:0)-ea);
+  const delta=mtcEloDelta(avg(a),avg(b),g.winner,mtcScoreFactor(g));
   a.forEach(id=>ratings[id]+=delta);b.forEach(id=>ratings[id]-=delta);
  }
- const bestOf=(fn,eligible=()=>true)=>people.filter(eligible).slice().sort((a,b)=>fn(b)-fn(a)||a.name.localeCompare(b.name,'ko'))[0];
- const a=bestOf(m=>attend.get(m.id)?.size||0,m=>(attend.get(m.id)?.size||0)>0);
- const w=bestOf(m=>(wins.get(m.id)||0)/(played.get(m.id)||1),m=>(played.get(m.id)||0)>=10);
- const r=official.length||history.length?bestOf(m=>ratings[m.id]||1500,m=>(played.get(m.id)||0)>0||history.some(g=>[...(g.a||[]),...(g.b||[])].includes(m.id))):null;
- const t=bestOf(m=>best.get(m.id)||0,m=>(best.get(m.id)||0)>0);
+ const topOf=(fn,eligible=()=>true)=>people.filter(eligible).slice().sort((a,b)=>fn(b)-fn(a)||a.name.localeCompare(b.name,'ko')).slice(0,3);
+ const attendanceTop=topOf(m=>attend.get(m.id)?.size||0,m=>(attend.get(m.id)?.size||0)>0);
+ const winTop=topOf(m=>(wins.get(m.id)||0)/(played.get(m.id)||1),m=>(played.get(m.id)||0)>=10);
+ const historyIds=new Set(history.flatMap(g=>[...(g.a||[]),...(g.b||[])]));
+ const ratingTop=topOf(m=>ratings[m.id]||1500,m=>historyIds.has(m.id));
+ const streakTop=topOf(m=>best.get(m.id)||0,m=>(best.get(m.id)||0)>0);
  const cards=[
-  {icon:'👑',label:'출석왕',person:a,detail:a?`${attend.get(a.id).size}회 출석`:'출석 기록 없음'},
-  {icon:'🏆',label:'승률왕',person:w,detail:w?`${wins.get(w.id)||0}승 / ${played.get(w.id)}경기 · ${Math.round(100*(wins.get(w.id)||0)/played.get(w.id))}%`:'공식전 10경기 이상 필요'},
-  {icon:'💎',label:'레이팅왕',person:r,detail:r?`${displayRating(ratings[r.id])}점`:'공식전 기록 없음'},
-  {icon:'🔥',label:'연승왕',person:t,detail:t?`최대 ${best.get(t.id)}연승`:'공식전 기록 없음'}
+  {icon:'👑',label:'출석왕',top:attendanceTop,detail:m=>`${attend.get(m.id).size}회 출석`,empty:'출석 기록 없음'},
+  {icon:'🏆',label:'승률왕',top:winTop,detail:m=>`${Math.round(100*(wins.get(m.id)||0)/played.get(m.id))}% · ${wins.get(m.id)||0}승/${played.get(m.id)}경기`,empty:'공식전 10경기 이상 필요'},
+  {icon:'💎',label:'레이팅왕',top:ratingTop,detail:m=>`${displayRating(ratings[m.id])}점`,empty:'공식전 기록 없음'},
+  {icon:'🔥',label:'연승왕',top:streakTop,detail:m=>`${best.get(m.id)}연승`,empty:'공식전 기록 없음'}
  ];
- if(hofOffset===0){currentHallBadges=new Map();for(const c of cards)if(c.person){const badges=currentHallBadges.get(c.person.id)||[];badges.push(c.icon);currentHallBadges.set(c.person.id,badges)}}
- $('hofGrid').innerHTML=cards.map((c,i)=>`<div class="hof-card ${i===0?'hof-top':''}"><span class="hof-emoji">${c.icon}</span><div class="hof-label">${c.label}</div><div class="hof-name">${c.person?esc(c.person.name):'—'}</div><div class="hof-detail">${c.detail}</div></div>`).join('');
+ if(hofOffset===0){currentHallBadges=new Map();for(const c of cards)if(c.top[0]){const badges=currentHallBadges.get(c.top[0].id)||[];badges.push(c.icon);currentHallBadges.set(c.top[0].id,badges)}}
+ renderSeasonBoard();
+ $('hofQuick').innerHTML=cards.map(c=>`<div class="hof-quick-item"><div class="hof-quick-title">${c.icon} ${c.label}</div>${c.top.length?c.top.map((m,i)=>`<div class="hof-quick-line"><span class="hof-quick-person">${i===0?'🥇':i===1?'🥈':'🥉'} ${esc(m.name)}</span><span class="hof-quick-record">${esc(c.detail(m))}</span></div>`).join(''):'<div class="hof-quick-line">기록 없음</div>'}</div>`).join('');
+ $('hofQuickDots').innerHTML=cards.map((c,i)=>`<button type="button" class="hof-quick-dot" data-hof-index="${i}" aria-label="${c.label} 보기"></button>`).join('');
+ $('hofQuickDots').querySelectorAll('button').forEach(b=>b.onclick=()=>{showHofQuick(Number(b.dataset.hofIndex));startHofQuick()});
+ showHofQuick(hofQuickIndex);
+ startHofQuick();
+ const champs=(state.tournaments||[]).filter(t=>t.date.startsWith(month)).map(t=>({t,team:tourChampion(t)})).filter(x=>x.team);
+ $('monthlyChampion').innerHTML=champs.map(({t,team})=>`<div>🏆 ${esc(t.date)} 월례대회 우승 · <b>${esc(names(team.members))}</b></div>`).join('');
+ $('hofGrid').innerHTML=cards.map(c=>{
+  const leader=c.top[0];
+  const runners=c.top.slice(1).map((m,i)=>`<div class="hof-runner"><span class="hof-rank">${i===0?'🥈 2위':'🥉 3위'}</span><span class="hof-runner-name">${esc(m.name)}</span><span class="hof-runner-score">${esc(c.detail(m))}</span></div>`).join('');
+  return `<div class="hof-card ${leader?'hof-top':''}"><span class="hof-emoji">${c.icon}</span><div class="hof-label">${c.label}</div><div class="hof-name">${leader?esc(leader.name):'—'}</div><div class="hof-detail">${leader?esc(c.detail(leader)):c.empty}</div><div class="hof-runners">${runners||'<div class="hof-runner-placeholder">2·3위 기록 없음</div>'}</div></div>`;
+ }).join('');
 }
 $('hofPrev').onclick=()=>{hofOffset-=1;renderHallOfFame()};
 $('hofNext').onclick=()=>{hofOffset=Math.min(hofOffset+1,0);renderHallOfFame()};
 
+// v43: tournament brackets reference the same settled games as the normal match ledger.
+let tourSelected='';
+const tourById=id=>(state.tournaments||[]).find(t=>t.id===id);
+const tourTeam=(t,id)=>t.teams.find(x=>x.id===id);
+function tourRoundMatches(t){return t.rounds.flat();}
+function tourRoundReady(t,round){return round.every(m=>m.bye||!!state.games.find(g=>g.id===m.gameId&&g.winner));}
+function tourWinnerId(m){if(m.bye)return m.winnerTeamId;const g=state.games.find(g=>g.id===m.gameId);return g?.winner?m[g.winner==='a'?'teamA':'teamB']:null;}
+function tourAdvance(t){const last=t.rounds.at(-1);if(!last||!tourRoundReady(t,last)||last.length<=1)return false;const winners=last.map(tourWinnerId);const next=[];for(let i=0;i<winners.length;i+=2){const a=winners[i],b=winners[i+1];if(!b){next.push({id:'tm'+(++state.seq),bye:true,winnerTeamId:a,round:t.rounds.length});continue;}next.push({id:'tm'+(++state.seq),teamA:a,teamB:b,round:t.rounds.length,bye:false});}t.rounds.push(next);return true;}
+function tourMakeGame(t,m){if(m.gameId)return state.games.find(g=>g.id===m.gameId);const teamA=tourTeam(t,m.teamA),teamB=tourTeam(t,m.teamB);if(!teamA||!teamB)return null;
+ const game={id:'g'+(++state.seq),date:t.date,a:[...teamA.members],b:[...teamB.members],court:'월례 '+((tourRoundMatches(t).filter(x=>x.gameId).length%2)+1)+'코트',winner:null,scoreA:null,scoreB:null,coinEnabled:true,ratingEnabled:true,gameType:'coin',tournamentId:t.id,createdAt:new Date().toISOString()};state.games.push(game);m.gameId=game.id;return game;}
+function renderTournament(){state.tournaments||=[];const picker=$('tourPicker');const tournaments=state.tournaments.slice().sort((a,b)=>b.date.localeCompare(a.date));if(!tourSelected&&tournaments.length)tourSelected=tournaments[0].id;
+ picker.innerHTML='<option value="">새 월례대회</option>'+tournaments.map(t=>`<option value="${esc(t.id)}" ${tourSelected===t.id?'selected':''}>${esc(t.date)} · ${esc(t.teams.length)}팀</option>`).join('');
+ const t=tourById(tourSelected);$('tourDate').value=t?.date||selectedDate;$('tourDate').disabled=!!t;
+ if(!t){const ids=Object.entries(state.sessions?.[selectedDate]?.attendance||{}).filter(([id,yes])=>yes&&person(id)&&!person(id).guest).map(([id])=>id);if(selectedDate===dateLocal())for(const m of state.members)if(m.present&&!m.guest&&!ids.includes(m.id))ids.push(m.id);
+ const eligible=ids.map(person).filter(Boolean).sort((a,b)=>a.name.localeCompare(b.name,'ko'));
+ $('tourSetup').innerHTML=`<h3>참가 회원 및 지정팀 구성</h3><p class="muted">먼저 출석·게스트 탭에서 대회 날짜의 출석을 기록한 뒤, 참가자만 선택해 2인 팀을 지정하세요. 최소 4명(2팀)부터 진행합니다.</p><div class="tour-people">${eligible.map(m=>`<label><input type="checkbox" data-tour-member="${esc(m.id)}" checked> ${esc(m.name)} <small>NTRP ${esc(ntrpLabel(m))}</small></label>`).join('')||'<p>해당 날짜의 출석 회원이 없습니다. 출석 탭에서 먼저 체크해 주세요.</p>'}</div><div class="row"><button id="tourPair" class="primary">선택 회원 지정팀 만들기</button><button id="tourAutoPair">NTRP 균형 팀 자동 편성</button></div><div id="tourDraft"></div>`;$('tourSchedule').innerHTML='';return;}
+ $('tourSetup').innerHTML=`<h3>${esc(t.date)} · 지정 복식 ${t.teams.length}팀</h3><div class="tour-teams">${t.teams.map((x,i)=>`<div><b>${i+1}팀</b> ${esc(names(x.members))}</div>`).join('')}</div><p class="muted">대진 시작 후 팀 구성은 고정됩니다. 경기 결과를 수정·취소하면 우승 결과도 자동 재계산됩니다.</p>`;
+ const rounds=t.rounds.map((round,i)=>`<div class="tour-round"><h3>${round.length===1?'결승':`${i+1}라운드`} · ${round.length}경기</h3>${round.map((m,j)=>{if(m.bye)return `<div class="tour-match">${esc(names(tourTeam(t,m.winnerTeamId)?.members||[]))} · 부전승</div>`;
+ const a=tourTeam(t,m.teamA),b=tourTeam(t,m.teamB),g=state.games.find(x=>x.id===m.gameId),win=tourWinnerId(m);const court=(j%2)+1;return `<div class="tour-match"><b>${j+1}경기 · ${court}코트</b><div>${esc(names(a?.members||[]))} <b>VS</b> ${esc(names(b?.members||[]))}</div>${g?.winner?`<strong>✔ ${esc(names(tourTeam(t,win)?.members||[]))} 승 · ${esc(g.scoreA)}:${esc(g.scoreB)}</strong>`:`<div class="row"><input aria-label="A팀 점수" type="number" min="0" max="99" placeholder="A팀" data-tour-a="${esc(m.id)}"><input aria-label="B팀 점수" type="number" min="0" max="99" placeholder="B팀" data-tour-b="${esc(m.id)}"><button data-tour-win="${esc(m.id)}" class="primary">결과 확정</button></div>`}</div>`;}).join('')}</div>`).join('');
+ const champ=tourChampion(t);const last=t.rounds.at(-1);const ready=last&&tourRoundReady(t,last);$('tourSchedule').innerHTML=`<h3>🎾 토너먼트 경기순서표</h3>${rounds}${champ?`<div class="tour-champion">🏆 우승팀: ${esc(names(champ.members))}</div>`:ready&&last.length>1?'<button class="primary" id="tourNextRound">다음 라운드 대진 생성</button>':'<p class="muted">현재 라운드의 모든 경기를 완료하면 다음 라운드가 열립니다.</p>'}`;
+}
+let tourDraftTeams=[];
+document.addEventListener('change',e=>{if(e.target.id==='tourPicker'){tourSelected=e.target.value;tourDraftTeams=[];renderTournament();}if(e.target.id==='tourDate'&&!tourSelected){selectedDate=e.target.value;$('meetingDate').value=selectedDate;switchDay(selectedDate);renderTournament();}});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.id==='tourPair'||b.id==='tourAutoPair'){
+  const ids=[...document.querySelectorAll('[data-tour-member]:checked')].map(x=>x.dataset.tourMember);if(ids.length<4||ids.length%2){alert('참가자는 4명 이상의 짝수여야 합니다.');return;}
+  let sorted=ids.slice();if(b.id==='tourAutoPair'){sorted.sort((a,b)=>(ntrpValue(person(b))||0)-(ntrpValue(person(a))||0));const pairs=[];while(sorted.length>=2){pairs.push([sorted.shift(),sorted.pop()]);}tourDraftTeams=pairs;}else{tourDraftTeams=[];for(let i=0;i<sorted.length;i+=2)tourDraftTeams.push(sorted.slice(i,i+2));}
+  const holder=$('tourDraft');holder.innerHTML=`<h3>지정팀 확인 · 순서 변경 가능</h3><p class="muted">각 팀의 선수 두 명을 선택해 조합을 수정한 뒤 대진표를 확정하세요.</p>${tourDraftTeams.map((pair,i)=>`<div class="row"><b>${i+1}팀</b>${[0,1].map(k=>`<select data-tour-team="${i}:${k}">${ids.map(id=>`<option value="${esc(id)}" ${id===pair[k]?'selected':''}>${esc(person(id)?.name||'?')}</option>`).join('')}</select>`).join('')}</div>`).join('')}<button class="primary" id="tourCreate">월례대회 대진표 확정</button>`;return;
+ }
+ if(b.id==='tourCreate'){
+  const pairs=tourDraftTeams.map((pair,i)=>[0,1].map(k=>document.querySelector(`[data-tour-team="${i}:${k}"]`)?.value));const ids=pairs.flat();if(new Set(ids).size!==ids.length){alert('같은 회원이 두 팀에 중복 배정되었습니다.');return;}if(!confirm(`${pairs.length}개 지정팀으로 월례대회 토너먼트를 시작할까요?`))return;
+  const date=$('tourDate').value;if(!date){alert('대회 날짜를 지정하세요.');return;}if(state.tournaments.some(t=>t.date===date)){alert('이 날짜에는 이미 월례대회가 있습니다.');return;}
+  const teams=pairs.map(members=>({id:'tt'+(++state.seq),members}));const n=2**Math.ceil(Math.log2(teams.length));const matches=[];for(let i=0;i<n;i+=2){const a=teams[i],c=teams[i+1];if(!a)continue;matches.push(c?{id:'tm'+(++state.seq),teamA:a.id,teamB:c.id,round:0,bye:false}:{id:'tm'+(++state.seq),bye:true,winnerTeamId:a.id,round:0});}
+  const t={id:'tour'+(++state.seq),date,teams,rounds:[matches],createdAt:new Date().toISOString()};state.tournaments.push(t);tourSelected=t.id;tourDraftTeams=[];save();return;
+ }
+ if(b.id==='tourNextRound'){const t=tourById(tourSelected);if(t&&tourAdvance(t))save();return;}
+ if(b.dataset.tourWin){const t=tourById(tourSelected);if(!t)return;const m=tourRoundMatches(t).find(x=>x.id===b.dataset.tourWin);if(!m||m.bye)return;
+  const a=Number(document.querySelector(`[data-tour-a="${m.id}"]`)?.value),c=Number(document.querySelector(`[data-tour-b="${m.id}"]`)?.value);const ar=document.querySelector(`[data-tour-a="${m.id}"]`),br=document.querySelector(`[data-tour-b="${m.id}"]`);if(!ar?.value||!br?.value||!Number.isInteger(a)||!Number.isInteger(c)||a===c||a<0||c<0||a>99||c>99){alert('유효한 양 팀 스코어를 입력해 주세요.');return;}
+  const side=a>c?'a':'b';const teamWin=tourTeam(t,m[side==='a'?'teamA':'teamB']),teamLose=tourTeam(t,m[side==='a'?'teamB':'teamA']);const stake=mtcNewCoinStake(a,c,{tournamentId:t.id});if(teamLose.members.some(id=>!person(id)||person(id).coins<stake)){alert(`패배팀 코인이 부족합니다. 각 ${stake}개가 필요합니다. 대출·정산 탭에서 먼저 처리해 주세요.`);return;}
+  if(!confirm(`${names(teamWin.members)} 승리 (${a}:${c})로 확정할까요? 코인 ±${stake}개씩 정산됩니다.`))return;
+  const g=tourMakeGame(t,m);g.scoreA=a;g.scoreB=c;g.winner=side;g.coinStake=stake;g.settledAt=new Date().toISOString();for(const id of teamWin.members){person(id).coins+=stake;person(id).wins++;}for(const id of teamLose.members){person(id).coins-=stake;person(id).losses++;}save();return;
+ }
+});
+let mtcNewsIndex=0,mtcNewsSignature='';
+function mtcNewsShow(index,animate=true){
+ const track=$('newsItems'),cards=track.children;
+ if(!cards.length)return;
+ mtcNewsIndex=((index%cards.length)+cards.length)%cards.length;
+ track.scrollTo({left:cards[mtcNewsIndex].offsetLeft-cards[0].offsetLeft,behavior:animate&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'});
+ $('newsProgress').innerHTML=Array.from(cards,(_,i)=>`<span class="mtc-news-dot ${i===mtcNewsIndex?'active':''}"></span>`).join('');
+}
+let mtcNewsPauseUntil=0;
+const mtcNewsTrack=$('newsItems');
+for(const event of ['pointerdown','touchstart','wheel'])mtcNewsTrack.addEventListener(event,()=>{mtcNewsPauseUntil=Date.now()+9000},{passive:true});
+mtcNewsTrack.addEventListener('scroll',()=>{
+ if(Date.now()<mtcNewsPauseUntil&&mtcNewsTrack.children.length){
+  const cards=Array.from(mtcNewsTrack.children);
+  const closest=cards.reduce((best,c,i)=>Math.abs(c.offsetLeft-cards[0].offsetLeft-mtcNewsTrack.scrollLeft)<Math.abs(cards[best].offsetLeft-cards[0].offsetLeft-mtcNewsTrack.scrollLeft)?i:best,0);
+  mtcNewsIndex=closest;
+  $('newsProgress').innerHTML=cards.map((_,i)=>`<span class="mtc-news-dot ${i===closest?'active':''}"></span>`).join('');
+ }
+},{passive:true});
+setInterval(()=>{
+ if(document.hidden||Date.now()<mtcNewsPauseUntil||!$('newsEditor').classList.contains('hide')||mtcNewsTrack.matches(':hover')||mtcNewsTrack.children.length<2)return;
+ mtcNewsShow(mtcNewsIndex+1);
+},3000);
+function renderNews(){
+ const entries=[];
+ const announcements=(state.announcements||[]).filter(x=>!x.deleted);
+ const upcoming=announcements.filter(x=>x.kind==='event'&&x.date&&x.date>=dateLocal()).sort((a,b)=>a.date.localeCompare(b.date));
+ const notices=announcements.filter(x=>x.kind==='notice').sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||'')));
+ const pastEvents=announcements.filter(x=>x.kind==='event'&&(!x.date||x.date<dateLocal())).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+ for(const x of [...upcoming,...notices,...pastEvents].slice(0,5))entries.push({title:(x.kind==='event'?'📅 ':'📣 ')+x.title,detail:(x.date?x.date+' · ':'')+(x.detail||'클럽 소식')});
+ const recent=(state.games||[]).filter(g=>['a','b'].includes(g.winner)&&!g.voided&&!g.cancelled).slice().sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))||String(b.settledAt||b.id||'').localeCompare(String(a.settledAt||a.id||''))).slice(0,3);
+ for(const g of recent)entries.push({title:'🎾 '+names(g[g.winner])+' 승',detail:(g.date||'')+' · '+names(g[g.winner==='a'?'b':'a'])+' 상대'+(g.scoreA!=null&&g.scoreB!=null?' · '+g.scoreA+':'+g.scoreB:'')});
+ const tournaments=(state.tournaments||[]).filter(t=>t.date>=dateLocal()).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,2);
+ for(const t of tournaments)entries.push({title:'🏆 월례대회 '+(t.title||''),detail:t.date+' · 지정팀 복식 토너먼트'});
+ if(!entries.length)entries.push({title:'📢 등록된 클럽 소식이 없습니다',detail:'공지·일정을 등록하거나 경기를 정산하면 여기에 표시됩니다'});
+ const visible=entries.slice(0,8);
+ const signature=JSON.stringify(visible);
+ if(signature!==mtcNewsSignature){
+  mtcNewsSignature=signature;
+  $('newsItems').innerHTML=visible.map(x=>`<div class="mtc-news-item"><b>${esc(x.title)}</b><small>${esc(x.detail)}</small></div>`).join('');
+  mtcNewsShow(0,false);
+ }
+ $('newsManageRows').innerHTML=announcements.slice().sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||''))).map(x=>`<div class="item"><span><b>${esc(x.title)}</b><br><small>${esc((x.date||'')+' '+(x.detail||''))}</small></span><button class="mtc-news-remove" data-news-delete="${esc(x.id)}">삭제</button></div>`).join('')||'<p class="muted">등록된 공지·일정이 없습니다.</p>';
+}
+$('newsManage').onclick=()=>$('newsEditor').classList.toggle('hide');
+$('newsClose').onclick=()=>$('newsEditor').classList.add('hide');
+$('newsKind').onchange=()=>{$('newsDate').style.display=$('newsKind').value==='event'?'':'none'};
+$('newsKind').onchange();
+$('newsAdd').onclick=()=>{const title=$('newsTitle').value.trim(),kind=$('newsKind').value,date=$('newsDate').value,detail=$('newsDetail').value.trim();if(!title){alert('제목을 입력해 주세요.');return;}if(kind==='event'&&!date){alert('일정 날짜를 선택해 주세요.');return;}state.announcements||=[];state.announcements.push({id:'news-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),kind,date:kind==='event'?date:'',title,detail,createdAt:new Date().toISOString()});$('newsTitle').value='';$('newsDetail').value='';save();};
+$('newsManageRows').addEventListener('click',e=>{const b=e.target.closest('[data-news-delete]');if(!b)return;const x=(state.announcements||[]).find(x=>x.id===b.dataset.newsDelete);if(x&&confirm('이 공지·일정을 삭제할까요?')){x.deleted=true;save();}});
+// v51: reuse existing date-specific attendance; no duplicate vote data or member login.
+let weekOffset=0,weekFocus=5;
+function localDateKey(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
+function weekMonday(){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7)+7*weekOffset);return d}
+function weekDayDate(i){const d=weekMonday();d.setDate(d.getDate()+i);return d}
+function weeklyPresent(date){const sess=state.sessions?.[date]?.attendance||{};return state.members.filter(m=>!m.guest&&m.status!=='탈퇴'&&(sess[m.id]===true||(date===selectedDate&&m.present===true&&!Object.prototype.hasOwnProperty.call(sess,m.id)))).sort((a,b)=>a.name.localeCompare(b.name,'ko'))}
+function renderWeeklyAttendance(){
+ const days=['월','화','수','목','금','토','일'],dates=days.map((_,i)=>weekDayDate(i)),sat=dates[5],monthly=sat.getDate()>=15&&sat.getDate()<=21;
+ const fmt=d=>`${d.getMonth()+1}/${d.getDate()}`;
+ $('weekRange').textContent=`${fmt(dates[0])}~${fmt(dates[6])}`;
+ $('weekDays').innerHTML=dates.map((d,i)=>{const key=localDateKey(d),n=weeklyPresent(key).length,kind=i===5?(monthly?'🏆 월례':'🎾 클럽'): '명';return `<button type="button" class="mtc-week-day ${i===5?'club ':''}${i===5&&monthly?'monthly ':''}${weekFocus===i?'selected':''}" data-week-day="${i}" aria-label="${fmt(d)} ${days[i]} 참석 ${n}명"><span>${days[i]} ${d.getDate()}</span><b>${n}</b><small>${kind}</small></button>`}).join('');
+ const d=dates[weekFocus],key=localDateKey(d),members=weeklyPresent(key),isSat=weekFocus===5,kind=isSat?(monthly?'🏆 월례대회 · 클럽데이':'🎾 클럽데이'):'';
+ const planned=key>dateLocal();
+ $('weekDetail').innerHTML=`<b>${fmt(d)} (${days[weekFocus]}) ${kind}</b> · ${planned?'참석 예정':'참가 체크'} ${members.length}명<div>${members.length?members.map(m=>esc(m.name)).join(' · '):'<span class="muted">체크된 회원이 없습니다.</span>'}</div><button type="button" id="weekGoAttendance">📅 이 날짜 참가 체크하기</button>`;
+}
+$('weekPrev').onclick=()=>{weekOffset--;renderWeeklyAttendance()};
+$('weekNext').onclick=()=>{weekOffset++;renderWeeklyAttendance()};
+$('weekDays').addEventListener('click',e=>{const b=e.target.closest('[data-week-day]');if(!b)return;weekFocus=Number(b.dataset.weekDay);renderWeeklyAttendance()});
+$('weekDetail').addEventListener('click',e=>{if(!e.target.closest('#weekGoAttendance'))return;const date=localDateKey(weekDayDate(weekFocus));$('meetingDate').value=date;switchDay(date);const tab=document.querySelector('[data-tab="attendance"]');if(tab)tab.click();document.getElementById('attendance').scrollIntoView({behavior:'smooth',block:'start'})});
 function render(){
  state.ledger ||= [];
+ renderWeeklyAttendance();
+ renderNews();
  renderHallOfFame();
+ renderTournament();
  const rating=computeRatings();
  const M=state.members,G=state.games.filter(g=>g.date===selectedDate),pending=G.filter(g=>!g.winner);
  const dates=[...new Set([selectedDate,...state.games.map(g=>g.date),...state.members.filter(m=>m.guest).map(m=>m.guestDate),...Object.keys(state.sessions)].filter(Boolean))].sort().reverse();
@@ -386,13 +723,16 @@ function applyGameTypeEdit(gameId, chosenType){
   if(settled&&oldCoin!==newCoin){
     // 새 코인전 전환: 패배팀에서 1개씩 차감. 기존 코인전 제외: 승리팀에서 1개씩 회수.
     const payers=newCoin?loser:winner;
-    if(payers.some(id=>person(id).coins<1)){alert('코인전 유형 변경에 필요한 보유 코인이 부족합니다. 대출 또는 후속 정산을 확인하세요.');return;}
+    const stake=newCoin?mtcNewCoinStake(g.scoreA,g.scoreB,g):mtcCoinStake(g);
+    if(payers.some(id=>person(id).coins<stake)){alert('코인전 유형 변경에 필요한 보유 코인이 부족합니다. 대출 또는 후속 정산을 확인하세요.');return;}
   }
   if(!confirm(`경기 유형을 변경할까요?\n경기 유형: ${gameTypeName(g)} → ${({friendly:'🤝 친선전',official:'🏆 공식전',coin:'🪙 코인전'})[chosenType]}\n${settled?'확정된 경기의 코인·승패 통계를 재정산하고 레이팅을 다시 계산합니다.':'미확정 경기이므로 향후 정산 방식만 변경됩니다.'}`))return;
   if(settled&&oldCoin!==newCoin){
-    const sign=newCoin?1:-1;
+    const stake=newCoin?mtcNewCoinStake(g.scoreA,g.scoreB,g):mtcCoinStake(g);
+    const sign=newCoin?stake:-stake;
     for(const id of winner)person(id).coins+=sign;
     for(const id of loser)person(id).coins-=sign;
+    if(newCoin)g.coinStake=stake;
   }
   if(settled&&oldRating!==newRating){
     const sign=newRating?1:-1;
@@ -426,7 +766,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
  if(b.dataset.promote){const g=person(b.dataset.promote);if(!g||!g.guest||g.promotedTo)return;const existing=state.members.find(m=>!m.guest&&m.name.replace(/\s/g,'')===g.name.replace(/\s/g,''));if(existing){alert('동일 이름의 기존 회원이 있습니다. 중복 등록을 방지하기 위해 전환을 중단합니다.');return;}if(state.games.some(x=>!x.winner&&[...x.a,...x.b].includes(g.id))){alert('진행 중인 게스트 경기를 먼저 마무리하세요.');return;}if(!confirm(`${g.name} 게스트를 정회원으로 등록할까요?\n기존 게스트 기록은 유지되고 새 정회원 코인은 0개로 시작합니다. 초기 3개는 +1 버튼으로 지급하세요.`))return;const id='member'+(++state.seq);state.members.push({id,name:g.name,status:'활동',coins:0,loans:0,wins:0,losses:0,initial:true,present:false,guest:false,ntrp:g.ntrp??null,joinedAt:selectedDate,promotedFrom:g.id});g.promotedTo=id;g.promotedAt=selectedDate;g.returnedCoins=g.coins;g.coins=0;g.returned=true;g.present=false;state.ledger.push({id:'p'+(++state.seq),type:'member_promoted',date:selectedDate,guestId:g.id,guestName:g.name,memberId:id,at:new Date().toISOString()});msg(g.name+' 정회원 전환 완료 · 초기 코인 수동 지급 필요');save();return;}
  if(b.dataset.bonus){const m=person(b.dataset.bonus);if(!m||m.guest||!m.present){alert('해당 날짜에 실제 출석 체크된 정회원만 지급할 수 있습니다.');return;}if(bonusEntry(m.id)){alert('이미 이 날짜에 출석 코인을 지급했습니다.');return;}if(!confirm(`${selectedDate} ${m.name} 회원에게 출석 코인 1개를 지급할까요?`))return;state.ledger.push({id:'b'+(++state.seq),type:'attendance_bonus',date:selectedDate,memberId:m.id,qty:1,at:new Date().toISOString(),voided:false});m.coins+=1;msg(m.name+' 출석 코인 +1 지급 완료');save();return;}
  if(b.dataset.undoBonus){const x=state.ledger.find(z=>z.id===b.dataset.undoBonus&&z.type==='attendance_bonus'&&!z.voided);if(!x)return;const m=person(x.memberId);if(!m||m.coins<1){alert('보유 코인이 부족하여 지급을 취소할 수 없습니다. 후속 정산을 먼저 확인해 주세요.');return;}if(!confirm(`${x.date} ${m.name} 회원의 출석 코인 +1 지급을 취소할까요?`))return;m.coins-=1;x.voided=true;x.voidedAt=new Date().toISOString();msg('출석 코인 지급 취소 완료');save();return;}
- if(b.dataset.win){const [id,side]=b.dataset.win.split(':'),g=state.games.find(x=>x.id===id);if(!g||g.winner)return;const aInput=document.querySelector(`[data-score-a="${id}"]`),bInput=document.querySelector(`[data-score-b="${id}"]`);const scoreA=Number(aInput?.value),scoreB=Number(bInput?.value);if(!aInput?.value.trim()||!bInput?.value.trim()||!Number.isInteger(scoreA)||!Number.isInteger(scoreB)||scoreA<0||scoreB<0||scoreA>99||scoreB>99||scoreA===scoreB){alert('A팀과 B팀의 게임 점수를 각각 입력해 주세요. 동점은 정산할 수 없습니다.');return;}if((scoreA>scoreB?'a':'b')!==side){alert('선택한 승리팀과 입력한 스코어가 일치하지 않습니다.');return;}if(!confirm(`${scoreA}:${scoreB} · ${side.toUpperCase()}팀 승리로 확정할까요? ${g.coinEnabled===false?'코인 정산 없음':''} ${g.ratingEnabled===false?'레이팅 및 전적 제외':''}`))return;g.scoreA=scoreA;g.scoreB=scoreB;const loser=side==='a'?g.b:g.a;if(g.coinEnabled!==false&&loser.some(id=>person(id).coins<1)){msg('패배팀 코인이 부족합니다. 대출 후 다시 입력하세요.');return}g.winner=side;g.settledAt=new Date().toISOString();if(g.coinEnabled!==false){for(const id of g[side])person(id).coins++;for(const id of loser)person(id).coins--;}if(g.ratingEnabled!==false){for(const id of g[side])person(id).wins++;for(const id of loser)person(id).losses++;}msg('경기 결과 반영 완료');save()}
+ if(b.dataset.win){const [id,side]=b.dataset.win.split(':'),g=state.games.find(x=>x.id===id);if(!g||g.winner)return;const aInput=document.querySelector(`[data-score-a="${id}"]`),bInput=document.querySelector(`[data-score-b="${id}"]`);const scoreA=Number(aInput?.value),scoreB=Number(bInput?.value);if(!aInput?.value.trim()||!bInput?.value.trim()||!Number.isInteger(scoreA)||!Number.isInteger(scoreB)||scoreA<0||scoreB<0||scoreA>99||scoreB>99||scoreA===scoreB){alert('A팀과 B팀의 게임 점수를 각각 입력해 주세요. 동점은 정산할 수 없습니다.');return;}if((scoreA>scoreB?'a':'b')!==side){alert('선택한 승리팀과 입력한 스코어가 일치하지 않습니다.');return;}if(!confirm(`${scoreA}:${scoreB} · ${side.toUpperCase()}팀 승리로 확정할까요? ${g.coinEnabled===false?'코인 정산 없음':''} ${g.ratingEnabled===false?'레이팅 및 전적 제외':''}`))return;g.scoreA=scoreA;g.scoreB=scoreB;const loser=side==='a'?g.b:g.a;const stake=mtcNewCoinStake(scoreA,scoreB,g);if(g.coinEnabled!==false&&loser.some(id=>person(id).coins<stake)){msg('패배팀 코인이 부족합니다. 대출 후 다시 입력하세요.');return}g.winner=side;g.settledAt=new Date().toISOString();if(g.coinEnabled!==false){g.coinStake=stake;for(const id of g[side])person(id).coins+=stake;for(const id of loser)person(id).coins-=stake;}if(g.ratingEnabled!==false){for(const id of g[side])person(id).wins++;for(const id of loser)person(id).losses++;}msg('경기 결과 반영 완료');save()}
  if(b.dataset.editType){
   if(!localMode&&!remoteReady){alert('Firebase 연결이 완료된 후 수정하세요.');return;}
   const g=state.games.find(x=>x.id===b.dataset.editType);
@@ -444,13 +784,16 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   if(settled&&oldCoin!==newCoin){
     // 새 코인전 전환: 패배팀에서 1개씩 차감. 기존 코인전 제외: 승리팀에서 1개씩 회수.
     const payers=newCoin?loser:winner;
-    if(payers.some(id=>person(id).coins<1)){alert('코인전 유형 변경에 필요한 보유 코인이 부족합니다. 대출 또는 후속 정산을 확인하세요.');return;}
+    const stake=newCoin?mtcNewCoinStake(g.scoreA,g.scoreB,g):mtcCoinStake(g);
+    if(payers.some(id=>person(id).coins<stake)){alert('코인전 유형 변경에 필요한 보유 코인이 부족합니다. 대출 또는 후속 정산을 확인하세요.');return;}
   }
   if(!confirm(`경기 유형을 변경할까요?\n경기 유형: ${gameTypeName(g)} → ${{'1':'🤝 친선전','2':'🏆 공식전','3':'🪙 코인전'}[raw.trim()]}\n${settled?'확정된 경기의 코인·승패 통계를 재정산하고 레이팅을 다시 계산합니다.':'미확정 경기이므로 향후 정산 방식만 변경됩니다.'}`))return;
   if(settled&&oldCoin!==newCoin){
-    const sign=newCoin?1:-1;
+    const stake=newCoin?mtcNewCoinStake(g.scoreA,g.scoreB,g):mtcCoinStake(g);
+    const sign=newCoin?stake:-stake;
     for(const id of winner)person(id).coins+=sign;
     for(const id of loser)person(id).coins-=sign;
+    if(newCoin)g.coinStake=stake;
   }
   if(settled&&oldRating!==newRating){
     const sign=newRating?1:-1;
@@ -472,15 +815,25 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   if(!match||Number(match[1])===Number(match[2])){alert('0~99 사이의 게임 점수를 A:B 형식으로 입력하세요. 동점은 불가합니다.');return;}
   const a=Number(match[1]),bScore=Number(match[2]),next=a>bScore?'a':'b',prev=g.winner;
   if(g.scoreA===a&&g.scoreB===bScore){msg('변경된 내용이 없습니다.');return;}
+  const oldStake=g.coinEnabled!==false?mtcCoinStake(g):0;
+  const newStake=g.coinEnabled!==false?mtcNewCoinStake(a,bScore,g):0;
+  const oldW=g[prev],oldL=g[prev==='a'?'b':'a'];
+  const newW=g[next],newL=g[next==='a'?'b':'a'];
+  const coinChanges=new Map();
+  for(const id of oldW)coinChanges.set(id,(coinChanges.get(id)||0)-oldStake);
+  for(const id of oldL)coinChanges.set(id,(coinChanges.get(id)||0)+oldStake);
+  for(const id of newW)coinChanges.set(id,(coinChanges.get(id)||0)+newStake);
+  for(const id of newL)coinChanges.set(id,(coinChanges.get(id)||0)-newStake);
+  if([...coinChanges].some(([id,d])=>!person(id)||(person(id).coins+d)<0)){
+   alert('스코어 수정에 필요한 코인이 부족합니다. 대출 또는 후속 정산을 먼저 확인해 주세요.');return;
+  }
+  if(!confirm(`스코어를 ${scoreText(g)} → ${a}:${bScore}으로 수정할까요?\\n${prev!==next?'승리팀 변경 및 ':''}코인 정산 차이와 레이팅을 다시 계산합니다.`))return;
+  for(const [id,d] of coinChanges)person(id).coins+=d;
+  if(g.coinEnabled!==false)g.coinStake=newStake;
   if(prev!==next){
-   const oldW=g[prev],oldL=g[prev==='a'?'b':'a'];
-   const affected=[...oldW,...oldL].map(id=>person(id));
-   if(affected.some(m=>!m)){alert('참가자 정보가 없어 자동 정산할 수 없습니다.');return;}
-   if(g.coinEnabled!==false&&oldW.some(id=>person(id).coins<2)){alert('승패를 반대로 변경하려면 기존 승리팀의 코인이 각각 2개 이상 필요합니다. 후속 정산을 확인하세요.');return;}
-   if(!confirm(`승리팀을 ${prev.toUpperCase()} → ${next.toUpperCase()}팀으로 변경할까요?\n기존 승리팀 각 -2코인, 기존 패배팀 각 +2코인으로 정정됩니다. 레이팅도 다시 계산됩니다.`))return;
-   for(const id of oldW){const m=person(id);if(g.coinEnabled!==false)m.coins-=2;if(g.ratingEnabled!==false){m.wins=Math.max(0,m.wins-1);m.losses=(m.losses||0)+1;}}
-   for(const id of oldL){const m=person(id);if(g.coinEnabled!==false)m.coins+=2;if(g.ratingEnabled!==false){m.losses=Math.max(0,m.losses-1);m.wins=(m.wins||0)+1;}}
-  }else if(!confirm(`스코어를 ${scoreText(g)} → ${a}:${bScore}으로 수정할까요?\n승패와 코인은 유지됩니다.`))return;
+   for(const id of oldW){if(g.ratingEnabled!==false){const m=person(id);m.wins=Math.max(0,m.wins-1);m.losses=(m.losses||0)+1;}}
+   for(const id of oldL){if(g.ratingEnabled!==false){const m=person(id);m.losses=Math.max(0,m.losses-1);m.wins=(m.wins||0)+1;}}
+  }
   g.resultEdits ||= [];
   g.resultEdits.push({fromWinner:prev,toWinner:next,fromA:g.scoreA??null,fromB:g.scoreB??null,toA:a,toB:bScore,at:new Date().toISOString()});
   g.winner=next;g.scoreA=a;g.scoreB=bScore;
@@ -498,18 +851,27 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   const a=Number(aRaw),bScore=Number(bRaw);
   if((a>bScore?'a':'b')!==g.winner){alert('기존 승리팀과 점수가 일치하지 않습니다. 승패 자체를 바꾸려면 기존 경기 정산 취소 후 다시 등록해야 합니다.');return;}
   if(g.scoreA===a&&g.scoreB===bScore){msg('변경된 점수가 없습니다.');return;}
-  if(!confirm(`${g.date} 경기 스코어를 ${g.scoreA??'?'}:${g.scoreB??'?'} → ${a}:${bScore}으로 변경할까요?\n코인과 승패는 유지되고 실력 레이팅만 다시 계산됩니다.`))return;
+  const oldStake=g.coinEnabled!==false?mtcCoinStake(g):0;
+  const newStake=g.coinEnabled!==false?mtcNewCoinStake(a,bScore,g):0;
+  const difference=newStake-oldStake;
+  const winners=g[g.winner],losers=g[g.winner==='a'?'b':'a'];
+  if(difference>0&&losers.some(id=>!person(id)||person(id).coins<difference)){alert('6:0 추가 정산에 필요한 패배팀 코인이 부족합니다.');return;}
+  if(difference<0&&winners.some(id=>!person(id)||person(id).coins<(-difference))){alert('기존 승리팀의 코인이 부족해 차액을 회수할 수 없습니다.');return;}
+  if(!confirm(`${g.date} 경기 스코어를 ${g.scoreA??'?'}:${g.scoreB??'?'} → ${a}:${bScore}으로 변경할까요?\\n레이팅과 코인 차액을 다시 계산합니다.`))return;
+  if(difference){for(const id of winners)person(id).coins+=difference;for(const id of losers)person(id).coins-=difference;}
+  if(g.coinEnabled!==false)g.coinStake=newStake;
   g.scoreEdits ||= [];
   g.scoreEdits.push({fromA:g.scoreA??null,fromB:g.scoreB??null,toA:a,toB:bScore,at:new Date().toISOString()});
   g.scoreA=a;g.scoreB=bScore;
   msg('경기 스코어 수정 완료 · 레이팅 재계산');save();return;
  }
  if(b.dataset.undoGame){const g=state.games.find(x=>x.id===b.dataset.undoGame);if(!g||!g.winner)return;
+  if(g.tournamentId){const t=tourById(g.tournamentId);if(t&&t.rounds.some((r,i)=>i>0&&r.some(m=>m.gameId))){alert("후속 라운드가 진행된 월례 경기는 취소할 수 없습니다.");return;}}
   if(!confirm(`${g.date} ${names(g.a)} vs ${names(g.b)} 경기 결과를 취소할까요?\n승패 기록과 코인 변동이 원상복구됩니다.`))return;
   const win=g[g.winner],lose=g[g.winner==='a'?'b':'a'];
-  if(win.some(id=>!person(id)||(g.coinEnabled!==false&&person(id).coins<1))||lose.some(id=>!person(id))){alert('이미 코인을 사용했거나 게스트가 퇴장하여 자동 복구가 어렵습니다. 후속 정산을 먼저 확인해 주세요.');return;}
-  for(const id of win){if(g.coinEnabled!==false)person(id).coins--;if(g.ratingEnabled!==false)person(id).wins=Math.max(0,person(id).wins-1)}
-  for(const id of lose){if(g.coinEnabled!==false)person(id).coins++;if(g.ratingEnabled!==false)person(id).losses=Math.max(0,person(id).losses-1)}
+  if(win.some(id=>!person(id)||(g.coinEnabled!==false&&person(id).coins<mtcCoinStake(g)))||lose.some(id=>!person(id))){alert('이미 코인을 사용했거나 게스트가 퇴장하여 자동 복구가 어렵습니다. 후속 정산을 먼저 확인해 주세요.');return;}
+  for(const id of win){if(g.coinEnabled!==false)person(id).coins-=mtcCoinStake(g);if(g.ratingEnabled!==false)person(id).wins=Math.max(0,person(id).wins-1)}
+  for(const id of lose){if(g.coinEnabled!==false)person(id).coins+=mtcCoinStake(g);if(g.ratingEnabled!==false)person(id).losses=Math.max(0,person(id).losses-1)}
   state.games=state.games.filter(x=>x.id!==g.id);msg('경기 결과와 코인 정산을 취소했습니다.');save();}
  if(b.dataset.undoLoan){const entry=state.ledger.find(x=>x.id===b.dataset.undoLoan&&!x.voided);if(!entry)return;const m=person(entry.memberId);
   if(!m||m.coins<entry.qty||m.loans<entry.qty){alert('코인 잔액이 부족해 대출을 자동 취소할 수 없습니다. 후속 정산을 먼저 확인해 주세요.');return;}
