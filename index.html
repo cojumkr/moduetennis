@@ -97,7 +97,12 @@ input:focus,select:focus,button:focus-visible{outline:2px solid #c6a36d;outline-
 @media(prefers-reduced-motion:reduce){.hof-card.hof-top .hof-emoji{animation:none}}
 .hof-note{font-size:10px;color:#c2d3c6;line-height:1.6;margin:12px 0 0}
 @media(max-width:600px){.hof{padding:14px}.hof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hof-title h2{font-size:19px}.hof-card{padding:11px 6px}}
-</style></head><body><main class="wrap"><header class="clubhouse-header"><div class="clubhouse-top"><span class="clubhouse-season">2026 SECOND HALF · MTC</span><span class="clubhouse-live"><span class="live-dot"></span> CLUB LIVE</span></div><div class="clubhouse-hero"><div class="clubhouse-logo"><img src="mtc-emblem.png" alt="MTC 모두의테니스클럽 공식 엠블럼: 테니스공 마차와 말, 테니스 선수"></div><div class="clubhouse-intro"><span class="clubhouse-kicker">WELCOME TO OUR CLUBHOUSE</span><h1>모두의<br>테니스클럽<span class="clubhouse-period">.</span></h1><p>함께 치고, 함께 성장하는 우리들의 테니스</p><div class="clubhouse-sub">MATCH · RANKING · COMMUNITY</div></div></div><div class="clubhouse-bottom"><span>MODUE TENNIS CLUB</span><span>EST. MTC · 2026 하반기</span></div></header><div id="appArea"><div class="hof" id="hallOfFame">
+
+.member-hof-badges{display:inline-flex;gap:2px;vertical-align:baseline;margin-left:3px;white-space:nowrap;font-size:.94em;line-height:1;cursor:help}
+.member-hof-badges span{display:inline-block;filter:drop-shadow(0 1px 1px #00000015)}
+
+.mtc-version{display:inline-block;margin-left:9px;padding:2px 7px;border:1px solid #d8bd8355;border-radius:99px;color:#ddc38c;font-size:10px;font-weight:700;letter-spacing:.05em;vertical-align:middle}
+</style></head><body><main class="wrap"><header class="clubhouse-header"><div class="clubhouse-top"><span class="clubhouse-season">2026 SECOND HALF · MTC</span><span class="mtc-version" title="사이트 버전">v40</span><span class="clubhouse-live"><span class="live-dot"></span> CLUB LIVE</span></div><div class="clubhouse-hero"><div class="clubhouse-logo"><img src="mtc-emblem.png" alt="MTC 모두의테니스클럽 공식 엠블럼: 테니스공 마차와 말, 테니스 선수"></div><div class="clubhouse-intro"><span class="clubhouse-kicker">WELCOME TO OUR CLUBHOUSE</span><h1>모두의<br>테니스클럽<span class="clubhouse-period">.</span></h1><p>함께 치고, 함께 성장하는 우리들의 테니스</p><div class="clubhouse-sub">MATCH · RANKING · COMMUNITY</div></div></div><div class="clubhouse-bottom"><span>MODUE TENNIS CLUB</span><span>EST. MTC · 2026 하반기</span></div></header><div id="appArea"><div class="hof" id="hallOfFame">
 <div class="hof-title"><div><small>MTC HALL OF FAME</small><h2>👑 이달의 명예의 전당</h2><p>우리 클럽의 빛나는 주인공들</p></div><div class="hof-actions"><button id="hofPrev" type="button">‹</button><span id="hofMonth"></span><button id="hofNext" type="button">›</button></div></div>
 <div class="hof-grid" id="hofGrid"><div class="hof-empty">기록을 불러오는 중...</div></div>
 <p class="hof-note">실제 경기·출석 기록으로 자동 집계 · 친선전은 출석에만 반영 · 월간 기록은 현재 저장된 데이터를 기준으로 재계산됩니다.</p>
@@ -195,6 +200,13 @@ function renderPairAnalysis(){
 
 // MTC v37: live month-based hall of fame; read-only derived statistics
 let hofOffset=0;
+let currentHallBadges=new Map();
+const hofBadgeNames={'👑':'출석왕','🏆':'승률왕','💎':'레이팅왕','🔥':'연승왕'};
+function memberBadge(id){
+ const icons=currentHallBadges.get(id)||[];
+ return icons.length?` <span class="member-hof-badges" title="${icons.map(x=>hofBadgeNames[x]).join(' · ')}" aria-label="${icons.map(x=>hofBadgeNames[x]).join(', ')}">${icons.map(x=>`<span>${x}</span>`).join('')}</span>`:'';
+}
+
 function hofMonthString(){
  const now=new Date(), d=new Date(now.getFullYear(),now.getMonth()+hofOffset,1);
  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
@@ -243,6 +255,7 @@ function renderHallOfFame(){
   {icon:'💎',label:'레이팅왕',person:r,detail:r?`${displayRating(ratings[r.id])}점`:'공식전 기록 없음'},
   {icon:'🔥',label:'연승왕',person:t,detail:t?`최대 ${best.get(t.id)}연승`:'공식전 기록 없음'}
  ];
+ if(hofOffset===0){currentHallBadges=new Map();for(const c of cards)if(c.person){const badges=currentHallBadges.get(c.person.id)||[];badges.push(c.icon);currentHallBadges.set(c.person.id,badges)}}
  $('hofGrid').innerHTML=cards.map((c,i)=>`<div class="hof-card ${i===0?'hof-top':''}"><span class="hof-emoji">${c.icon}</span><div class="hof-label">${c.label}</div><div class="hof-name">${c.person?esc(c.person.name):'—'}</div><div class="hof-detail">${c.detail}</div></div>`).join('');
 }
 $('hofPrev').onclick=()=>{hofOffset-=1;renderHallOfFame()};
@@ -257,16 +270,16 @@ function render(){
  $('meetingHistory').innerHTML=dates.map(d=>`<option value="${d}" ${d===selectedDate?'selected':''}>${d}</option>`).join('');
  $('n').textContent=M.filter(m=>!m.guest&&m.status==='활동').length;$('a').textContent=M.filter(m=>m.present).length;$('g').textContent=G.filter(g=>g.winner).length;
  $('rosterPatch').style.display=M.some(m=>!m.guest&&m.name.replace(/\\s/g,'')==='고영훈')?'none':'';
- $('attendanceRows').innerHTML=M.filter(m=>!m.guest&&m.status!=='탈퇴').map(m=>`<div class="item"><label><input style="width:auto" type="checkbox" data-present="${m.id}" ${m.present?'checked':''}> ${esc(m.name)} <span class="tag">${esc(m.status)}</span></label><select style="max-width:150px" aria-label="${esc(m.name)} NTRP" data-ntrp="${m.id}">${ntrpOptions(ntrpValue(m))}</select><span class="muted">🪙 ${m.coins}</span><button data-coin="${m.id}:1" title="코인 1개 지급">+1</button><button data-coin="${m.id}:-1" title="코인 1개 차감">-1</button></div>`).join('');
- $('attendanceBonusRows').innerHTML=M.filter(m=>!m.guest&&m.status!=='탈퇴'&&m.present).map(m=>{const done=bonusEntry(m.id);return `<div class="item"><span><b>${esc(m.name)}</b> <small class="muted">${done?'출석 코인 지급 완료':'지급 대기'}</small></span>${done?`<button data-undo-bonus="${done.id}">지급 취소</button>`:`<button class="primary" data-bonus="${m.id}">출석 +1 지급</button>`}</div>`}).join('')||'<p class="muted">출석 체크된 정회원이 없습니다.</p>';
- $('guestRows').innerHTML=M.filter(m=>m.guest&&m.guestDate===selectedDate).map(m=>`<div class="item"><span>${esc(m.name)} <span class="tag">${m.returned?'반납 완료':'게스트'}</span> <span class="tag">NTRP ${ntrpLabel(m)}</span><br><small class="muted">보유 ${m.coins}개 ${m.returned?'· 회수 '+m.returnedCoins+'개':''}</small></span><button data-promote="${m.id}" ${m.promotedTo?'disabled':''}>${m.promotedTo?'정회원 전환 완료':'정회원 전환'}</button><button data-return="${m.id}" ${m.returned||m.promotedTo?'disabled':''}>코인 회수·퇴장</button></div>`).join('')||'<p class="muted">등록된 게스트 없음</p>';
+ $('attendanceRows').innerHTML=M.filter(m=>!m.guest&&m.status!=='탈퇴').slice().sort((a,b)=>a.name.localeCompare(b.name,'ko')).map(m=>`<div class="item"><label><input style="width:auto" type="checkbox" data-present="${m.id}" ${m.present?'checked':''}> ${esc(m.name)}${memberBadge(m.id)} <span class="tag">${esc(m.status)}</span></label><select style="max-width:150px" aria-label="${esc(m.name)} NTRP" data-ntrp="${m.id}">${ntrpOptions(ntrpValue(m))}</select><span class="muted">🪙 ${m.coins}</span><button data-coin="${m.id}:1" title="코인 1개 지급">+1</button><button data-coin="${m.id}:-1" title="코인 1개 차감">-1</button></div>`).join('');
+ $('attendanceBonusRows').innerHTML=M.filter(m=>!m.guest&&m.status!=='탈퇴'&&m.present).slice().sort((a,b)=>a.name.localeCompare(b.name,'ko')).map(m=>{const done=bonusEntry(m.id);return `<div class="item"><span><b>${esc(m.name)}${memberBadge(m.id)}</b> <small class="muted">${done?'출석 코인 지급 완료':'지급 대기'}</small></span>${done?`<button data-undo-bonus="${done.id}">지급 취소</button>`:`<button class="primary" data-bonus="${m.id}">출석 +1 지급</button>`}</div>`}).join('')||'<p class="muted">출석 체크된 정회원이 없습니다.</p>';
+ $('guestRows').innerHTML=M.filter(m=>m.guest&&m.guestDate===selectedDate).slice().sort((a,b)=>a.name.localeCompare(b.name,'ko')).map(m=>`<div class="item"><span>${esc(m.name)}${memberBadge(m.id)} <span class="tag">${m.returned?'반납 완료':'게스트'}</span> <span class="tag">NTRP ${ntrpLabel(m)}</span><br><small class="muted">보유 ${m.coins}개 ${m.returned?'· 회수 '+m.returnedCoins+'개':''}</small></span><button data-promote="${m.id}" ${m.promotedTo?'disabled':''}>${m.promotedTo?'정회원 전환 완료':'정회원 전환'}</button><button data-return="${m.id}" ${m.returned||m.promotedTo?'disabled':''}>코인 회수·퇴장</button></div>`).join('')||'<p class="muted">등록된 게스트 없음</p>';
  $('ongoing').innerHTML=pending.map(g=>`<div class="card"><strong>${esc(g.court)} · ${gameTypeName(g)}</strong><div class="two"><p>${esc(names(g.a))} <small class="muted">(${g.a.map(id=>ntrpLabel(person(id))).join('+')})</small></p><p>${esc(names(g.b))} <small class="muted">(${g.b.map(id=>ntrpLabel(person(id))).join('+')})</small></p></div><div class="row"><label>A팀 게임 점수<input type="number" min="0" max="99" step="1" data-score-a="${g.id}" placeholder="예: 6"></label><label>B팀 게임 점수<input type="number" min="0" max="99" step="1" data-score-b="${g.id}" placeholder="예: 3"></label></div><p class="muted">양 팀 점수를 입력하고 승리팀을 선택하세요. 승패는 스코어와 일치해야 합니다.</p><div class="row"><button class="primary" data-win="${g.id}:a">A팀 승 · 정산</button><button class="primary" data-win="${g.id}:b">B팀 승 · 정산</button><button data-edit-type="${g.id}">⚙️ 유형 수정</button><button data-cancel="${g.id}">취소</button></div></div>`).join('')||'<p class="muted">진행 중 경기 없음</p>';
  const busy=new Set(pending.flatMap(g=>[...g.a,...g.b]));
  $('waiting').textContent=M.filter(m=>m.present&&!busy.has(m.id)&&($('autoType').value!=='coin'||m.coins>0)).map(m=>m.name).join(', ')||'대기 선수 없음';
  $('gameTypeCounts').textContent=['friendly','official','coin'].map(t=>({friendly:'🤝 친선전',official:'🏆 공식전',coin:'🪙 코인전'})[t]+' '+G.filter(g=>['a','b'].includes(g.winner)&&!g.voided&&!g.cancelled&&gameType(g)===t).length+'경기').join(' · ');
  $('history').innerHTML=G.filter(g=>g.winner).slice().reverse().map(g=>matchCard(g,true)).join('')||'<p class="muted">완료 경기 없음</p>';
  const ranked=M.filter(m=>!m.guest).sort((a,b)=>(b.coins-b.loans)-(a.coins-a.loans)||b.wins-a.wins);
- $('ranks').innerHTML=ranked.map((m,i)=>`<div class="item"><span><b>${i+1}. ${esc(m.name)}</b><br><small class="muted">${m.wins}승 ${m.losses}패 · 대출 ${m.loans}</small></span><b>🟡 ${m.coins-m.loans}</b></div>`).join('');
+ $('ranks').innerHTML=ranked.map((m,i)=>`<div class="item"><span><b>${i+1}. ${esc(m.name)}${memberBadge(m.id)}</b><br><small class="muted">${m.wins}승 ${m.losses}패 · 대출 ${m.loans}</small></span><b>🟡 ${m.coins-m.loans}</b></div>`).join('');
  const available=M.filter(m=>!m.guest||(m.guestDate===selectedDate)).sort((a,b)=>a.name.localeCompare(b.name,'ko'));
  const playerOpts='<option value="">선수 선택</option>'+available.map(m=>`<option value="${m.id}">${esc(m.name)}${m.guest?' (게스트)':''}</option>`).join('');
  for(const team of ['A','B']){const box=$('manual'+team);const previous=[...box.querySelectorAll('select')].map(x=>x.value);box.innerHTML=[0,1].map((n)=>`<select data-manual="${team}" data-slot="${n}" style="margin:4px 0">${playerOpts}</select>`).join('');[...box.querySelectorAll('select')].forEach((el,i)=>{el.value=previous[i]||'';el.style.display=Number($('manualMode').value)===2&&i===1?'none':'';});}
@@ -290,11 +303,11 @@ function render(){
  const attendanceCounts=new Map();
  for(const ids of attendanceByDate.values())for(const id of ids)attendanceCounts.set(id,(attendanceCounts.get(id)||0)+1);
  const attendanceMembers=M.filter(m=>!m.guest).slice().sort((a,b)=>(attendanceCounts.get(b.id)||0)-(attendanceCounts.get(a.id)||0)||a.name.localeCompare(b.name,'ko'));
- $('attendanceRankRows').innerHTML=attendanceMembers.map((m,i)=>`<div class="item"><span><b>${i+1}위 · ${esc(m.name)}</b><br><small class="muted">${esc(m.status||'회원')} · 출석 코인 지급과 별도 집계</small></span><strong>${attendanceCounts.get(m.id)||0}회</strong></div>`).join('')||'<p class="muted">회원 기록이 없습니다.</p>';
- $('ratingRows').innerHTML=M.filter(m=>!m.guest).slice().sort((a,b)=>(rating.r[b.id]??1500)-(rating.r[a.id]??1500)).map((m,i)=>`<div class="item"><span><b>${i+1}. ${esc(m.name)}</b><br><small class="muted">${rating.w[m.id]||0}승 ${rating.l[m.id]||0}패 · 승률 ${((rating.w[m.id]||0)+(rating.l[m.id]||0))?((rating.w[m.id]||0)/((rating.w[m.id]||0)+(rating.l[m.id]||0))*100).toFixed(1):'0.0'}%</small></span><b>${displayRating(rating.r[m.id]??1500)}</b></div>`).join('');
+ $('attendanceRankRows').innerHTML=attendanceMembers.map((m,i)=>`<div class="item"><span><b>${i+1}위 · ${esc(m.name)}${memberBadge(m.id)}</b><br><small class="muted">${esc(m.status||'회원')} · 출석 코인 지급과 별도 집계</small></span><strong>${attendanceCounts.get(m.id)||0}회</strong></div>`).join('')||'<p class="muted">회원 기록이 없습니다.</p>';
+ $('ratingRows').innerHTML=M.filter(m=>!m.guest).slice().sort((a,b)=>(rating.r[b.id]??1500)-(rating.r[a.id]??1500)).map((m,i)=>`<div class="item"><span><b>${i+1}. ${esc(m.name)}${memberBadge(m.id)}</b><br><small class="muted">${rating.w[m.id]||0}승 ${rating.l[m.id]||0}패 · 승률 ${((rating.w[m.id]||0)+(rating.l[m.id]||0))?((rating.w[m.id]||0)/((rating.w[m.id]||0)+(rating.l[m.id]||0))*100).toFixed(1):'0.0'}%</small></span><b>${displayRating(rating.r[m.id]??1500)}</b></div>`).join('');
  renderPairAnalysis();
  $('ratingHistory').innerHTML=rating.details.slice().reverse().map(({g,delta})=>`<div class="item"><span><b>${esc(g.date)}</b> ${esc(names(g.a))} vs ${esc(names(g.b))}<br><small class="muted">${esc(scoreText(g))} · ${esc(names(g[g.winner]))} 승 · A팀 ${delta>=0?'+':''}${delta.toFixed(1)} / B팀 ${delta<=0?'+':''}${(-delta).toFixed(1)} 레이팅 포인트 (각 선수)</small></span></div>`).join('')||'<p class="muted">레이팅 경기 기록이 없습니다.</p>';
- $('settlement').innerHTML=ranked.map(m=>`<div class="item"><span>${esc(m.name)}</span><span>${m.coins} − ${m.loans} = <b>${m.coins-m.loans}</b></span></div>`).join('');
+ $('settlement').innerHTML=ranked.map(m=>`<div class="item"><span>${esc(m.name)}${memberBadge(m.id)}</span><span>${m.coins} − ${m.loans} = <b>${m.coins-m.loans}</b></span></div>`).join('');
 }
 $('attendanceRankPeriod').onchange=()=>render();
 $('analysisPlayer').onchange=()=>{$('analysisPlayer').dataset.lastSelected=$('analysisPlayer').value;renderPairAnalysis()};
