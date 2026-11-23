@@ -1,0 +1,5351 @@
+{
+  "format": "MTC-backup-v1",
+  "exportedAt": "2026-11-23T04:32:56.829Z",
+  "revision": 780,
+  "data": {
+    "memberHistory": [
+      {
+        "memberName": "김기현",
+        "action": "withdraw",
+        "id": "mh176",
+        "reason": "복귀미정",
+        "date": "2026-11-16",
+        "at": "2026-11-15T15:26:18.307Z",
+        "memberId": "m5"
+      },
+      {
+        "id": "mh177",
+        "action": "withdraw",
+        "date": "2026-11-16",
+        "reason": "장기 미복귀",
+        "at": "2026-11-16T00:44:03.165Z",
+        "memberName": "송미령",
+        "memberId": "m25"
+      },
+      {
+        "memberName": "유선혜",
+        "at": "2026-11-16T00:44:15.874Z",
+        "date": "2026-11-16",
+        "id": "mh178",
+        "action": "withdraw",
+        "memberId": "m30",
+        "reason": "미활동"
+      },
+      {
+        "date": "2026-11-16",
+        "memberId": "m13",
+        "memberName": "김완준",
+        "id": "mh179",
+        "at": "2026-11-16T00:44:59.108Z",
+        "action": "withdraw",
+        "reason": "장기미활동"
+      }
+    ],
+    "announcements": [
+      {
+        "title": "모테허브 탄생",
+        "createdAt": "2026-11-14T13:52:07.207Z",
+        "kind": "notice",
+        "date": "",
+        "id": "news-1794664327207-eodn7",
+        "deleted": true,
+        "detail": ""
+      },
+      {
+        "date": "",
+        "title": "모테허브 탄생",
+        "detail": "출첵 대전기록 코인광리",
+        "deleted": true,
+        "id": "news-1794665287124-rfav4",
+        "kind": "notice",
+        "createdAt": "2026-11-14T14:08:07.125Z"
+      },
+      {
+        "kind": "notice",
+        "detail": "출석 대전기록 코인관리",
+        "deleted": true,
+        "createdAt": "2026-11-14T14:33:58.302Z",
+        "title": "모테허브 탄생",
+        "id": "news-1794666838302-5gioc",
+        "date": ""
+      }
+    ],
+    "seq": 340,
+    "ledger": [
+      {
+        "at": "2026-11-13T06:32:35.926Z",
+        "date": "2026-11-13",
+        "voided": false,
+        "qty": 3,
+        "memberId": "m28",
+        "id": "l4"
+      },
+      {
+        "qty": 1,
+        "type": "attendance_bonus",
+        "id": "b5",
+        "date": "2026-11-07",
+        "voided": false,
+        "memberId": "member-goyounghoon-2026",
+        "at": "2026-11-13T06:37:12.571Z"
+      },
+      {
+        "type": "attendance_bonus",
+        "at": "2026-11-13T06:37:13.991Z",
+        "date": "2026-11-07",
+        "qty": 1,
+        "voided": false,
+        "memberId": "m44",
+        "id": "b6"
+      },
+      {
+        "at": "2026-11-13T06:37:15.274Z",
+        "date": "2026-11-07",
+        "voided": false,
+        "id": "b7",
+        "memberId": "m34",
+        "type": "attendance_bonus",
+        "qty": 1
+      },
+      {
+        "id": "b8",
+        "type": "attendance_bonus",
+        "qty": 1,
+        "voided": false,
+        "date": "2026-11-07",
+        "memberId": "m28",
+        "at": "2026-11-13T06:37:16.739Z"
+      },
+      {
+        "type": "attendance_bonus",
+        "memberId": "m27",
+        "date": "2026-11-07",
+        "at": "2026-11-13T06:37:18.038Z",
+        "qty": 1,
+        "voided": false,
+        "id": "b9"
+      },
+      {
+        "voided": false,
+        "id": "b10",
+        "memberId": "m20",
+        "qty": 1,
+        "at": "2026-11-13T06:37:19.197Z",
+        "date": "2026-11-07",
+        "type": "attendance_bonus"
+      },
+      {
+        "memberId": "m17",
+        "voided": false,
+        "id": "b11",
+        "qty": 1,
+        "date": "2026-11-07",
+        "at": "2026-11-13T06:37:20.577Z",
+        "type": "attendance_bonus"
+      },
+      {
+        "date": "2026-11-07",
+        "voided": false,
+        "id": "b12",
+        "memberId": "m10",
+        "type": "attendance_bonus",
+        "qty": 1,
+        "at": "2026-11-13T06:37:21.629Z"
+      },
+      {
+        "type": "attendance_bonus",
+        "at": "2026-11-13T06:37:22.994Z",
+        "date": "2026-11-07",
+        "qty": 1,
+        "memberId": "m6",
+        "voided": false,
+        "id": "b13"
+      },
+      {
+        "voided": false,
+        "at": "2026-11-13T06:37:24.072Z",
+        "memberId": "m4",
+        "date": "2026-11-07",
+        "qty": 1,
+        "id": "b14",
+        "type": "attendance_bonus"
+      },
+      {
+        "date": "2026-11-07",
+        "signupAt": null,
+        "at": "2026-11-14T07:20:50.720Z",
+        "voided": false,
+        "type": "attendance_bonus",
+        "memberId": "m14",
+        "qty": 1,
+        "id": "b32"
+      },
+      {
+        "memberId": "m18",
+        "type": "attendance_bonus",
+        "at": "2026-11-14T07:20:52.903Z",
+        "date": "2026-11-07",
+        "signupAt": null,
+        "qty": 1,
+        "voided": false,
+        "id": "b33"
+      },
+      {
+        "qty": 1,
+        "id": "c42",
+        "reason": "초기 코인 지급",
+        "memberId": "m28",
+        "type": "manual_coin",
+        "at": "2026-11-14T09:51:36.254Z",
+        "voided": false,
+        "date": "2026-11-14"
+      },
+      {
+        "date": "2026-11-14",
+        "memberId": "m28",
+        "id": "c43",
+        "type": "manual_coin",
+        "at": "2026-11-14T09:51:38.088Z",
+        "qty": 1,
+        "voided": false,
+        "reason": "초기 코인 지급"
+      },
+      {
+        "type": "manual_coin",
+        "date": "2026-11-14",
+        "at": "2026-11-14T09:51:39.792Z",
+        "qty": 1,
+        "id": "c44",
+        "reason": "초기 코인 지급",
+        "memberId": "m28",
+        "voided": false
+      },
+      {
+        "at": "2026-11-14T11:34:32.932Z",
+        "voided": false,
+        "memberId": "m28",
+        "date": "2026-11-14",
+        "qty": 2,
+        "id": "l65"
+      },
+      {
+        "id": "c66",
+        "qty": 1,
+        "reason": "초기 코인 지급",
+        "type": "manual_coin",
+        "memberId": "m28",
+        "at": "2026-11-14T11:34:42.757Z",
+        "voided": false,
+        "date": "2026-11-14"
+      },
+      {
+        "reason": "초기 코인 지급",
+        "qty": 1,
+        "memberId": "m28",
+        "voided": false,
+        "id": "c67",
+        "at": "2026-11-14T11:34:44.549Z",
+        "type": "manual_coin",
+        "date": "2026-11-14"
+      },
+      {
+        "qty": 1,
+        "memberId": "m40",
+        "id": "c68",
+        "at": "2026-11-14T11:35:29.730Z",
+        "reason": "초기 코인 지급",
+        "type": "manual_coin",
+        "voided": false,
+        "date": "2026-11-14"
+      },
+      {
+        "id": "c69",
+        "reason": "초기 코인 지급",
+        "date": "2026-11-14",
+        "type": "manual_coin",
+        "voided": false,
+        "qty": 1,
+        "at": "2026-11-14T11:35:31.392Z",
+        "memberId": "m40"
+      },
+      {
+        "type": "manual_coin",
+        "at": "2026-11-14T11:35:34.763Z",
+        "date": "2026-11-14",
+        "qty": 1,
+        "reason": "초기 코인 지급",
+        "id": "c70",
+        "memberId": "m40",
+        "voided": false
+      },
+      {
+        "memberId": "m6",
+        "date": "2026-11-14",
+        "id": "b73",
+        "signupAt": null,
+        "type": "attendance_bonus",
+        "qty": 1,
+        "at": "2026-11-14T12:02:25.421Z",
+        "voided": false
+      },
+      {
+        "date": "2026-11-14",
+        "memberId": "m14",
+        "voided": false,
+        "type": "attendance_bonus",
+        "signupAt": null,
+        "at": "2026-11-14T12:02:27.604Z",
+        "id": "b75",
+        "qty": 1
+      },
+      {
+        "voided": false,
+        "id": "b77",
+        "signupAt": null,
+        "memberId": "m17",
+        "qty": 1,
+        "date": "2026-11-14",
+        "at": "2026-11-14T12:02:29.802Z",
+        "type": "attendance_bonus"
+      },
+      {
+        "voided": false,
+        "memberId": "m18",
+        "signupAt": null,
+        "id": "b79",
+        "qty": 1,
+        "at": "2026-11-14T12:02:31.972Z",
+        "date": "2026-11-14",
+        "type": "attendance_bonus"
+      },
+      {
+        "at": "2026-11-14T12:02:34.718Z",
+        "voided": false,
+        "date": "2026-11-14",
+        "memberId": "m20",
+        "id": "b81",
+        "type": "attendance_bonus",
+        "signupAt": null,
+        "qty": 1
+      },
+      {
+        "id": "b83",
+        "memberId": "m44",
+        "voided": false,
+        "signupAt": null,
+        "qty": 1,
+        "date": "2026-11-14",
+        "type": "attendance_bonus",
+        "at": "2026-11-14T12:02:36.322Z"
+      },
+      {
+        "memberId": "m43",
+        "voided": false,
+        "signupAt": null,
+        "at": "2026-11-14T12:02:38.940Z",
+        "qty": 1,
+        "type": "attendance_bonus",
+        "id": "b85",
+        "date": "2026-11-14"
+      },
+      {
+        "qty": 1,
+        "memberId": "m28",
+        "type": "attendance_bonus",
+        "signupAt": null,
+        "id": "b87",
+        "voided": false,
+        "date": "2026-11-14",
+        "at": "2026-11-14T12:02:40.622Z"
+      },
+      {
+        "type": "attendance_bonus",
+        "signupAt": null,
+        "voided": false,
+        "date": "2026-11-14",
+        "at": "2026-11-14T12:02:42.473Z",
+        "qty": 1,
+        "memberId": "m40",
+        "id": "b89"
+      },
+      {
+        "id": "b91",
+        "signupAt": null,
+        "memberId": "m51",
+        "voided": false,
+        "qty": 1,
+        "date": "2026-11-14",
+        "type": "attendance_bonus",
+        "at": "2026-11-14T12:02:44.255Z"
+      },
+      {
+        "memberId": "m28",
+        "date": "2026-11-22",
+        "voided": false,
+        "at": "2026-11-22T01:41:40.230Z",
+        "type": "loan_repayment",
+        "id": "lr301",
+        "qty": 5
+      },
+      {
+        "reason": "운영진 승인",
+        "voided": false,
+        "qty": 1,
+        "exception": true,
+        "memberId": "m53",
+        "at": "2026-11-22T02:12:16.074Z",
+        "signupAt": "2026-11-19T03:33:53.384Z",
+        "type": "attendance_bonus",
+        "id": "b303",
+        "date": "2026-11-21"
+      },
+      {
+        "memberId": "member-goyounghoon-2026",
+        "id": "b305",
+        "signupAt": "2026-11-19T06:03:00.666Z",
+        "at": "2026-11-22T02:12:18.348Z",
+        "reason": "운영진 승인",
+        "voided": false,
+        "date": "2026-11-21",
+        "type": "attendance_bonus",
+        "exception": true,
+        "qty": 1
+      },
+      {
+        "memberId": "m4",
+        "signupAt": "2026-11-19T04:13:59.976Z",
+        "reason": "운영진 승인",
+        "voided": false,
+        "type": "attendance_bonus",
+        "at": "2026-11-22T02:12:19.979Z",
+        "date": "2026-11-21",
+        "qty": 1,
+        "exception": true,
+        "id": "b307"
+      },
+      {
+        "qty": 1,
+        "reason": "운영진 승인",
+        "id": "b309",
+        "voided": false,
+        "signupAt": "2026-11-19T06:02:46.995Z",
+        "exception": true,
+        "type": "attendance_bonus",
+        "date": "2026-11-21",
+        "at": "2026-11-22T02:12:22.453Z",
+        "memberId": "m6"
+      },
+      {
+        "qty": 1,
+        "type": "attendance_bonus",
+        "signupAt": "2026-11-21T07:47:50.444Z",
+        "memberId": "m8",
+        "date": "2026-11-21",
+        "id": "b311",
+        "voided": false,
+        "reason": "운영진 승인",
+        "exception": true,
+        "at": "2026-11-22T02:12:24.100Z"
+      },
+      {
+        "voided": false,
+        "qty": 1,
+        "reason": "운영진 승인",
+        "type": "attendance_bonus",
+        "date": "2026-11-21",
+        "id": "b313",
+        "memberId": "m14",
+        "signupAt": "2026-11-21T06:47:41.262Z",
+        "at": "2026-11-22T02:12:26.601Z",
+        "exception": true
+      },
+      {
+        "reason": "운영진 승인",
+        "voided": false,
+        "type": "attendance_bonus",
+        "exception": true,
+        "date": "2026-11-21",
+        "at": "2026-11-22T02:12:28.336Z",
+        "qty": 1,
+        "signupAt": "2026-11-21T07:24:59.411Z",
+        "id": "b315",
+        "memberId": "m18"
+      },
+      {
+        "memberId": "m20",
+        "at": "2026-11-22T02:12:30.173Z",
+        "signupAt": "2026-11-19T06:43:51.144Z",
+        "exception": true,
+        "reason": "운영진 승인",
+        "id": "b317",
+        "voided": false,
+        "date": "2026-11-21",
+        "type": "attendance_bonus",
+        "qty": 1
+      },
+      {
+        "qty": 1,
+        "exception": true,
+        "type": "attendance_bonus",
+        "date": "2026-11-21",
+        "signupAt": "2026-11-19T04:13:09.403Z",
+        "voided": false,
+        "reason": "운영진 승인",
+        "at": "2026-11-22T02:12:32.672Z",
+        "memberId": "m22",
+        "id": "b319"
+      },
+      {
+        "reason": "운영진 승인",
+        "id": "b321",
+        "voided": false,
+        "qty": 1,
+        "at": "2026-11-22T02:12:34.358Z",
+        "memberId": "m24",
+        "signupAt": "2026-11-19T06:24:30.404Z",
+        "exception": true,
+        "date": "2026-11-21",
+        "type": "attendance_bonus"
+      },
+      {
+        "qty": 1,
+        "signupAt": "2026-11-19T03:34:03.634Z",
+        "memberId": "m28",
+        "id": "b323",
+        "exception": true,
+        "reason": "운영진 승인",
+        "at": "2026-11-22T02:12:36.361Z",
+        "type": "attendance_bonus",
+        "voided": false,
+        "date": "2026-11-21"
+      },
+      {
+        "exception": true,
+        "qty": 1,
+        "type": "attendance_bonus",
+        "date": "2026-11-21",
+        "at": "2026-11-22T02:12:38.170Z",
+        "voided": false,
+        "id": "b325",
+        "memberId": "m33",
+        "signupAt": "2026-11-19T06:02:49.678Z",
+        "reason": "운영진 승인"
+      },
+      {
+        "qty": 1,
+        "memberId": "m34",
+        "exception": true,
+        "signupAt": "2026-11-19T04:25:48.542Z",
+        "reason": "운영진 승인",
+        "id": "b327",
+        "voided": false,
+        "at": "2026-11-22T02:12:39.931Z",
+        "type": "attendance_bonus",
+        "date": "2026-11-21"
+      }
+    ],
+    "sessions": {
+      "2026-11-12": {
+        "attendance": {
+          "m16": false,
+          "m14": false,
+          "m23": false,
+          "m17": false,
+          "m33": false,
+          "m19": false,
+          "m18": false,
+          "m10": false,
+          "m50": false,
+          "m8": false,
+          "m38": false,
+          "m31": false,
+          "m30": false,
+          "m32": false,
+          "m26": false,
+          "m21": false,
+          "m35": false,
+          "m2": false,
+          "m40": false,
+          "m44": false,
+          "m5": false,
+          "m24": false,
+          "m11": false,
+          "m51": false,
+          "m9": false,
+          "m15": false,
+          "m25": false,
+          "m41": false,
+          "m12": false,
+          "member-goyounghoon-2026": false,
+          "m46": false,
+          "m13": false,
+          "m6": false,
+          "m39": false,
+          "m37": false,
+          "m45": false,
+          "m52": false,
+          "m53": false,
+          "m29": false,
+          "m47": false,
+          "m49": false,
+          "m36": false,
+          "m4": false,
+          "m3": false,
+          "m7": false,
+          "m42": false,
+          "m20": false,
+          "m43": false,
+          "m34": false,
+          "m1": false,
+          "m28": false,
+          "m27": false,
+          "m22": false,
+          "m48": false,
+          "m0": false
+        }
+      },
+      "2026-11-28": {
+        "attendance": {
+          "m32": false,
+          "m26": false,
+          "m21": false,
+          "m38": false,
+          "m31": false,
+          "m30": false,
+          "m2": false,
+          "m24": false,
+          "m11": false,
+          "m5": false,
+          "m51": false,
+          "m15": false,
+          "m35": false,
+          "m40": false,
+          "m44": false,
+          "m9": false,
+          "m14": true,
+          "m23": false,
+          "m16": false,
+          "m18": true,
+          "m10": false,
+          "m50": false,
+          "m17": true,
+          "m33": false,
+          "m19": false,
+          "m8": false,
+          "m4": false,
+          "m29": false,
+          "m3": false,
+          "m47": false,
+          "m49": false,
+          "m36": false,
+          "m7": false,
+          "m27": false,
+          "m22": false,
+          "m1": false,
+          "m48": false,
+          "m42": false,
+          "m20": true,
+          "m43": true,
+          "m34": false,
+          "m0": false,
+          "m28": false,
+          "m46": false,
+          "m25": false,
+          "m41": false,
+          "m12": false,
+          "m45": false,
+          "m52": false,
+          "member-goyounghoon-2026": false,
+          "m53": false,
+          "m6": false,
+          "m13": false,
+          "m39": false,
+          "m37": false
+        },
+        "signupAt": {
+          "m14": "2026-11-23T01:40:23.672Z",
+          "m43": "2026-11-23T01:48:29.321Z",
+          "m17": "2026-11-22T02:27:32.348Z",
+          "m18": "2026-11-23T01:41:35.575Z",
+          "m20": "2026-11-23T03:35:55.308Z"
+        }
+      },
+      "2026-11-19": {
+        "attendance": {
+          "m11": false,
+          "m24": false,
+          "m15": false,
+          "m51": false,
+          "m40": false,
+          "m35": false,
+          "m44": false,
+          "m32": false,
+          "m21": false,
+          "m26": false,
+          "m8": false,
+          "m38": false,
+          "m30": false,
+          "m31": false,
+          "m10": false,
+          "m18": false,
+          "m50": false,
+          "m33": false,
+          "m17": false,
+          "m19": false,
+          "m5": false,
+          "m23": false,
+          "m2": false,
+          "m14": false,
+          "m16": false,
+          "m9": false,
+          "m27": false,
+          "m48": false,
+          "m22": false,
+          "m20": false,
+          "m42": false,
+          "m28": false,
+          "m43": false,
+          "m34": false,
+          "m6": false,
+          "member-goyounghoon-2026": false,
+          "m49": false,
+          "m47": false,
+          "m29": false,
+          "m36": false,
+          "m4": false,
+          "m52": false,
+          "m45": false,
+          "m53": false,
+          "m7": false,
+          "m13": false,
+          "m37": false,
+          "m39": false,
+          "m3": false,
+          "m1": false,
+          "m46": false,
+          "m0": false,
+          "m12": false,
+          "m41": false,
+          "m25": false
+        }
+      },
+      "2026-11-24": {
+        "attendance": {
+          "m36": false,
+          "m49": true,
+          "m29": false,
+          "m47": false,
+          "m28": false,
+          "m34": false,
+          "m43": false,
+          "m20": false,
+          "m42": false,
+          "m6": false,
+          "m22": false,
+          "m48": false,
+          "m27": false,
+          "m12": false,
+          "m25": false,
+          "m41": false,
+          "m7": false,
+          "m3": false,
+          "m4": false,
+          "m46": false,
+          "m37": false,
+          "m39": false,
+          "m0": false,
+          "m13": false,
+          "m1": false,
+          "m53": false,
+          "m45": false,
+          "m52": false,
+          "m31": false,
+          "m30": false,
+          "m38": false,
+          "m21": false,
+          "m26": false,
+          "m32": false,
+          "m8": false,
+          "m44": false,
+          "m40": false,
+          "m35": false,
+          "m15": false,
+          "m51": false,
+          "m11": false,
+          "m24": false,
+          "m16": false,
+          "m23": true,
+          "member-goyounghoon-2026": false,
+          "m14": false,
+          "m9": false,
+          "m19": false,
+          "m33": false,
+          "m17": true,
+          "m50": false,
+          "m5": false,
+          "m10": false,
+          "m2": false,
+          "m18": true
+        }
+      },
+      "2026-11-13": {
+        "attendance": {
+          "m4": false,
+          "member-goyounghoon-2026": false,
+          "m23": false,
+          "m14": false,
+          "m16": false,
+          "m7": false,
+          "m3": false,
+          "m1": false,
+          "m10": false,
+          "m18": true,
+          "m50": false,
+          "m33": false,
+          "m0": false,
+          "m17": false,
+          "m19": false,
+          "m32": false,
+          "m21": false,
+          "m26": false,
+          "m38": false,
+          "m31": false,
+          "m30": false,
+          "m11": false,
+          "m6": false,
+          "m24": false,
+          "m15": false,
+          "m51": false,
+          "m40": false,
+          "m35": false,
+          "m44": false,
+          "m46": false,
+          "m12": false,
+          "m25": false,
+          "m41": false,
+          "m5": false,
+          "m45": false,
+          "m52": false,
+          "m2": false,
+          "m53": false,
+          "m9": false,
+          "m13": false,
+          "m37": false,
+          "m39": false,
+          "m49": false,
+          "m29": false,
+          "m47": false,
+          "m36": false,
+          "m27": false,
+          "m22": false,
+          "m48": false,
+          "m20": false,
+          "m42": false,
+          "m8": false,
+          "m28": false,
+          "m43": false,
+          "m34": false
+        }
+      },
+      "2026-11-25": {
+        "attendance": {
+          "m52": false,
+          "m45": false,
+          "m53": false,
+          "m13": false,
+          "m37": false,
+          "m39": false,
+          "m6": false,
+          "m46": false,
+          "m12": false,
+          "m41": false,
+          "m25": false,
+          "m4": false,
+          "m27": false,
+          "m48": false,
+          "m22": false,
+          "m7": false,
+          "m20": false,
+          "m42": false,
+          "m28": false,
+          "m34": false,
+          "m43": true,
+          "m3": false,
+          "m1": false,
+          "m0": false,
+          "m49": false,
+          "m47": false,
+          "m29": false,
+          "m36": false,
+          "m10": false,
+          "m18": false,
+          "m50": false,
+          "m33": false,
+          "m17": false,
+          "m19": false,
+          "m23": false,
+          "m14": false,
+          "m8": false,
+          "m16": false,
+          "m11": false,
+          "m24": false,
+          "m15": false,
+          "m51": false,
+          "m40": false,
+          "m35": false,
+          "m44": false,
+          "m32": false,
+          "m5": false,
+          "m21": false,
+          "member-goyounghoon-2026": false,
+          "m2": false,
+          "m26": false,
+          "m9": false,
+          "m38": false,
+          "m30": false,
+          "m31": false
+        }
+      },
+      "2026-11-21": {
+        "fixedTeams": [],
+        "attendance": {
+          "m4": true,
+          "m23": false,
+          "m14": true,
+          "m16": false,
+          "m7": false,
+          "m3": false,
+          "m1": false,
+          "m10": false,
+          "m18": true,
+          "m50": false,
+          "m33": true,
+          "m17": false,
+          "m0": false,
+          "m19": false,
+          "m32": false,
+          "m21": false,
+          "m26": false,
+          "member-goyounghoon-2026": true,
+          "m38": false,
+          "m31": false,
+          "m30": false,
+          "m11": false,
+          "m6": true,
+          "m24": true,
+          "m15": false,
+          "m51": false,
+          "m40": false,
+          "m35": false,
+          "m44": false,
+          "m46": false,
+          "m12": false,
+          "m25": false,
+          "m41": false,
+          "m5": false,
+          "m45": false,
+          "m52": false,
+          "m2": false,
+          "m53": true,
+          "m9": false,
+          "m13": false,
+          "m37": false,
+          "m39": false,
+          "m49": false,
+          "m29": false,
+          "m47": false,
+          "m36": false,
+          "m27": false,
+          "m22": true,
+          "m48": false,
+          "m20": true,
+          "m42": false,
+          "m8": true,
+          "m28": true,
+          "m43": false,
+          "m34": true
+        },
+        "actualAttendance": {
+          "m28": true,
+          "m34": true,
+          "m20": true,
+          "m33": true,
+          "m4": true,
+          "m22": true,
+          "m53": true,
+          "m24": true,
+          "m18": true,
+          "m8": true,
+          "m6": true,
+          "m14": true,
+          "member-goyounghoon-2026": true
+        },
+        "signupAt": {
+          "m6": "2026-11-19T06:02:46.995Z",
+          "m8": "2026-11-21T07:47:50.444Z",
+          "m14": "2026-11-21T06:47:41.262Z",
+          "m20": "2026-11-19T06:43:51.144Z",
+          "m33": "2026-11-19T06:02:49.678Z",
+          "member-goyounghoon-2026": "2026-11-19T06:03:00.666Z",
+          "m34": "2026-11-19T04:25:48.542Z",
+          "m4": "2026-11-19T04:13:59.976Z",
+          "m28": "2026-11-19T03:34:03.634Z",
+          "m24": "2026-11-19T06:24:30.404Z",
+          "m18": "2026-11-21T07:24:59.411Z",
+          "m53": "2026-11-19T03:33:53.384Z",
+          "m22": "2026-11-19T04:13:09.403Z"
+        }
+      },
+      "2026-11-07": {
+        "attendance": {
+          "m46": false,
+          "m3": false,
+          "m7": false,
+          "m25": false,
+          "m41": false,
+          "m12": false,
+          "m4": true,
+          "m53": false,
+          "m45": false,
+          "m52": false,
+          "m0": false,
+          "m39": false,
+          "m37": false,
+          "m13": false,
+          "m1": false,
+          "m36": false,
+          "m29": false,
+          "m47": false,
+          "m49": false,
+          "m22": false,
+          "m48": false,
+          "m27": true,
+          "m34": true,
+          "m43": false,
+          "m28": true,
+          "m42": false,
+          "m6": true,
+          "m20": true,
+          "m14": true,
+          "m23": false,
+          "member-goyounghoon-2026": true,
+          "m16": false,
+          "m50": false,
+          "m9": false,
+          "m18": true,
+          "m10": true,
+          "m2": false,
+          "m19": false,
+          "m17": true,
+          "m5": false,
+          "m33": false,
+          "m26": false,
+          "m21": false,
+          "m32": false,
+          "m31": false,
+          "m30": false,
+          "m38": false,
+          "m51": false,
+          "m15": false,
+          "m24": false,
+          "m11": false,
+          "m8": false,
+          "m44": true,
+          "m35": false,
+          "m40": false
+        }
+      },
+      "2026-11-23": {
+        "attendance": {
+          "m19": false,
+          "m17": false,
+          "m33": false,
+          "m50": false,
+          "m18": false,
+          "m10": false,
+          "m6": false,
+          "m16": false,
+          "m14": false,
+          "m23": false,
+          "m44": false,
+          "m0": false,
+          "m35": false,
+          "m40": false,
+          "m51": false,
+          "m15": false,
+          "m24": false,
+          "m1": false,
+          "m11": false,
+          "m30": false,
+          "m31": false,
+          "m3": false,
+          "m7": false,
+          "m38": false,
+          "m26": false,
+          "m21": false,
+          "m4": false,
+          "m32": false,
+          "m39": false,
+          "m37": false,
+          "m13": false,
+          "m8": false,
+          "m53": false,
+          "m52": false,
+          "m45": false,
+          "m41": false,
+          "m25": false,
+          "m12": false,
+          "m46": false,
+          "member-goyounghoon-2026": false,
+          "m43": false,
+          "m34": false,
+          "m28": false,
+          "m42": false,
+          "m20": false,
+          "m9": false,
+          "m48": false,
+          "m22": false,
+          "m2": false,
+          "m27": false,
+          "m5": false,
+          "m36": false,
+          "m47": false,
+          "m29": false,
+          "m49": false
+        }
+      },
+      "2026-11-14": {
+        "attendance": {
+          "m20": true,
+          "m42": false,
+          "m28": true,
+          "m34": false,
+          "m43": true,
+          "m8": false,
+          "m27": false,
+          "m48": false,
+          "m22": false,
+          "m49": false,
+          "m47": false,
+          "m29": false,
+          "m36": false,
+          "m5": false,
+          "m13": false,
+          "m37": false,
+          "m39": false,
+          "m2": false,
+          "m52": false,
+          "m9": false,
+          "m45": false,
+          "m53": false,
+          "m12": false,
+          "m41": false,
+          "m25": false,
+          "m46": false,
+          "m40": true,
+          "m35": false,
+          "m6": true,
+          "m44": true,
+          "m11": false,
+          "m24": false,
+          "m15": false,
+          "m51": true,
+          "m38": false,
+          "m30": false,
+          "m31": false,
+          "m32": false,
+          "m21": false,
+          "m26": false,
+          "m33": false,
+          "m1": false,
+          "m17": true,
+          "m19": false,
+          "m10": false,
+          "m0": false,
+          "m18": true,
+          "m50": false,
+          "member-goyounghoon-2026": false,
+          "m16": false,
+          "m4": false,
+          "m7": false,
+          "m23": false,
+          "m14": true,
+          "m3": false
+        },
+        "leftPlayers": {
+          "m18": true,
+          "m51": true,
+          "m14": true,
+          "m6": true,
+          "m17": true,
+          "m20": true,
+          "m40": true,
+          "m43": true,
+          "m44": true,
+          "m28": true
+        }
+      },
+      "2026-11-15": {
+        "fixedTeams": [],
+        "attendance": {
+          "m32": false,
+          "m6": false,
+          "m21": false,
+          "m26": true,
+          "m38": false,
+          "m30": false,
+          "m31": false,
+          "m11": false,
+          "m24": false,
+          "m15": false,
+          "m51": false,
+          "m40": false,
+          "m35": false,
+          "m44": true,
+          "m1": false,
+          "m23": false,
+          "member-goyounghoon-2026": false,
+          "m14": true,
+          "m16": false,
+          "m0": false,
+          "m10": true,
+          "m4": false,
+          "m18": true,
+          "m50": false,
+          "m33": false,
+          "m7": false,
+          "m17": true,
+          "m19": false,
+          "m3": false,
+          "m8": false,
+          "m49": false,
+          "m47": true,
+          "m29": false,
+          "m36": false,
+          "m27": true,
+          "m48": false,
+          "m22": true,
+          "m20": true,
+          "m42": false,
+          "m28": true,
+          "m43": false,
+          "m34": true,
+          "m5": false,
+          "m46": false,
+          "m2": false,
+          "m9": false,
+          "m12": false,
+          "m41": false,
+          "m25": false,
+          "m52": false,
+          "m45": false,
+          "m53": false,
+          "m13": false,
+          "m37": false,
+          "m39": false
+        },
+        "rejectedDraws": {
+          "코트 2": [
+            "m14,m27 vs m17,m26"
+          ]
+        },
+        "leftPlayers": {
+          "m34": true,
+          "m18": true,
+          "m22": true,
+          "m28": true
+        }
+      },
+      "2026-11-11": {
+        "attendance": {
+          "m41": false,
+          "m25": false,
+          "m12": false,
+          "m46": false,
+          "m13": false,
+          "m39": false,
+          "m37": false,
+          "m52": false,
+          "m45": false,
+          "m8": false,
+          "m53": false,
+          "m47": false,
+          "m29": false,
+          "m49": false,
+          "member-goyounghoon-2026": false,
+          "m36": false,
+          "m42": false,
+          "m20": false,
+          "m2": false,
+          "m34": false,
+          "m43": false,
+          "m28": false,
+          "m5": false,
+          "m27": false,
+          "m48": false,
+          "m22": false,
+          "m9": false,
+          "m16": false,
+          "m14": false,
+          "m23": false,
+          "m17": false,
+          "m33": false,
+          "m19": false,
+          "m6": false,
+          "m18": true,
+          "m10": false,
+          "m50": false,
+          "m38": false,
+          "m4": false,
+          "m30": false,
+          "m31": false,
+          "m3": false,
+          "m32": false,
+          "m7": false,
+          "m26": false,
+          "m21": false,
+          "m35": false,
+          "m40": false,
+          "m44": false,
+          "m1": false,
+          "m24": false,
+          "m11": false,
+          "m51": false,
+          "m0": false,
+          "m15": false
+        }
+      },
+      "2026-11-06": {
+        "attendance": {
+          "m46": false,
+          "m4": false,
+          "m3": false,
+          "m25": false,
+          "m41": false,
+          "m12": false,
+          "m7": false,
+          "m45": false,
+          "m52": false,
+          "m53": false,
+          "m1": false,
+          "member-goyounghoon-2026": false,
+          "m13": false,
+          "m39": false,
+          "m0": false,
+          "m37": false,
+          "m29": false,
+          "m47": false,
+          "m49": false,
+          "m36": false,
+          "m27": false,
+          "m22": false,
+          "m6": false,
+          "m48": false,
+          "m42": false,
+          "m20": false,
+          "m43": false,
+          "m34": false,
+          "m28": false,
+          "m14": false,
+          "m23": false,
+          "m16": false,
+          "m2": false,
+          "m18": false,
+          "m10": false,
+          "m5": false,
+          "m50": false,
+          "m17": false,
+          "m33": false,
+          "m9": false,
+          "m19": false,
+          "m32": false,
+          "m26": false,
+          "m21": false,
+          "m38": false,
+          "m31": false,
+          "m30": false,
+          "m24": false,
+          "m11": false,
+          "m51": false,
+          "m15": false,
+          "m35": false,
+          "m40": false,
+          "m44": false,
+          "m8": false
+        }
+      },
+      "2026-11-20": {
+        "attendance": {
+          "m46": false,
+          "m8": true,
+          "m41": false,
+          "m25": false,
+          "m12": false,
+          "m52": false,
+          "m45": false,
+          "m53": false,
+          "m13": false,
+          "m39": false,
+          "m37": false,
+          "m2": false,
+          "m5": false,
+          "m47": false,
+          "m29": false,
+          "m49": false,
+          "m36": false,
+          "m9": false,
+          "m27": false,
+          "m48": false,
+          "m22": false,
+          "m42": false,
+          "m20": false,
+          "m34": false,
+          "m43": false,
+          "m28": false,
+          "m14": false,
+          "m23": false,
+          "m6": false,
+          "m16": false,
+          "m18": true,
+          "m10": false,
+          "m50": false,
+          "m17": false,
+          "m33": false,
+          "m19": false,
+          "member-goyounghoon-2026": true,
+          "m32": false,
+          "m26": false,
+          "m21": false,
+          "m1": false,
+          "m38": false,
+          "m30": false,
+          "m31": false,
+          "m0": false,
+          "m24": true,
+          "m11": false,
+          "m51": false,
+          "m4": false,
+          "m15": false,
+          "m35": false,
+          "m3": false,
+          "m40": false,
+          "m7": false,
+          "m44": false
+        }
+      },
+      "2026-11-16": {
+        "attendance": {
+          "m36": false,
+          "m29": true,
+          "m47": false,
+          "m49": false,
+          "m34": false,
+          "m43": true,
+          "m28": false,
+          "m42": false,
+          "m20": false,
+          "m22": true,
+          "m48": false,
+          "m6": false,
+          "m27": false,
+          "m25": false,
+          "m3": false,
+          "m41": false,
+          "m12": false,
+          "m7": false,
+          "m46": false,
+          "m4": false,
+          "m39": false,
+          "m37": false,
+          "m13": false,
+          "m0": false,
+          "m53": false,
+          "m45": false,
+          "m52": false,
+          "m1": false,
+          "m31": false,
+          "m30": false,
+          "m38": false,
+          "m26": false,
+          "m21": false,
+          "m32": false,
+          "m44": true,
+          "member-goyounghoon-2026": false,
+          "m35": false,
+          "m8": false,
+          "m40": false,
+          "m51": false,
+          "m15": false,
+          "m24": false,
+          "m11": false,
+          "m16": false,
+          "m14": false,
+          "m23": false,
+          "m19": false,
+          "m17": false,
+          "m9": false,
+          "m33": false,
+          "m2": false,
+          "m50": false,
+          "m18": false,
+          "m5": false,
+          "m10": false
+        }
+      },
+      "2026-11-22": {
+        "attendance": {
+          "m7": false,
+          "m46": false,
+          "m3": false,
+          "m12": false,
+          "m25": false,
+          "m41": false,
+          "m4": false,
+          "m53": false,
+          "m0": false,
+          "m45": false,
+          "m52": false,
+          "m1": false,
+          "m37": false,
+          "m39": false,
+          "m13": false,
+          "m36": false,
+          "m49": false,
+          "m29": false,
+          "m47": false,
+          "m22": true,
+          "m48": false,
+          "m27": false,
+          "m6": false,
+          "m28": true,
+          "m34": true,
+          "m43": false,
+          "m20": false,
+          "m42": false,
+          "m23": false,
+          "m14": false,
+          "member-goyounghoon-2026": false,
+          "m16": true,
+          "m50": false,
+          "m9": false,
+          "m10": false,
+          "m18": false,
+          "m5": false,
+          "m19": false,
+          "m33": false,
+          "m2": false,
+          "m17": true,
+          "m21": false,
+          "m26": false,
+          "m32": true,
+          "m31": false,
+          "m30": false,
+          "m38": false,
+          "m15": false,
+          "m8": false,
+          "m51": false,
+          "m11": false,
+          "m24": false,
+          "m44": false,
+          "m40": false,
+          "m35": false
+        }
+      },
+      "2026-11-17": {
+        "attendance": {
+          "member-goyounghoon-2026": false,
+          "m3": false,
+          "m34": false,
+          "m43": false,
+          "m28": false,
+          "m42": false,
+          "m7": false,
+          "m20": false,
+          "m22": false,
+          "m48": false,
+          "m27": false,
+          "m4": false,
+          "m36": false,
+          "m29": false,
+          "m47": false,
+          "m49": false,
+          "m0": false,
+          "m1": false,
+          "m39": false,
+          "m37": false,
+          "m13": false,
+          "m53": false,
+          "m45": false,
+          "m52": false,
+          "m25": false,
+          "m41": false,
+          "m12": false,
+          "m46": false,
+          "m6": false,
+          "m44": false,
+          "m35": false,
+          "m40": false,
+          "m51": false,
+          "m15": false,
+          "m24": false,
+          "m11": false,
+          "m31": false,
+          "m30": false,
+          "m38": false,
+          "m9": false,
+          "m26": false,
+          "m2": false,
+          "m21": false,
+          "m5": false,
+          "m32": false,
+          "m19": false,
+          "m17": false,
+          "m33": false,
+          "m50": false,
+          "m18": false,
+          "m10": false,
+          "m8": false,
+          "m16": false,
+          "m14": false,
+          "m23": false
+        }
+      },
+      "2026-11-18": {
+        "attendance": {
+          "m53": false,
+          "m52": false,
+          "m45": false,
+          "m39": false,
+          "m37": false,
+          "m13": false,
+          "member-goyounghoon-2026": false,
+          "m46": false,
+          "m41": false,
+          "m25": false,
+          "m12": false,
+          "m6": false,
+          "m48": false,
+          "m22": true,
+          "m3": false,
+          "m27": false,
+          "m7": false,
+          "m43": false,
+          "m34": false,
+          "m28": false,
+          "m42": false,
+          "m4": false,
+          "m20": false,
+          "m0": false,
+          "m36": true,
+          "m47": true,
+          "m29": true,
+          "m1": true,
+          "m49": false,
+          "m50": false,
+          "m18": false,
+          "m10": false,
+          "m19": false,
+          "m17": true,
+          "m33": false,
+          "m14": false,
+          "m23": true,
+          "m8": false,
+          "m16": false,
+          "m51": false,
+          "m15": false,
+          "m24": true,
+          "m11": false,
+          "m44": true,
+          "m35": false,
+          "m40": false,
+          "m26": false,
+          "m21": false,
+          "m9": false,
+          "m32": false,
+          "m30": false,
+          "m31": false,
+          "m2": false,
+          "m38": false,
+          "m5": false
+        }
+      }
+    },
+    "tournaments": [
+      {
+        "id": "tour276",
+        "createdAt": "2026-11-21T08:09:53.384Z",
+        "participants": [
+          "member-goyounghoon-2026",
+          "m28",
+          "m8",
+          "m53",
+          "m34",
+          "m20",
+          "m24",
+          "m6",
+          "m22",
+          "m33",
+          "m18",
+          "m4",
+          "m14"
+        ],
+        "target": 3,
+        "matches": [
+          {
+            "gameId": "g295",
+            "a": [
+              "member-goyounghoon-2026",
+              "m28"
+            ],
+            "court": "코트 1",
+            "b": [
+              "m8",
+              "m53"
+            ],
+            "order": 1
+          },
+          {
+            "gameId": "g296",
+            "court": "코트 2",
+            "b": [
+              "m24",
+              "m6"
+            ],
+            "order": 2,
+            "a": [
+              "m34",
+              "m20"
+            ]
+          },
+          {
+            "b": [
+              "m18",
+              "m4"
+            ],
+            "court": "코트 1",
+            "a": [
+              "m22",
+              "m33"
+            ],
+            "gameId": "g278",
+            "order": 3
+          },
+          {
+            "order": 4,
+            "gameId": "g297",
+            "a": [
+              "m20",
+              "m14"
+            ],
+            "court": "코트 2",
+            "b": [
+              "m8",
+              "member-goyounghoon-2026"
+            ]
+          },
+          {
+            "order": 5,
+            "a": [
+              "m18",
+              "m28"
+            ],
+            "court": "코트 1",
+            "b": [
+              "m34",
+              "m6"
+            ],
+            "gameId": "g279"
+          },
+          {
+            "court": "코트 2",
+            "gameId": "g302",
+            "a": [
+              "m22",
+              "m33"
+            ],
+            "order": 6,
+            "b": [
+              "m53",
+              "m24"
+            ]
+          },
+          {
+            "order": 7,
+            "b": [
+              "m4",
+              "m22"
+            ],
+            "a": [
+              "m20",
+              "member-goyounghoon-2026"
+            ],
+            "court": "코트 1",
+            "gameId": "g294"
+          },
+          {
+            "order": 8,
+            "b": [
+              "m24",
+              "m33"
+            ],
+            "court": "코트 2",
+            "gameId": "g280",
+            "a": [
+              "m6",
+              "m8"
+            ]
+          },
+          {
+            "gameId": "g332",
+            "court": "코트 1",
+            "a": [
+              "m4",
+              "m28"
+            ],
+            "order": 9,
+            "b": [
+              "m14",
+              "m20"
+            ]
+          },
+          {
+            "gameId": "g293",
+            "court": "코트 2",
+            "b": [
+              "m34",
+              "m22"
+            ],
+            "a": [
+              "m14",
+              "m53"
+            ],
+            "order": 10
+          }
+        ],
+        "mode": "league",
+        "edits": [
+          {
+            "from": "m14",
+            "match": 6,
+            "to": "m22",
+            "at": "2026-11-22T01:27:21.282Z"
+          },
+          {
+            "at": "2026-11-22T01:27:44.300Z",
+            "match": 9,
+            "from": "m18",
+            "to": "m20"
+          }
+        ],
+        "date": "2026-11-21"
+      }
+    ],
+    "members": [
+      {
+        "id": "m0",
+        "initial": false,
+        "coins": 0,
+        "guest": false,
+        "present": false,
+        "name": "고현호",
+        "losses": 0,
+        "wins": 0,
+        "loans": 0,
+        "status": "탈퇴"
+      },
+      {
+        "coins": 3,
+        "guest": false,
+        "name": "구혜윤",
+        "id": "m1",
+        "losses": 0,
+        "initial": true,
+        "present": false,
+        "ntrp": 2,
+        "wins": 0,
+        "status": "활동",
+        "loans": 0
+      },
+      {
+        "guest": false,
+        "coins": 3,
+        "losses": 0,
+        "name": "권순원",
+        "initial": true,
+        "status": "활동",
+        "present": false,
+        "ntrp": 2,
+        "id": "m2",
+        "loans": 0,
+        "wins": 0
+      },
+      {
+        "status": "활동",
+        "loans": 0,
+        "ntrp": 5,
+        "id": "m3",
+        "wins": 0,
+        "losses": 0,
+        "name": "권준원",
+        "guest": false,
+        "coins": 3,
+        "present": false,
+        "initial": true
+      },
+      {
+        "status": "활동",
+        "losses": 4,
+        "present": false,
+        "loans": 0,
+        "name": "김갑득",
+        "initial": true,
+        "wins": 2,
+        "guest": false,
+        "coins": 4,
+        "ntrp": 2.5,
+        "id": "m4"
+      },
+      {
+        "initial": true,
+        "coins": 3,
+        "guest": false,
+        "withdrawnAt": "2026-11-15T15:26:18.307Z",
+        "name": "김기현",
+        "present": false,
+        "ntrp": 2,
+        "losses": 0,
+        "wins": 0,
+        "status": "탈퇴",
+        "loans": 0,
+        "id": "m5"
+      },
+      {
+        "ntrp": 2,
+        "present": false,
+        "initial": true,
+        "loans": 0,
+        "wins": 5,
+        "status": "활동",
+        "name": "김대환",
+        "coins": 5,
+        "guest": false,
+        "losses": 7,
+        "id": "m6"
+      },
+      {
+        "status": "활동",
+        "losses": 0,
+        "loans": 0,
+        "name": "김동혁",
+        "id": "m7",
+        "wins": 0,
+        "guest": false,
+        "coins": 0,
+        "present": false,
+        "ntrp": 2,
+        "initial": true
+      },
+      {
+        "present": false,
+        "name": "김목규",
+        "initial": true,
+        "id": "m8",
+        "loans": 0,
+        "guest": false,
+        "coins": 7,
+        "ntrp": 3,
+        "status": "활동",
+        "losses": 1,
+        "wins": 2
+      },
+      {
+        "wins": 0,
+        "ntrp": 2.5,
+        "guest": false,
+        "coins": 3,
+        "initial": true,
+        "loans": 0,
+        "losses": 0,
+        "present": false,
+        "id": "m9",
+        "status": "활동",
+        "name": "김성모"
+      },
+      {
+        "initial": true,
+        "wins": 6,
+        "present": false,
+        "ntrp": 3,
+        "coins": 4,
+        "guest": false,
+        "loans": 0,
+        "losses": 3,
+        "status": "활동",
+        "name": "김수원",
+        "id": "m10"
+      },
+      {
+        "coins": 0,
+        "guest": false,
+        "losses": 0,
+        "name": "김수빈",
+        "id": "m11",
+        "status": "활동",
+        "ntrp": 2,
+        "wins": 0,
+        "initial": true,
+        "present": false,
+        "loans": 0
+      },
+      {
+        "status": "휴회",
+        "loans": 0,
+        "wins": 0,
+        "ntrp": 2,
+        "present": false,
+        "losses": 0,
+        "initial": false,
+        "name": "김영일",
+        "id": "m12",
+        "guest": false,
+        "coins": 0
+      },
+      {
+        "guest": false,
+        "coins": 0,
+        "name": "김완준",
+        "losses": 0,
+        "initial": true,
+        "present": false,
+        "status": "탈퇴",
+        "id": "m13",
+        "withdrawnAt": "2026-11-16T00:44:59.108Z",
+        "ntrp": 2,
+        "wins": 0,
+        "loans": 0
+      },
+      {
+        "guest": false,
+        "coins": 13,
+        "initial": true,
+        "present": false,
+        "name": "김인호",
+        "ntrp": 3,
+        "losses": 6,
+        "id": "m14",
+        "status": "활동",
+        "loans": 0,
+        "wins": 6
+      },
+      {
+        "initial": true,
+        "present": false,
+        "coins": 3,
+        "guest": false,
+        "id": "m15",
+        "name": "김종민",
+        "losses": 0,
+        "wins": 0,
+        "loans": 0,
+        "ntrp": 3,
+        "status": "활동"
+      },
+      {
+        "name": "김종철",
+        "guest": false,
+        "coins": 3,
+        "id": "m16",
+        "initial": true,
+        "losses": 0,
+        "present": false,
+        "ntrp": 2.5,
+        "wins": 0,
+        "loans": 0,
+        "status": "활동"
+      },
+      {
+        "ntrp": 2.5,
+        "loans": 0,
+        "wins": 7,
+        "status": "활동",
+        "present": false,
+        "name": "김지동",
+        "initial": true,
+        "id": "m17",
+        "guest": false,
+        "coins": 5,
+        "losses": 11
+      },
+      {
+        "status": "활동",
+        "ntrp": 2,
+        "loans": 0,
+        "id": "m18",
+        "present": false,
+        "wins": 5,
+        "initial": true,
+        "losses": 5,
+        "name": "김혜성",
+        "guest": false,
+        "coins": 6
+      },
+      {
+        "present": false,
+        "id": "m19",
+        "loans": 0,
+        "initial": true,
+        "ntrp": 2,
+        "wins": 0,
+        "status": "활동",
+        "name": "노달호",
+        "guest": false,
+        "coins": 3,
+        "losses": 0
+      },
+      {
+        "status": "활동",
+        "ntrp": 2.5,
+        "loans": 0,
+        "present": false,
+        "initial": true,
+        "wins": 12,
+        "losses": 8,
+        "name": "박대웅",
+        "guest": false,
+        "coins": 13,
+        "id": "m20"
+      },
+      {
+        "guest": false,
+        "coins": 0,
+        "id": "m21",
+        "losses": 0,
+        "name": "박유준",
+        "status": "휴회",
+        "ntrp": 2,
+        "initial": false,
+        "wins": 0,
+        "present": false,
+        "loans": 0
+      },
+      {
+        "loans": 0,
+        "status": "활동",
+        "wins": 8,
+        "ntrp": 2.5,
+        "losses": 4,
+        "id": "m22",
+        "present": false,
+        "name": "백경식",
+        "initial": true,
+        "coins": 7,
+        "guest": false
+      },
+      {
+        "wins": 0,
+        "losses": 0,
+        "id": "m23",
+        "status": "활동",
+        "coins": 3,
+        "guest": false,
+        "ntrp": 2,
+        "loans": 0,
+        "name": "백상화",
+        "initial": true,
+        "present": false
+      },
+      {
+        "initial": true,
+        "present": false,
+        "coins": 7,
+        "guest": false,
+        "name": "선정훈",
+        "losses": 2,
+        "wins": 2,
+        "id": "m24",
+        "loans": 0,
+        "ntrp": 3,
+        "status": "활동"
+      },
+      {
+        "status": "탈퇴",
+        "loans": 0,
+        "withdrawnAt": "2026-11-16T00:44:03.165Z",
+        "ntrp": 2,
+        "wins": 0,
+        "id": "m25",
+        "losses": 0,
+        "name": "송미령",
+        "coins": 0,
+        "guest": false,
+        "present": false,
+        "initial": false
+      },
+      {
+        "wins": 3,
+        "losses": 0,
+        "status": "활동",
+        "ntrp": 2.5,
+        "coins": 0,
+        "guest": false,
+        "loans": 0,
+        "initial": true,
+        "id": "m26",
+        "name": "안승주",
+        "present": false
+      },
+      {
+        "ntrp": 2,
+        "loans": 0,
+        "wins": 2,
+        "status": "활동",
+        "present": false,
+        "name": "안희정",
+        "initial": true,
+        "coins": 4,
+        "guest": false,
+        "id": "m27",
+        "losses": 4
+      },
+      {
+        "status": "활동",
+        "ntrp": 2.5,
+        "loans": 0,
+        "present": false,
+        "initial": true,
+        "wins": 6,
+        "losses": 14,
+        "id": "m28",
+        "name": "안진원",
+        "guest": false,
+        "coins": 4
+      },
+      {
+        "loans": 0,
+        "status": "활동",
+        "wins": 0,
+        "ntrp": 3,
+        "losses": 1,
+        "id": "m29",
+        "present": false,
+        "initial": true,
+        "name": "왕윤호",
+        "coins": 2,
+        "guest": false
+      },
+      {
+        "name": "유선혜",
+        "loans": 0,
+        "present": false,
+        "id": "m30",
+        "ntrp": 3,
+        "coins": 0,
+        "guest": false,
+        "status": "탈퇴",
+        "initial": false,
+        "losses": 0,
+        "withdrawnAt": "2026-11-16T00:44:15.874Z",
+        "wins": 0
+      },
+      {
+        "loans": 0,
+        "wins": 0,
+        "status": "휴회",
+        "id": "m31",
+        "losses": 0,
+        "ntrp": 2,
+        "name": "유선화",
+        "present": false,
+        "coins": 0,
+        "guest": false,
+        "initial": false
+      },
+      {
+        "wins": 0,
+        "ntrp": 3,
+        "guest": false,
+        "coins": 3,
+        "initial": true,
+        "loans": 0,
+        "losses": 0,
+        "present": false,
+        "status": "활동",
+        "id": "m32",
+        "name": "유채전"
+      },
+      {
+        "initial": true,
+        "present": false,
+        "coins": 5,
+        "guest": false,
+        "name": "이상준",
+        "losses": 2,
+        "wins": 2,
+        "ntrp": 2,
+        "loans": 0,
+        "status": "활동",
+        "id": "m33"
+      },
+      {
+        "loans": 0,
+        "wins": 3,
+        "id": "m34",
+        "ntrp": 2.5,
+        "status": "활동",
+        "present": false,
+        "initial": true,
+        "name": "이성재",
+        "coins": 2,
+        "guest": false,
+        "losses": 5
+      },
+      {
+        "losses": 0,
+        "wins": 0,
+        "initial": false,
+        "status": "탈퇴",
+        "guest": false,
+        "coins": 0,
+        "present": false,
+        "loans": 0,
+        "name": "이정룡",
+        "id": "m35"
+      },
+      {
+        "losses": 1,
+        "guest": false,
+        "coins": 3,
+        "name": "이지원",
+        "id": "m36",
+        "status": "활동",
+        "wins": 0,
+        "loans": 0,
+        "initial": true,
+        "present": false,
+        "ntrp": 2.5
+      },
+      {
+        "present": false,
+        "name": "이태곤",
+        "initial": false,
+        "id": "m37",
+        "loans": 0,
+        "guest": false,
+        "coins": 0,
+        "status": "탈퇴",
+        "wins": 0,
+        "losses": 0
+      },
+      {
+        "name": "정순기",
+        "present": false,
+        "initial": true,
+        "id": "m38",
+        "loans": 0,
+        "coins": 3,
+        "guest": false,
+        "status": "활동",
+        "ntrp": 3,
+        "wins": 0,
+        "losses": 0
+      },
+      {
+        "id": "m39",
+        "loans": 0,
+        "name": "전현진",
+        "present": false,
+        "wins": 0,
+        "guest": false,
+        "coins": 0,
+        "status": "탈퇴",
+        "initial": false,
+        "losses": 0
+      },
+      {
+        "present": false,
+        "name": "진찬훈",
+        "initial": true,
+        "loans": 0,
+        "coins": 2,
+        "guest": false,
+        "ntrp": 2,
+        "status": "활동",
+        "losses": 4,
+        "wins": 0,
+        "id": "m40"
+      },
+      {
+        "losses": 0,
+        "ntrp": 3,
+        "wins": 0,
+        "id": "m41",
+        "status": "휴회",
+        "coins": 0,
+        "guest": false,
+        "name": "최찬희",
+        "loans": 0,
+        "initial": false,
+        "present": false
+      },
+      {
+        "name": "한웅비",
+        "coins": 0,
+        "guest": false,
+        "losses": 0,
+        "id": "m42",
+        "status": "휴회",
+        "ntrp": 3,
+        "wins": 0,
+        "initial": false,
+        "present": false,
+        "loans": 0
+      },
+      {
+        "id": "m43",
+        "ntrp": 2.5,
+        "losses": 1,
+        "guest": false,
+        "initial": true,
+        "coins": 6,
+        "status": "활동",
+        "wins": 3,
+        "present": false,
+        "name": "변태규",
+        "loans": 0
+      },
+      {
+        "loans": 0,
+        "status": "활동",
+        "wins": 14,
+        "ntrp": 2.5,
+        "losses": 5,
+        "present": false,
+        "name": "박창민",
+        "initial": true,
+        "guest": false,
+        "coins": 11,
+        "id": "m44"
+      },
+      {
+        "ntrp": 2.5,
+        "status": "활동",
+        "loans": 0,
+        "present": false,
+        "initial": true,
+        "wins": 0,
+        "losses": 0,
+        "id": "m45",
+        "name": "조덕균",
+        "guest": false,
+        "coins": 3
+      },
+      {
+        "status": "활동",
+        "name": "우범식",
+        "losses": 0,
+        "loans": 0,
+        "id": "m46",
+        "ntrp": 2.5,
+        "guest": false,
+        "coins": 3,
+        "present": false,
+        "initial": true,
+        "wins": 0
+      },
+      {
+        "ntrp": 2.5,
+        "losses": 4,
+        "coins": 3,
+        "guest": false,
+        "initial": true,
+        "id": "m47",
+        "wins": 1,
+        "status": "활동",
+        "present": false,
+        "name": "이주헌",
+        "loans": 0
+      },
+      {
+        "losses": 0,
+        "wins": 0,
+        "ntrp": 2,
+        "status": "활동",
+        "coins": 3,
+        "guest": false,
+        "loans": 0,
+        "id": "m48",
+        "initial": true,
+        "present": false,
+        "name": "강인희"
+      },
+      {
+        "status": "활동",
+        "loans": 0,
+        "ntrp": 2,
+        "id": "m49",
+        "wins": 0,
+        "losses": 0,
+        "name": "조세원",
+        "guest": false,
+        "coins": 3,
+        "present": false,
+        "initial": true
+      },
+      {
+        "losses": 0,
+        "coins": 3,
+        "guest": false,
+        "id": "m50",
+        "name": "김철수",
+        "initial": true,
+        "present": false,
+        "status": "활동",
+        "wins": 0,
+        "loans": 0,
+        "ntrp": 2.5
+      },
+      {
+        "loans": 0,
+        "wins": 3,
+        "status": "활동",
+        "present": false,
+        "losses": 1,
+        "initial": true,
+        "ntrp": 2.5,
+        "id": "m51",
+        "name": "황순언",
+        "coins": 3,
+        "guest": false
+      },
+      {
+        "status": "활동",
+        "id": "m52",
+        "loans": 0,
+        "ntrp": 2.5,
+        "wins": 0,
+        "losses": 0,
+        "name": "정진우",
+        "guest": false,
+        "coins": 3,
+        "present": false,
+        "initial": true
+      },
+      {
+        "loans": 0,
+        "name": "고결누리",
+        "present": false,
+        "coins": 10,
+        "guest": false,
+        "initial": true,
+        "id": "m53",
+        "status": "활동",
+        "wins": 3,
+        "losses": 0,
+        "ntrp": 2
+      },
+      {
+        "returnedCoins": 3,
+        "guest": true,
+        "coins": 0,
+        "losses": 0,
+        "name": "게스트 가정",
+        "present": false,
+        "ntrp": null,
+        "id": "guest3",
+        "guestDate": "2026-11-13",
+        "loans": 0,
+        "wins": 0,
+        "returned": true
+      },
+      {
+        "status": "활동",
+        "ntrp": 2.5,
+        "loans": 0,
+        "present": false,
+        "wins": 3,
+        "initial": true,
+        "losses": 5,
+        "name": "고영훈",
+        "guest": false,
+        "coins": 3,
+        "id": "member-goyounghoon-2026"
+      }
+    ],
+    "games": [
+      {
+        "a": [
+          "m20",
+          "member-goyounghoon-2026"
+        ],
+        "scoreEdits": [
+          {
+            "fromB": null,
+            "at": "2026-11-13T07:22:10.798Z",
+            "toB": 2,
+            "toA": 6,
+            "fromA": null
+          }
+        ],
+        "scoreA": 6,
+        "id": "g15",
+        "createdAt": "2026-11-13T06:38:03.580Z",
+        "date": "2026-11-07",
+        "b": [
+          "m28",
+          "m6"
+        ],
+        "manual": true,
+        "court": "코트 1",
+        "winner": "a",
+        "scoreB": 2,
+        "settledAt": "2026-11-13T06:38:06.904Z"
+      },
+      {
+        "scoreB": 5,
+        "winner": "a",
+        "scoreEdits": [
+          {
+            "fromB": null,
+            "toA": 6,
+            "fromA": null,
+            "at": "2026-11-13T07:25:48.378Z",
+            "toB": 5
+          }
+        ],
+        "court": "코트 1",
+        "b": [
+          "m10",
+          "m28"
+        ],
+        "manual": true,
+        "createdAt": "2026-11-13T06:38:48.613Z",
+        "a": [
+          "m4",
+          "m20"
+        ],
+        "date": "2026-11-07",
+        "settledAt": "2026-11-13T06:38:51.635Z",
+        "id": "g16",
+        "scoreA": 6
+      },
+      {
+        "date": "2026-11-07",
+        "scoreEdits": [
+          {
+            "toA": 6,
+            "fromB": null,
+            "toB": 3,
+            "fromA": null,
+            "at": "2026-11-13T07:25:56.357Z"
+          }
+        ],
+        "createdAt": "2026-11-13T06:39:09.598Z",
+        "scoreA": 6,
+        "a": [
+          "m44",
+          "member-goyounghoon-2026"
+        ],
+        "court": "코트 1",
+        "id": "g17",
+        "winner": "a",
+        "scoreB": 3,
+        "settledAt": "2026-11-13T06:39:15.113Z",
+        "manual": true,
+        "b": [
+          "m6",
+          "m17"
+        ]
+      },
+      {
+        "manual": true,
+        "scoreB": 6,
+        "winner": "b",
+        "a": [
+          "member-goyounghoon-2026",
+          "m27"
+        ],
+        "createdAt": "2026-11-13T06:39:36.625Z",
+        "court": "코트 1",
+        "id": "g18",
+        "scoreA": 3,
+        "resultEdits": [
+          {
+            "fromWinner": "b",
+            "fromA": null,
+            "at": "2026-11-13T07:22:34.609Z",
+            "toA": 3,
+            "toWinner": "b",
+            "fromB": null,
+            "toB": 6
+          },
+          {
+            "toWinner": "a",
+            "at": "2026-11-13T07:23:15.007Z",
+            "toB": 3,
+            "fromWinner": "b",
+            "fromB": 6,
+            "toA": 6,
+            "fromA": 3
+          },
+          {
+            "toWinner": "b",
+            "fromB": 3,
+            "at": "2026-11-13T07:23:48.077Z",
+            "toA": 3,
+            "fromWinner": "a",
+            "fromA": 6,
+            "toB": 6
+          }
+        ],
+        "b": [
+          "m6",
+          "m44"
+        ],
+        "settledAt": "2026-11-13T06:39:40.872Z",
+        "date": "2026-11-07"
+      },
+      {
+        "winner": "a",
+        "scoreB": 2,
+        "court": "코트 1",
+        "scoreEdits": [
+          {
+            "fromB": null,
+            "toA": 6,
+            "toB": 2,
+            "fromA": null,
+            "at": "2026-11-13T07:26:02.052Z"
+          }
+        ],
+        "settledAt": "2026-11-13T06:40:07.346Z",
+        "b": [
+          "m4",
+          "m10"
+        ],
+        "manual": true,
+        "date": "2026-11-07",
+        "createdAt": "2026-11-13T06:40:02.565Z",
+        "a": [
+          "m17",
+          "m20"
+        ],
+        "id": "g19",
+        "scoreA": 6
+      },
+      {
+        "court": "코트 1",
+        "id": "g20",
+        "b": [
+          "m17",
+          "m44"
+        ],
+        "settledAt": "2026-11-13T06:40:40.683Z",
+        "scoreA": 2,
+        "date": "2026-11-07",
+        "winner": "b",
+        "scoreB": 6,
+        "scoreEdits": [
+          {
+            "fromA": null,
+            "toA": 2,
+            "fromB": null,
+            "toB": 6,
+            "at": "2026-11-13T07:26:07.858Z"
+          }
+        ],
+        "a": [
+          "m28",
+          "m34"
+        ],
+        "manual": true,
+        "createdAt": "2026-11-13T06:40:38.325Z"
+      },
+      {
+        "scoreA": 3,
+        "createdAt": "2026-11-13T06:41:26.542Z",
+        "scoreEdits": [
+          {
+            "at": "2026-11-13T07:26:34.242Z",
+            "fromB": null,
+            "toB": 6,
+            "fromA": null,
+            "toA": 3
+          }
+        ],
+        "date": "2026-11-07",
+        "b": [
+          "m20",
+          "member-goyounghoon-2026"
+        ],
+        "manual": true,
+        "court": "코트 1",
+        "settledAt": "2026-11-13T06:41:28.321Z",
+        "a": [
+          "m17",
+          "m28"
+        ],
+        "id": "g22",
+        "scoreB": 6,
+        "winner": "b"
+      },
+      {
+        "b": [
+          "m28",
+          "m20"
+        ],
+        "settledAt": "2026-11-13T06:43:02.819Z",
+        "date": "2026-11-07",
+        "scoreEdits": [
+          {
+            "fromB": null,
+            "toB": 2,
+            "at": "2026-11-13T07:26:38.201Z",
+            "toA": 6,
+            "fromA": null
+          }
+        ],
+        "winner": "a",
+        "scoreB": 2,
+        "manual": true,
+        "court": "코트 1",
+        "createdAt": "2026-11-13T06:43:00.297Z",
+        "a": [
+          "m17",
+          "m10"
+        ],
+        "scoreA": 6,
+        "id": "g23"
+      },
+      {
+        "date": "2026-11-07",
+        "manual": true,
+        "id": "g24",
+        "b": [
+          "m44",
+          "m28"
+        ],
+        "settledAt": "2026-11-13T06:43:29.170Z",
+        "winner": "a",
+        "scoreB": 2,
+        "scoreEdits": [
+          {
+            "toB": 2,
+            "toA": 6,
+            "fromA": null,
+            "at": "2026-11-13T07:26:44.759Z",
+            "fromB": null
+          }
+        ],
+        "scoreA": 6,
+        "a": [
+          "m34",
+          "m20"
+        ],
+        "createdAt": "2026-11-13T06:43:27.224Z",
+        "court": "코트 1"
+      },
+      {
+        "coinStake": 1,
+        "b": [
+          "m14",
+          "m43"
+        ],
+        "winner": "b",
+        "ratingEnabled": true,
+        "scoreA": 2,
+        "court": "코트 1",
+        "settledAt": "2026-11-14T08:58:22.389Z",
+        "manual": true,
+        "scoreB": 6,
+        "date": "2026-11-14",
+        "coinEnabled": true,
+        "createdAt": "2026-11-14T08:57:56.263Z",
+        "a": [
+          "m28",
+          "m44"
+        ],
+        "id": "g34"
+      },
+      {
+        "a": [
+          "m27",
+          "m10"
+        ],
+        "ratingEnabled": true,
+        "coinStake": 1,
+        "date": "2026-11-07",
+        "manual": true,
+        "id": "g36",
+        "coinEnabled": true,
+        "scoreB": 5,
+        "scoreA": 6,
+        "settledAt": "2026-11-14T09:06:26.663Z",
+        "b": [
+          "m4",
+          "m6"
+        ],
+        "court": "코트 1",
+        "createdAt": "2026-11-14T09:06:21.574Z",
+        "winner": "a"
+      },
+      {
+        "scoreB": 6,
+        "settledAt": "2026-11-14T09:53:23.383Z",
+        "manual": true,
+        "a": [
+          "m17",
+          "m6"
+        ],
+        "createdAt": "2026-11-14T09:53:19.065Z",
+        "id": "g45",
+        "date": "2026-11-14",
+        "winner": "b",
+        "coinStake": 1,
+        "court": "코트 1",
+        "coinEnabled": true,
+        "scoreA": 2,
+        "b": [
+          "m18",
+          "m20"
+        ],
+        "ratingEnabled": true
+      },
+      {
+        "scoreB": 6,
+        "b": [
+          "m44",
+          "m43"
+        ],
+        "id": "g46",
+        "manual": true,
+        "coinStake": 1,
+        "coinEnabled": true,
+        "date": "2026-11-14",
+        "winner": "b",
+        "court": "코트 1",
+        "createdAt": "2026-11-14T09:55:01.676Z",
+        "ratingEnabled": true,
+        "a": [
+          "m14",
+          "m28"
+        ],
+        "settledAt": "2026-11-14T09:55:11.859Z",
+        "scoreA": 3
+      },
+      {
+        "b": [
+          "m43",
+          "m28"
+        ],
+        "coinEnabled": true,
+        "date": "2026-11-14",
+        "scoreA": 6,
+        "court": "코트 2",
+        "coinStake": 1,
+        "a": [
+          "m20",
+          "m44"
+        ],
+        "settledAt": "2026-11-14T10:23:03.217Z",
+        "scoreB": 3,
+        "winner": "a",
+        "ratingEnabled": true,
+        "id": "g48"
+      },
+      {
+        "settledAt": "2026-11-14T10:23:12.893Z",
+        "id": "g50",
+        "court": "코트 1",
+        "coinEnabled": true,
+        "b": [
+          "m6",
+          "m51"
+        ],
+        "scoreB": 6,
+        "createdAt": "2026-11-14T10:23:05.907Z",
+        "ratingEnabled": true,
+        "manual": true,
+        "coinStake": 1,
+        "a": [
+          "m17",
+          "m18"
+        ],
+        "scoreA": 3,
+        "winner": "b",
+        "date": "2026-11-14"
+      },
+      {
+        "scoreA": 3,
+        "a": [
+          "m40",
+          "m51"
+        ],
+        "id": "g51",
+        "ratingEnabled": true,
+        "date": "2026-11-14",
+        "coinEnabled": true,
+        "b": [
+          "m14",
+          "m6"
+        ],
+        "court": "코트 1",
+        "winner": "b",
+        "scoreB": 6,
+        "settledAt": "2026-11-14T10:51:33.604Z",
+        "coinStake": 1
+      },
+      {
+        "scoreB": 3,
+        "winner": "a",
+        "court": "코트 2",
+        "b": [
+          "m18",
+          "m44"
+        ],
+        "settledAt": "2026-11-14T10:53:04.227Z",
+        "coinStake": 1,
+        "coinEnabled": true,
+        "a": [
+          "m20",
+          "m17"
+        ],
+        "date": "2026-11-14",
+        "ratingEnabled": true,
+        "id": "g52",
+        "scoreA": 6
+      },
+      {
+        "settledAt": "2026-11-14T11:16:00.701Z",
+        "coinStake": 1,
+        "scoreA": 1,
+        "coinEnabled": true,
+        "b": [
+          "m43",
+          "m18"
+        ],
+        "court": "코트 1",
+        "a": [
+          "m40",
+          "m17"
+        ],
+        "scoreB": 6,
+        "winner": "b",
+        "id": "g61",
+        "ratingEnabled": true,
+        "date": "2026-11-14"
+      },
+      {
+        "scoreA": 4,
+        "settledAt": "2026-11-14T11:30:08.827Z",
+        "b": [
+          "m14",
+          "m51"
+        ],
+        "coinEnabled": true,
+        "court": "코트 1",
+        "createdAt": "2026-11-14T10:57:51.423Z",
+        "winner": "b",
+        "date": "2026-11-14",
+        "coinStake": 1,
+        "id": "g63",
+        "a": [
+          "m28",
+          "m20"
+        ],
+        "ratingEnabled": true,
+        "manual": true,
+        "scoreB": 6
+      },
+      {
+        "winner": "a",
+        "id": "g72",
+        "a": [
+          "m17",
+          "m44"
+        ],
+        "settledAt": "2026-11-14T11:52:39.284Z",
+        "createdAt": "2026-11-14T11:52:33.668Z",
+        "scoreA": 6,
+        "scoreB": 0,
+        "court": "코트 1",
+        "coinStake": 2,
+        "manual": true,
+        "date": "2026-11-14",
+        "b": [
+          "m40",
+          "m6"
+        ],
+        "coinEnabled": true,
+        "ratingEnabled": true
+      },
+      {
+        "id": "g93",
+        "settledAt": "2026-11-14T12:04:19.139Z",
+        "winner": "b",
+        "a": [
+          "m20",
+          "m40"
+        ],
+        "createdAt": "2026-11-14T12:04:12.097Z",
+        "scoreA": 3,
+        "date": "2026-11-14",
+        "coinStake": 1,
+        "manual": true,
+        "scoreB": 6,
+        "court": "코트 1",
+        "coinEnabled": true,
+        "ratingEnabled": true,
+        "b": [
+          "m51",
+          "m28"
+        ]
+      },
+      {
+        "coinEnabled": true,
+        "settledAt": "2026-11-14T12:34:01.868Z",
+        "winner": "b",
+        "date": "2026-11-14",
+        "scoreA": 1,
+        "createdAt": "2026-11-14T12:25:20.066Z",
+        "b": [
+          "m28",
+          "m44"
+        ],
+        "id": "g96",
+        "manual": true,
+        "a": [
+          "m18",
+          "m14"
+        ],
+        "ratingEnabled": true,
+        "coinStake": 1,
+        "scoreB": 6,
+        "court": "코트 1"
+      },
+      {
+        "scoreA": 3,
+        "court": "코트 1",
+        "b": [
+          "m22",
+          "m44"
+        ],
+        "winner": "b",
+        "settledAt": "2026-11-15T08:29:09.647Z",
+        "id": "g120",
+        "a": [
+          "m20",
+          "m28"
+        ],
+        "coinEnabled": false,
+        "date": "2026-11-15",
+        "ratingEnabled": true,
+        "createdAt": "2026-11-15T07:29:13.806Z",
+        "scoreB": 6,
+        "manual": true
+      },
+      {
+        "createdAt": "2026-11-15T08:30:01.357Z",
+        "b": [
+          "m44",
+          "m22"
+        ],
+        "court": "코트 1",
+        "coinEnabled": false,
+        "settledAt": "2026-11-15T08:30:16.961Z",
+        "scoreB": 6,
+        "date": "2026-11-15",
+        "ratingEnabled": true,
+        "manual": true,
+        "id": "g123",
+        "scoreA": 5,
+        "winner": "b",
+        "a": [
+          "m17",
+          "m14"
+        ],
+        "typeEdits": [
+          {
+            "toCoin": false,
+            "fromRating": true,
+            "fromCoin": true,
+            "at": "2026-11-15T08:30:12.391Z",
+            "toRating": true
+          }
+        ]
+      },
+      {
+        "typeEdits": [
+          {
+            "fromRating": true,
+            "toRating": true,
+            "fromCoin": true,
+            "toCoin": false,
+            "at": "2026-11-15T08:55:35.458Z"
+          }
+        ],
+        "winner": "b",
+        "b": [
+          "m10",
+          "m27"
+        ],
+        "court": "코트 1",
+        "date": "2026-11-15",
+        "ratingEnabled": true,
+        "scoreA": 5,
+        "id": "g135",
+        "scoreB": 6,
+        "manual": true,
+        "coinEnabled": false,
+        "settledAt": "2026-11-15T09:09:43.671Z",
+        "a": [
+          "m44",
+          "m22"
+        ],
+        "createdAt": "2026-11-15T08:54:52.631Z"
+      },
+      {
+        "scoreB": 3,
+        "winner": "a",
+        "court": "코트 2",
+        "a": [
+          "m18",
+          "m34"
+        ],
+        "coinEnabled": false,
+        "typeEdits": [
+          {
+            "fromRating": true,
+            "toRating": true,
+            "fromCoin": true,
+            "at": "2026-11-15T08:55:38.483Z",
+            "toCoin": false
+          }
+        ],
+        "id": "g136",
+        "settledAt": "2026-11-15T09:23:21.299Z",
+        "b": [
+          "m47",
+          "m20"
+        ],
+        "date": "2026-11-15",
+        "scoreA": 6,
+        "ratingEnabled": true
+      },
+      {
+        "id": "g142",
+        "scoreB": 6,
+        "winner": "b",
+        "a": [
+          "m28",
+          "m14"
+        ],
+        "ratingEnabled": true,
+        "court": "코트 1",
+        "coinEnabled": false,
+        "settledAt": "2026-11-15T09:46:26.653Z",
+        "scoreA": 5,
+        "b": [
+          "m17",
+          "m10"
+        ],
+        "date": "2026-11-15"
+      },
+      {
+        "typeEdits": [
+          {
+            "fromCoin": true,
+            "toRating": true,
+            "fromRating": true,
+            "toCoin": false,
+            "at": "2026-11-15T09:55:18.413Z"
+          }
+        ],
+        "id": "g146",
+        "court": "코트 1",
+        "ratingEnabled": true,
+        "a": [
+          "m22",
+          "m44"
+        ],
+        "scoreB": 3,
+        "manual": true,
+        "coinEnabled": false,
+        "settledAt": "2026-11-15T09:55:23.689Z",
+        "scoreA": 6,
+        "winner": "a",
+        "date": "2026-11-15",
+        "b": [
+          "m47",
+          "m34"
+        ],
+        "createdAt": "2026-11-15T09:46:35.635Z"
+      },
+      {
+        "id": "g149",
+        "date": "2026-11-15",
+        "scoreA": 1,
+        "ratingEnabled": true,
+        "settledAt": "2026-11-15T10:07:02.800Z",
+        "coinEnabled": false,
+        "a": [
+          "m27",
+          "m10"
+        ],
+        "b": [
+          "m18",
+          "m20"
+        ],
+        "court": "코트 2",
+        "winner": "b",
+        "scoreB": 6
+      },
+      {
+        "winner": "a",
+        "scoreB": 3,
+        "b": [
+          "m14",
+          "m27"
+        ],
+        "court": "코트 1",
+        "ratingEnabled": true,
+        "id": "g158",
+        "coinEnabled": false,
+        "a": [
+          "m26",
+          "m17"
+        ],
+        "date": "2026-11-15",
+        "settledAt": "2026-11-15T10:30:09.746Z",
+        "scoreA": 6
+      },
+      {
+        "settledAt": "2026-11-15T10:35:58.595Z",
+        "scoreA": 6,
+        "b": [
+          "m47",
+          "m18"
+        ],
+        "coinEnabled": false,
+        "court": "코트 2",
+        "ratingEnabled": true,
+        "id": "g159",
+        "winner": "a",
+        "scoreB": 3,
+        "date": "2026-11-15",
+        "a": [
+          "m28",
+          "m34"
+        ]
+      },
+      {
+        "id": "g161",
+        "winner": "a",
+        "ratingEnabled": true,
+        "scoreA": 6,
+        "b": [
+          "m44",
+          "m22"
+        ],
+        "scoreB": 3,
+        "settledAt": "2026-11-15T10:56:40.664Z",
+        "a": [
+          "m20",
+          "m10"
+        ],
+        "manual": true,
+        "date": "2026-11-15",
+        "court": "코트 1",
+        "coinEnabled": false,
+        "createdAt": "2026-11-15T10:30:55.527Z"
+      },
+      {
+        "createdAt": "2026-11-15T10:39:20.496Z",
+        "ratingEnabled": true,
+        "date": "2026-11-15",
+        "coinEnabled": false,
+        "settledAt": "2026-11-15T10:56:51.824Z",
+        "b": [
+          "m17",
+          "m47"
+        ],
+        "scoreB": 0,
+        "scoreA": 6,
+        "a": [
+          "m26",
+          "m28"
+        ],
+        "id": "g165",
+        "mixedFixedDraw": false,
+        "typeEdits": [
+          {
+            "toRating": true,
+            "fromCoin": true,
+            "toCoin": false,
+            "at": "2026-11-15T10:56:19.724Z",
+            "fromRating": true
+          }
+        ],
+        "fixedTeam": false,
+        "rerolled": true,
+        "court": "코트 2",
+        "winner": "a"
+      },
+      {
+        "a": [
+          "m26",
+          "m10"
+        ],
+        "winner": "a",
+        "scoreB": 3,
+        "settledAt": "2026-11-15T11:25:05.394Z",
+        "coinEnabled": false,
+        "ratingEnabled": true,
+        "b": [
+          "m14",
+          "m20"
+        ],
+        "court": "코트 1",
+        "id": "g174",
+        "scoreA": 6,
+        "date": "2026-11-15"
+      },
+      {
+        "a": [
+          "m27",
+          "m17"
+        ],
+        "date": "2026-11-15",
+        "coinEnabled": false,
+        "id": "g175",
+        "scoreB": 6,
+        "winner": "b",
+        "scoreA": 4,
+        "ratingEnabled": true,
+        "b": [
+          "m47",
+          "m44"
+        ],
+        "settledAt": "2026-11-15T11:29:55.654Z",
+        "court": "코트 2"
+      },
+      {
+        "b": [
+          "m22",
+          "m44"
+        ],
+        "scoreB": 6,
+        "settledAt": "2026-11-18T12:14:09.864Z",
+        "manual": true,
+        "id": "g232",
+        "date": "2026-11-18",
+        "coinEnabled": true,
+        "createdAt": "2026-11-18T09:56:08.472Z",
+        "winner": "b",
+        "court": "코트 1",
+        "coinStake": 1,
+        "ratingEnabled": true,
+        "a": [
+          "m17",
+          "m29"
+        ],
+        "scoreA": 5
+      },
+      {
+        "manual": true,
+        "coinEnabled": false,
+        "settledAt": "2026-11-18T12:15:45.820Z",
+        "scoreB": 4,
+        "createdAt": "2026-11-18T12:15:35.544Z",
+        "a": [
+          "m44",
+          "m22"
+        ],
+        "ratingEnabled": true,
+        "court": "코트 1",
+        "b": [
+          "m17",
+          "m36"
+        ],
+        "winner": "a",
+        "date": "2026-11-18",
+        "scoreA": 6,
+        "id": "g233"
+      },
+      {
+        "a": [
+          "m44",
+          "m22"
+        ],
+        "scoreA": 6,
+        "settledAt": "2026-11-18T13:09:34.628Z",
+        "coinEnabled": false,
+        "id": "g235",
+        "winner": "a",
+        "createdAt": "2026-11-18T13:09:23.033Z",
+        "ratingEnabled": true,
+        "court": "코트 1",
+        "date": "2026-11-18",
+        "scoreB": 4,
+        "manual": true,
+        "b": [
+          "m17",
+          "m24"
+        ]
+      },
+      {
+        "settledAt": "2026-11-21T08:22:33.580Z",
+        "b": [
+          "m33",
+          "m28"
+        ],
+        "scoreA": 3,
+        "createdAt": "2026-11-21T08:22:22.460Z",
+        "winner": "b",
+        "coinEnabled": true,
+        "date": "2026-11-21",
+        "ratingEnabled": true,
+        "id": "g277",
+        "coinStake": 1,
+        "court": "코트 1",
+        "scoreB": 6,
+        "a": [
+          "member-goyounghoon-2026",
+          "m6"
+        ],
+        "manual": true
+      },
+      {
+        "coinStake": 2,
+        "winner": "a",
+        "a": [
+          "m22",
+          "m33"
+        ],
+        "scoreA": 6,
+        "coinEnabled": true,
+        "tournamentId": "tour276",
+        "court": "코트 1",
+        "id": "g278",
+        "b": [
+          "m18",
+          "m4"
+        ],
+        "settledAt": "2026-11-21T09:13:10.041Z",
+        "date": "2026-11-21",
+        "scoreB": 1,
+        "leagueMatchIndex": 2,
+        "ratingEnabled": true,
+        "coinLossStake": 1
+      },
+      {
+        "ratingEnabled": true,
+        "leagueMatchIndex": 4,
+        "a": [
+          "m18",
+          "m28"
+        ],
+        "court": "코트 1",
+        "tournamentId": "tour276",
+        "id": "g279",
+        "scoreA": 6,
+        "winner": "a",
+        "coinStake": 2,
+        "coinEnabled": true,
+        "scoreB": 2,
+        "settledAt": "2026-11-21T09:17:20.333Z",
+        "b": [
+          "m34",
+          "m6"
+        ],
+        "date": "2026-11-21",
+        "coinLossStake": 1
+      },
+      {
+        "b": [
+          "m24",
+          "m33"
+        ],
+        "scoreB": 4,
+        "ratingEnabled": true,
+        "settledAt": "2026-11-21T10:05:18.042Z",
+        "winner": "a",
+        "id": "g280",
+        "court": "코트 2",
+        "leagueMatchIndex": 7,
+        "a": [
+          "m6",
+          "m8"
+        ],
+        "scoreA": 6,
+        "date": "2026-11-21",
+        "coinEnabled": true,
+        "tournamentId": "tour276",
+        "coinStake": 2,
+        "coinLossStake": 1
+      },
+      {
+        "b": [
+          "m34",
+          "m22"
+        ],
+        "winner": "a",
+        "scoreA": 6,
+        "settledAt": "2026-11-21T11:02:51.175Z",
+        "date": "2026-11-21",
+        "tournamentId": "tour276",
+        "coinEnabled": true,
+        "scoreB": 3,
+        "leagueMatchIndex": 9,
+        "id": "g293",
+        "a": [
+          "m14",
+          "m53"
+        ],
+        "ratingEnabled": true,
+        "coinStake": 2,
+        "court": "코트 2",
+        "coinLossStake": 1
+      },
+      {
+        "b": [
+          "m4",
+          "m22"
+        ],
+        "date": "2026-11-21",
+        "winner": "b",
+        "tournamentId": "tour276",
+        "settledAt": "2026-11-21T11:03:11.504Z",
+        "id": "g294",
+        "scoreA": 5,
+        "scoreB": 6,
+        "coinStake": 2,
+        "leagueMatchIndex": 6,
+        "court": "코트 1",
+        "ratingEnabled": true,
+        "a": [
+          "m20",
+          "member-goyounghoon-2026"
+        ],
+        "coinEnabled": true,
+        "coinLossStake": 1
+      },
+      {
+        "settledAt": "2026-11-21T11:03:59.476Z",
+        "winner": "b",
+        "tournamentId": "tour276",
+        "court": "코트 1",
+        "a": [
+          "member-goyounghoon-2026",
+          "m28"
+        ],
+        "scoreA": 4,
+        "coinEnabled": true,
+        "b": [
+          "m8",
+          "m53"
+        ],
+        "leagueMatchIndex": 0,
+        "coinStake": 2,
+        "scoreB": 6,
+        "ratingEnabled": true,
+        "date": "2026-11-21",
+        "id": "g295",
+        "coinLossStake": 1
+      },
+      {
+        "ratingEnabled": true,
+        "settledAt": "2026-11-21T11:04:09.223Z",
+        "scoreA": 1,
+        "coinEnabled": true,
+        "winner": "b",
+        "leagueMatchIndex": 1,
+        "b": [
+          "m24",
+          "m6"
+        ],
+        "tournamentId": "tour276",
+        "a": [
+          "m34",
+          "m20"
+        ],
+        "court": "코트 2",
+        "coinStake": 2,
+        "scoreB": 6,
+        "id": "g296",
+        "date": "2026-11-21",
+        "coinLossStake": 1
+      },
+      {
+        "b": [
+          "m8",
+          "member-goyounghoon-2026"
+        ],
+        "ratingEnabled": true,
+        "coinStake": 2,
+        "id": "g297",
+        "date": "2026-11-21",
+        "scoreB": 4,
+        "coinEnabled": true,
+        "a": [
+          "m20",
+          "m14"
+        ],
+        "scoreA": 6,
+        "court": "코트 2",
+        "settledAt": "2026-11-21T11:33:55.608Z",
+        "tournamentId": "tour276",
+        "winner": "a",
+        "leagueMatchIndex": 3,
+        "coinLossStake": 1
+      },
+      {
+        "date": "2026-11-21",
+        "a": [
+          "m18",
+          "m24"
+        ],
+        "coinEnabled": true,
+        "b": [
+          "m4",
+          "m53"
+        ],
+        "ratingEnabled": true,
+        "id": "g298",
+        "court": "코트 1",
+        "winner": null
+      },
+      {
+        "winner": null,
+        "b": [
+          "m22",
+          "m28"
+        ],
+        "ratingEnabled": true,
+        "court": "코트 2",
+        "id": "g299",
+        "a": [
+          "m14",
+          "m33"
+        ],
+        "date": "2026-11-21",
+        "coinEnabled": true
+      },
+      {
+        "b": [
+          "m53",
+          "m24"
+        ],
+        "ratingEnabled": true,
+        "coinEnabled": true,
+        "date": "2026-11-21",
+        "settledAt": "2026-11-22T01:49:24.008Z",
+        "scoreB": 6,
+        "scoreA": 2,
+        "court": "코트 2",
+        "tournamentId": "tour276",
+        "coinStake": 2,
+        "winner": "b",
+        "a": [
+          "m22",
+          "m33"
+        ],
+        "id": "g302",
+        "leagueMatchIndex": 5,
+        "coinLossStake": 1
+      },
+      {
+        "settledAt": "2026-11-22T08:32:32.096Z",
+        "ratingEnabled": true,
+        "scoreA": 2,
+        "tournamentId": "tour276",
+        "leagueMatchIndex": 8,
+        "winner": "b",
+        "b": [
+          "m14",
+          "m20"
+        ],
+        "id": "g332",
+        "a": [
+          "m4",
+          "m28"
+        ],
+        "coinStake": 2,
+        "court": "코트 1",
+        "date": "2026-11-21",
+        "coinEnabled": true,
+        "scoreB": 6,
+        "coinLossStake": 1
+      }
+    ],
+    "attendanceAudit": [
+      {
+        "date": "2026-11-14",
+        "id": "audit-37",
+        "type": "signup_cancel",
+        "at": "2026-11-14T09:39:20.224Z",
+        "details": "",
+        "memberId": "m6"
+      },
+      {
+        "details": "",
+        "memberId": "m6",
+        "at": "2026-11-14T09:39:29.520Z",
+        "type": "signup",
+        "id": "audit-38",
+        "date": "2026-11-14"
+      },
+      {
+        "date": "2026-11-14",
+        "memberId": "m44",
+        "details": "",
+        "type": "signup",
+        "at": "2026-11-14T09:39:33.793Z",
+        "id": "audit-39"
+      },
+      {
+        "type": "signup",
+        "memberId": "m40",
+        "at": "2026-11-14T10:22:26.552Z",
+        "details": "",
+        "date": "2026-11-14",
+        "id": "audit-49"
+      },
+      {
+        "date": "2026-11-14",
+        "memberId": "m6",
+        "type": "bonus_paid",
+        "at": "2026-11-14T12:02:25.421Z",
+        "details": "",
+        "id": "audit-74"
+      },
+      {
+        "memberId": "m14",
+        "details": "",
+        "id": "audit-76",
+        "type": "bonus_paid",
+        "at": "2026-11-14T12:02:27.604Z",
+        "date": "2026-11-14"
+      },
+      {
+        "date": "2026-11-14",
+        "details": "",
+        "at": "2026-11-14T12:02:29.802Z",
+        "type": "bonus_paid",
+        "memberId": "m17",
+        "id": "audit-78"
+      },
+      {
+        "id": "audit-80",
+        "details": "",
+        "date": "2026-11-14",
+        "memberId": "m18",
+        "type": "bonus_paid",
+        "at": "2026-11-14T12:02:31.972Z"
+      },
+      {
+        "date": "2026-11-14",
+        "type": "bonus_paid",
+        "at": "2026-11-14T12:02:34.718Z",
+        "memberId": "m20",
+        "details": "",
+        "id": "audit-82"
+      },
+      {
+        "date": "2026-11-14",
+        "at": "2026-11-14T12:02:36.322Z",
+        "type": "bonus_paid",
+        "id": "audit-84",
+        "memberId": "m44",
+        "details": ""
+      },
+      {
+        "date": "2026-11-14",
+        "id": "audit-86",
+        "details": "",
+        "type": "bonus_paid",
+        "at": "2026-11-14T12:02:38.940Z",
+        "memberId": "m43"
+      },
+      {
+        "date": "2026-11-14",
+        "memberId": "m28",
+        "type": "bonus_paid",
+        "at": "2026-11-14T12:02:40.623Z",
+        "id": "audit-88",
+        "details": ""
+      },
+      {
+        "memberId": "m40",
+        "at": "2026-11-14T12:02:42.473Z",
+        "date": "2026-11-14",
+        "id": "audit-90",
+        "type": "bonus_paid",
+        "details": ""
+      },
+      {
+        "date": "2026-11-14",
+        "details": "",
+        "at": "2026-11-14T12:02:44.256Z",
+        "type": "bonus_paid",
+        "memberId": "m51",
+        "id": "audit-92"
+      },
+      {
+        "id": "audit-97",
+        "date": "2026-11-14",
+        "details": "",
+        "type": "left_court",
+        "memberId": "m51",
+        "at": "2026-11-14T12:27:02.977Z"
+      },
+      {
+        "details": "",
+        "at": "2026-11-14T12:27:03.437Z",
+        "date": "2026-11-14",
+        "memberId": "m40",
+        "id": "audit-98",
+        "type": "left_court"
+      },
+      {
+        "date": "2026-11-14",
+        "type": "left_court",
+        "id": "audit-99",
+        "at": "2026-11-14T12:27:05.447Z",
+        "details": "",
+        "memberId": "m43"
+      },
+      {
+        "id": "audit-100",
+        "date": "2026-11-14",
+        "details": "",
+        "memberId": "m6",
+        "at": "2026-11-14T12:27:08.393Z",
+        "type": "left_court"
+      },
+      {
+        "memberId": "m14",
+        "type": "left_court",
+        "id": "audit-101",
+        "details": "",
+        "date": "2026-11-14",
+        "at": "2026-11-14T12:34:04.502Z"
+      },
+      {
+        "date": "2026-11-14",
+        "memberId": "m18",
+        "type": "left_court",
+        "at": "2026-11-14T12:34:04.692Z",
+        "details": "",
+        "id": "audit-102"
+      },
+      {
+        "type": "left_court",
+        "at": "2026-11-14T12:34:04.875Z",
+        "date": "2026-11-14",
+        "memberId": "m44",
+        "details": "",
+        "id": "audit-103"
+      },
+      {
+        "at": "2026-11-14T12:34:05.101Z",
+        "date": "2026-11-14",
+        "details": "",
+        "id": "audit-104",
+        "memberId": "m28",
+        "type": "left_court"
+      },
+      {
+        "details": "",
+        "type": "left_court",
+        "date": "2026-11-14",
+        "at": "2026-11-14T12:34:05.460Z",
+        "memberId": "m17",
+        "id": "audit-105"
+      },
+      {
+        "at": "2026-11-14T12:34:05.641Z",
+        "type": "left_court",
+        "details": "",
+        "id": "audit-106",
+        "memberId": "m20",
+        "date": "2026-11-14"
+      },
+      {
+        "at": "2026-11-14T14:33:07.109Z",
+        "details": "",
+        "type": "signup",
+        "id": "audit-107",
+        "date": "2026-11-14",
+        "memberId": "m48"
+      },
+      {
+        "memberId": "m48",
+        "id": "audit-108",
+        "type": "signup_cancel",
+        "details": "",
+        "at": "2026-11-14T14:33:09.152Z",
+        "date": "2026-11-14"
+      },
+      {
+        "type": "signup",
+        "at": "2026-11-14T15:27:21.078Z",
+        "date": "2026-11-15",
+        "memberId": "m18",
+        "details": "",
+        "id": "audit-109"
+      },
+      {
+        "at": "2026-11-14T15:27:48.486Z",
+        "memberId": "m14",
+        "date": "2026-11-15",
+        "id": "audit-110",
+        "type": "signup",
+        "details": ""
+      },
+      {
+        "details": "",
+        "id": "audit-111",
+        "at": "2026-11-14T15:28:33.108Z",
+        "memberId": "m18",
+        "type": "signup",
+        "date": "2026-11-13"
+      },
+      {
+        "at": "2026-11-14T15:29:23.914Z",
+        "details": "",
+        "memberId": "m18",
+        "type": "signup",
+        "date": "2026-11-11",
+        "id": "audit-112"
+      },
+      {
+        "type": "signup",
+        "at": "2026-11-14T22:14:20.016Z",
+        "details": "",
+        "date": "2026-11-15",
+        "memberId": "m4",
+        "id": "audit-113"
+      },
+      {
+        "details": "",
+        "at": "2026-11-14T23:38:33.877Z",
+        "id": "audit-114",
+        "memberId": "m22",
+        "date": "2026-11-15",
+        "type": "signup"
+      },
+      {
+        "id": "audit-115",
+        "memberId": "m4",
+        "details": "",
+        "type": "signup_cancel",
+        "date": "2026-11-15",
+        "at": "2026-11-15T00:45:45.180Z"
+      },
+      {
+        "type": "signup",
+        "date": "2026-11-15",
+        "at": "2026-11-15T00:45:45.811Z",
+        "memberId": "m4",
+        "details": "",
+        "id": "audit-116"
+      },
+      {
+        "type": "signup_cancel",
+        "at": "2026-11-15T00:59:05.575Z",
+        "date": "2026-11-15",
+        "details": "",
+        "memberId": "m4",
+        "id": "audit-117"
+      },
+      {
+        "type": "signup",
+        "id": "audit-118",
+        "date": "2026-11-15",
+        "at": "2026-11-15T01:44:19.248Z",
+        "memberId": "m34",
+        "details": ""
+      },
+      {
+        "details": "",
+        "id": "audit-119",
+        "at": "2026-11-15T07:28:11.709Z",
+        "memberId": "m44",
+        "type": "signup",
+        "date": "2026-11-15"
+      },
+      {
+        "at": "2026-11-15T08:21:09.332Z",
+        "type": "signup",
+        "date": "2026-11-15",
+        "id": "audit-121",
+        "details": "",
+        "memberId": "m27"
+      },
+      {
+        "at": "2026-11-15T08:21:26.494Z",
+        "memberId": "m10",
+        "type": "signup",
+        "details": "",
+        "id": "audit-122",
+        "date": "2026-11-15"
+      },
+      {
+        "details": "",
+        "id": "audit-124",
+        "date": "2026-11-15",
+        "type": "left_court",
+        "at": "2026-11-15T08:37:28.558Z",
+        "memberId": "m34"
+      },
+      {
+        "date": "2026-11-15",
+        "memberId": "m34",
+        "type": "return_court",
+        "at": "2026-11-15T08:38:38.857Z",
+        "id": "audit-125",
+        "details": ""
+      },
+      {
+        "date": "2026-11-15",
+        "id": "audit-126",
+        "memberId": "m20",
+        "type": "signup",
+        "at": "2026-11-15T08:45:02.960Z",
+        "details": ""
+      },
+      {
+        "at": "2026-11-15T08:45:18.978Z",
+        "date": "2026-11-15",
+        "type": "signup",
+        "memberId": "m47",
+        "details": "",
+        "id": "audit-127"
+      },
+      {
+        "type": "left_court",
+        "id": "audit-131",
+        "date": "2026-11-15",
+        "at": "2026-11-15T08:54:13.082Z",
+        "details": "",
+        "memberId": "m27"
+      },
+      {
+        "date": "2026-11-15",
+        "details": "",
+        "type": "return_court",
+        "id": "audit-132",
+        "at": "2026-11-15T08:54:14.577Z",
+        "memberId": "m27"
+      },
+      {
+        "at": "2026-11-15T09:02:55.150Z",
+        "details": "",
+        "memberId": "m28",
+        "date": "2026-11-15",
+        "type": "signup",
+        "id": "audit-137"
+      },
+      {
+        "memberId": "m22",
+        "id": "audit-139",
+        "details": "",
+        "type": "left_court",
+        "at": "2026-11-15T09:11:25.459Z",
+        "date": "2026-11-15"
+      },
+      {
+        "date": "2026-11-15",
+        "details": "",
+        "at": "2026-11-15T09:11:26.166Z",
+        "memberId": "m27",
+        "type": "left_court",
+        "id": "audit-140"
+      },
+      {
+        "details": "",
+        "memberId": "m44",
+        "date": "2026-11-15",
+        "id": "audit-141",
+        "type": "left_court",
+        "at": "2026-11-15T09:11:28.686Z"
+      },
+      {
+        "memberId": "m27",
+        "at": "2026-11-15T09:31:58.403Z",
+        "details": "",
+        "type": "return_court",
+        "id": "audit-143",
+        "date": "2026-11-15"
+      },
+      {
+        "type": "return_court",
+        "id": "audit-144",
+        "date": "2026-11-15",
+        "details": "",
+        "at": "2026-11-15T09:31:59.751Z",
+        "memberId": "m22"
+      },
+      {
+        "date": "2026-11-15",
+        "memberId": "m44",
+        "at": "2026-11-15T09:32:00.709Z",
+        "type": "return_court",
+        "details": "",
+        "id": "audit-145"
+      },
+      {
+        "date": "2026-11-15",
+        "memberId": "m27",
+        "id": "audit-147",
+        "type": "left_court",
+        "at": "2026-11-15T09:46:40.829Z",
+        "details": ""
+      },
+      {
+        "type": "return_court",
+        "at": "2026-11-15T09:46:46.872Z",
+        "date": "2026-11-15",
+        "details": "",
+        "memberId": "m27",
+        "id": "audit-148"
+      },
+      {
+        "at": "2026-11-15T09:55:27.415Z",
+        "date": "2026-11-15",
+        "details": "",
+        "type": "left_court",
+        "id": "audit-150",
+        "memberId": "m17"
+      },
+      {
+        "at": "2026-11-15T09:55:29.968Z",
+        "type": "left_court",
+        "details": "",
+        "date": "2026-11-15",
+        "memberId": "m44",
+        "id": "audit-151"
+      },
+      {
+        "id": "audit-152",
+        "memberId": "m22",
+        "date": "2026-11-15",
+        "details": "",
+        "type": "left_court",
+        "at": "2026-11-15T09:55:30.189Z"
+      },
+      {
+        "memberId": "m44",
+        "at": "2026-11-15T09:55:51.425Z",
+        "type": "return_court",
+        "details": "",
+        "id": "audit-154",
+        "date": "2026-11-15"
+      },
+      {
+        "type": "return_court",
+        "date": "2026-11-15",
+        "id": "audit-155",
+        "memberId": "m22",
+        "at": "2026-11-15T09:55:51.625Z",
+        "details": ""
+      },
+      {
+        "id": "audit-156",
+        "details": "",
+        "date": "2026-11-15",
+        "at": "2026-11-15T09:55:51.835Z",
+        "type": "return_court",
+        "memberId": "m17"
+      },
+      {
+        "memberId": "m26",
+        "type": "signup",
+        "details": "",
+        "date": "2026-11-15",
+        "at": "2026-11-15T10:07:11.984Z",
+        "id": "audit-157"
+      },
+      {
+        "at": "2026-11-15T10:54:21.207Z",
+        "date": "2026-11-15",
+        "id": "audit-166",
+        "type": "left_court",
+        "memberId": "m34",
+        "details": ""
+      },
+      {
+        "date": "2026-11-15",
+        "details": "",
+        "at": "2026-11-15T10:56:53.942Z",
+        "type": "left_court",
+        "memberId": "m18",
+        "id": "audit-167"
+      },
+      {
+        "type": "left_court",
+        "id": "audit-168",
+        "memberId": "m17",
+        "date": "2026-11-15",
+        "at": "2026-11-15T10:56:56.753Z",
+        "details": ""
+      },
+      {
+        "id": "audit-169",
+        "at": "2026-11-15T10:57:02.411Z",
+        "date": "2026-11-15",
+        "type": "left_court",
+        "memberId": "m28",
+        "details": ""
+      },
+      {
+        "type": "left_court",
+        "at": "2026-11-15T10:57:05.680Z",
+        "date": "2026-11-15",
+        "details": "",
+        "memberId": "m47",
+        "id": "audit-170"
+      },
+      {
+        "at": "2026-11-15T10:57:19.219Z",
+        "memberId": "m17",
+        "details": "",
+        "type": "return_court",
+        "date": "2026-11-15",
+        "id": "audit-171"
+      },
+      {
+        "at": "2026-11-15T10:57:40.427Z",
+        "date": "2026-11-15",
+        "details": "",
+        "id": "audit-172",
+        "type": "left_court",
+        "memberId": "m22"
+      },
+      {
+        "at": "2026-11-15T10:58:10.983Z",
+        "type": "return_court",
+        "details": "",
+        "id": "audit-173",
+        "date": "2026-11-15",
+        "memberId": "m47"
+      },
+      {
+        "type": "signup",
+        "id": "audit-180",
+        "memberId": "m22",
+        "date": "2026-11-18",
+        "at": "2026-11-16T00:55:33.397Z",
+        "details": ""
+      },
+      {
+        "type": "signup",
+        "id": "audit-181",
+        "date": "2026-11-16",
+        "at": "2026-11-16T01:15:39.597Z",
+        "details": "",
+        "memberId": "m22"
+      },
+      {
+        "at": "2026-11-16T01:16:16.652Z",
+        "details": "",
+        "memberId": "m22",
+        "type": "signup",
+        "date": "2026-11-21",
+        "id": "audit-182"
+      },
+      {
+        "type": "signup",
+        "at": "2026-11-16T01:49:48.349Z",
+        "date": "2026-11-16",
+        "details": "",
+        "memberId": "m29",
+        "id": "audit-183"
+      },
+      {
+        "id": "audit-184",
+        "type": "signup",
+        "date": "2026-11-16",
+        "memberId": "m44",
+        "details": "",
+        "at": "2026-11-16T04:36:14.943Z"
+      },
+      {
+        "id": "audit-185",
+        "details": "",
+        "memberId": "m43",
+        "type": "signup",
+        "at": "2026-11-16T04:36:29.655Z",
+        "date": "2026-11-16"
+      },
+      {
+        "at": "2026-11-16T05:56:45.130Z",
+        "details": "",
+        "type": "signup",
+        "date": "2026-11-21",
+        "memberId": "m6",
+        "id": "audit-186"
+      },
+      {
+        "type": "signup",
+        "date": "2026-11-18",
+        "id": "audit-187",
+        "at": "2026-11-16T05:57:00.055Z",
+        "memberId": "m47",
+        "details": ""
+      },
+      {
+        "date": "2026-11-18",
+        "at": "2026-11-16T09:18:03.247Z",
+        "type": "signup",
+        "memberId": "m48",
+        "details": "",
+        "id": "audit-188"
+      },
+      {
+        "memberId": "m53",
+        "date": "2026-11-21",
+        "details": "",
+        "type": "signup",
+        "id": "audit-189",
+        "at": "2026-11-16T10:02:40.854Z"
+      },
+      {
+        "type": "signup_cancel",
+        "date": "2026-11-21",
+        "at": "2026-11-16T10:02:43.511Z",
+        "details": "",
+        "id": "audit-190",
+        "memberId": "m53"
+      },
+      {
+        "date": "2026-11-21",
+        "type": "signup",
+        "at": "2026-11-16T10:03:26.090Z",
+        "id": "audit-191",
+        "details": "",
+        "memberId": "m53"
+      },
+      {
+        "details": "",
+        "id": "audit-192",
+        "at": "2026-11-16T10:03:43.847Z",
+        "memberId": "m53",
+        "type": "signup_cancel",
+        "date": "2026-11-21"
+      },
+      {
+        "details": "",
+        "memberId": "m53",
+        "at": "2026-11-16T10:05:18.029Z",
+        "type": "signup",
+        "id": "audit-193",
+        "date": "2026-11-21"
+      },
+      {
+        "id": "audit-194",
+        "details": "",
+        "type": "signup",
+        "memberId": "m17",
+        "at": "2026-11-17T01:53:57.799Z",
+        "date": "2026-11-22"
+      },
+      {
+        "at": "2026-11-17T02:35:15.218Z",
+        "memberId": "m53",
+        "date": "2026-11-21",
+        "id": "audit-195",
+        "type": "signup_cancel",
+        "details": ""
+      },
+      {
+        "memberId": "m33",
+        "details": "",
+        "at": "2026-11-17T02:49:55.788Z",
+        "date": "2026-11-21",
+        "id": "audit-196",
+        "type": "signup"
+      },
+      {
+        "details": "",
+        "id": "audit-197",
+        "at": "2026-11-17T04:08:28.296Z",
+        "memberId": "m28",
+        "date": "2026-11-21",
+        "type": "signup"
+      },
+      {
+        "at": "2026-11-17T04:09:04.040Z",
+        "date": "2026-11-18",
+        "memberId": "m1",
+        "type": "signup",
+        "id": "audit-198",
+        "details": ""
+      },
+      {
+        "at": "2026-11-17T04:09:04.990Z",
+        "date": "2026-11-18",
+        "memberId": "m1",
+        "details": "",
+        "type": "signup_cancel",
+        "id": "audit-199"
+      },
+      {
+        "at": "2026-11-17T04:16:59.904Z",
+        "memberId": "member-goyounghoon-2026",
+        "date": "2026-11-21",
+        "id": "audit-200",
+        "type": "signup",
+        "details": ""
+      },
+      {
+        "details": "",
+        "at": "2026-11-17T04:17:02.311Z",
+        "date": "2026-11-21",
+        "id": "audit-201",
+        "memberId": "member-goyounghoon-2026",
+        "type": "signup_cancel"
+      },
+      {
+        "details": "",
+        "memberId": "m17",
+        "id": "audit-202",
+        "at": "2026-11-17T04:17:32.456Z",
+        "date": "2026-11-24",
+        "type": "signup"
+      },
+      {
+        "id": "audit-203",
+        "details": "",
+        "type": "signup",
+        "memberId": "m43",
+        "at": "2026-11-17T04:17:40.463Z",
+        "date": "2026-11-21"
+      },
+      {
+        "type": "signup",
+        "at": "2026-11-17T04:17:44.843Z",
+        "date": "2026-11-25",
+        "memberId": "m17",
+        "id": "audit-204",
+        "details": ""
+      },
+      {
+        "memberId": "m36",
+        "id": "audit-205",
+        "type": "signup",
+        "at": "2026-11-17T04:18:06.947Z",
+        "details": "",
+        "date": "2026-11-18"
+      },
+      {
+        "date": "2026-11-18",
+        "type": "signup",
+        "at": "2026-11-17T04:18:12.039Z",
+        "id": "audit-206",
+        "details": "",
+        "memberId": "m43"
+      },
+      {
+        "at": "2026-11-17T04:18:12.992Z",
+        "memberId": "m36",
+        "details": "",
+        "type": "signup_cancel",
+        "id": "audit-207",
+        "date": "2026-11-18"
+      },
+      {
+        "id": "audit-208",
+        "type": "signup",
+        "date": "2026-11-18",
+        "memberId": "m36",
+        "details": "",
+        "at": "2026-11-17T04:18:14.114Z"
+      },
+      {
+        "details": "",
+        "at": "2026-11-17T04:18:37.989Z",
+        "date": "2026-11-21",
+        "id": "audit-209",
+        "memberId": "member-goyounghoon-2026",
+        "type": "signup"
+      },
+      {
+        "type": "signup",
+        "date": "2026-11-18",
+        "at": "2026-11-17T04:19:25.597Z",
+        "details": "",
+        "id": "audit-210",
+        "memberId": "m29"
+      },
+      {
+        "memberId": "m32",
+        "date": "2026-11-22",
+        "details": "",
+        "at": "2026-11-17T04:25:01.133Z",
+        "type": "signup",
+        "id": "audit-211"
+      },
+      {
+        "id": "audit-212",
+        "details": "",
+        "memberId": "m49",
+        "type": "signup",
+        "at": "2026-11-17T04:52:13.520Z",
+        "date": "2026-11-24"
+      },
+      {
+        "id": "audit-213",
+        "type": "signup",
+        "details": "",
+        "date": "2026-11-20",
+        "memberId": "m18",
+        "at": "2026-11-17T08:42:57.173Z"
+      },
+      {
+        "id": "audit-214",
+        "date": "2026-11-17",
+        "details": "",
+        "type": "signup",
+        "memberId": "m48",
+        "at": "2026-11-17T11:27:47.595Z"
+      },
+      {
+        "at": "2026-11-17T11:27:48.686Z",
+        "details": "",
+        "date": "2026-11-17",
+        "memberId": "m48",
+        "type": "signup_cancel",
+        "id": "audit-215"
+      },
+      {
+        "memberId": "m53",
+        "type": "signup",
+        "id": "audit-216",
+        "date": "2026-11-21",
+        "details": "",
+        "at": "2026-11-17T11:40:26.133Z"
+      },
+      {
+        "date": "2026-11-18",
+        "details": "",
+        "type": "signup_cancel",
+        "at": "2026-11-17T13:54:38.819Z",
+        "id": "audit-217",
+        "memberId": "m36"
+      },
+      {
+        "date": "2026-11-18",
+        "memberId": "m48",
+        "details": "",
+        "at": "2026-11-18T00:16:26.052Z",
+        "type": "signup_cancel",
+        "id": "audit-218"
+      },
+      {
+        "id": "audit-219",
+        "details": "",
+        "date": "2026-11-18",
+        "at": "2026-11-18T01:03:51.977Z",
+        "memberId": "m36",
+        "type": "signup"
+      },
+      {
+        "details": "",
+        "type": "signup",
+        "id": "audit-220",
+        "date": "2026-11-18",
+        "memberId": "m1",
+        "at": "2026-11-18T01:06:35.407Z"
+      },
+      {
+        "id": "audit-221",
+        "at": "2026-11-18T02:25:04.965Z",
+        "date": "2026-11-18",
+        "details": "",
+        "memberId": "m24",
+        "type": "signup"
+      },
+      {
+        "id": "audit-222",
+        "memberId": "m24",
+        "date": "2026-11-20",
+        "details": "",
+        "type": "signup",
+        "at": "2026-11-18T02:25:33.165Z"
+      },
+      {
+        "id": "audit-223",
+        "type": "signup",
+        "memberId": "m28",
+        "date": "2026-11-22",
+        "details": "",
+        "at": "2026-11-18T02:25:54.526Z"
+      },
+      {
+        "details": "",
+        "memberId": "m34",
+        "type": "signup",
+        "date": "2026-11-18",
+        "at": "2026-11-18T02:26:43.468Z",
+        "id": "audit-224"
+      },
+      {
+        "id": "audit-225",
+        "memberId": "m34",
+        "date": "2026-11-21",
+        "details": "",
+        "at": "2026-11-18T02:32:08.648Z",
+        "type": "signup"
+      },
+      {
+        "details": "",
+        "id": "audit-226",
+        "memberId": "m43",
+        "type": "signup_cancel",
+        "at": "2026-11-18T03:39:52.121Z",
+        "date": "2026-11-18"
+      },
+      {
+        "details": "",
+        "type": "signup",
+        "id": "audit-227",
+        "date": "2026-11-21",
+        "at": "2026-11-18T06:00:03.222Z",
+        "memberId": "m20"
+      },
+      {
+        "date": "2026-11-18",
+        "at": "2026-11-18T06:20:07.990Z",
+        "details": "",
+        "type": "signup_cancel",
+        "memberId": "m34",
+        "id": "audit-228"
+      },
+      {
+        "memberId": "m24",
+        "details": "",
+        "id": "audit-229",
+        "date": "2026-11-18",
+        "at": "2026-11-18T07:13:14.850Z",
+        "type": "signup_cancel"
+      },
+      {
+        "at": "2026-11-18T07:33:28.796Z",
+        "memberId": "m44",
+        "details": "",
+        "date": "2026-11-18",
+        "type": "signup",
+        "id": "audit-230"
+      },
+      {
+        "date": "2026-11-21",
+        "id": "audit-231",
+        "memberId": "m4",
+        "type": "signup",
+        "at": "2026-11-18T08:04:17.616Z",
+        "details": ""
+      },
+      {
+        "memberId": "m24",
+        "at": "2026-11-18T13:08:46.559Z",
+        "details": "",
+        "type": "signup",
+        "id": "audit-234",
+        "date": "2026-11-18"
+      },
+      {
+        "memberId": "m23",
+        "date": "2026-11-18",
+        "id": "audit-236",
+        "details": "",
+        "type": "signup",
+        "at": "2026-11-18T13:46:48.157Z"
+      },
+      {
+        "id": "audit-237",
+        "type": "signup",
+        "details": "",
+        "at": "2026-11-18T21:18:09.734Z",
+        "memberId": "m8",
+        "date": "2026-11-20"
+      },
+      {
+        "date": "2026-11-21",
+        "type": "signup",
+        "details": "",
+        "at": "2026-11-19T03:29:31.859Z",
+        "id": "audit-238",
+        "memberId": "member-goyounghoon-2026"
+      },
+      {
+        "at": "2026-11-19T03:29:32.985Z",
+        "memberId": "member-goyounghoon-2026",
+        "type": "signup_cancel",
+        "date": "2026-11-21",
+        "details": "",
+        "id": "audit-239"
+      },
+      {
+        "id": "audit-240",
+        "date": "2026-11-19",
+        "memberId": "m53",
+        "type": "signup",
+        "details": "",
+        "at": "2026-11-19T03:32:51.111Z"
+      },
+      {
+        "id": "audit-241",
+        "memberId": "member-goyounghoon-2026",
+        "at": "2026-11-19T03:32:55.937Z",
+        "type": "signup",
+        "details": "",
+        "date": "2026-11-19"
+      },
+      {
+        "memberId": "m53",
+        "details": "",
+        "at": "2026-11-19T03:32:58.396Z",
+        "type": "signup_cancel",
+        "id": "audit-242",
+        "date": "2026-11-19"
+      },
+      {
+        "memberId": "member-goyounghoon-2026",
+        "details": "",
+        "date": "2026-11-19",
+        "id": "audit-243",
+        "type": "signup_cancel",
+        "at": "2026-11-19T03:33:05.797Z"
+      },
+      {
+        "type": "signup",
+        "at": "2026-11-19T03:33:07.411Z",
+        "details": "",
+        "date": "2026-11-19",
+        "memberId": "m53",
+        "id": "audit-244"
+      },
+      {
+        "memberId": "m53",
+        "details": "",
+        "id": "audit-245",
+        "at": "2026-11-19T03:33:18.817Z",
+        "type": "signup",
+        "date": "2026-11-21"
+      },
+      {
+        "at": "2026-11-19T03:33:28.614Z",
+        "date": "2026-11-21",
+        "type": "signup_cancel",
+        "details": "",
+        "memberId": "m53",
+        "id": "audit-246"
+      },
+      {
+        "details": "",
+        "id": "audit-247",
+        "at": "2026-11-19T03:33:39.394Z",
+        "type": "signup_cancel",
+        "memberId": "m53",
+        "date": "2026-11-19"
+      },
+      {
+        "at": "2026-11-19T03:33:53.385Z",
+        "date": "2026-11-21",
+        "memberId": "m53",
+        "type": "signup",
+        "details": "",
+        "id": "audit-248"
+      },
+      {
+        "details": "",
+        "id": "audit-249",
+        "memberId": "m28",
+        "date": "2026-11-21",
+        "at": "2026-11-19T03:34:03.634Z",
+        "type": "signup"
+      },
+      {
+        "date": "2026-11-21",
+        "id": "audit-250",
+        "type": "signup",
+        "at": "2026-11-19T04:13:09.403Z",
+        "details": "",
+        "memberId": "m22"
+      },
+      {
+        "date": "2026-11-21",
+        "id": "audit-251",
+        "type": "signup",
+        "details": "",
+        "at": "2026-11-19T04:13:59.976Z",
+        "memberId": "m4"
+      },
+      {
+        "id": "audit-252",
+        "at": "2026-11-19T04:25:48.542Z",
+        "details": "",
+        "date": "2026-11-21",
+        "memberId": "m34",
+        "type": "signup"
+      },
+      {
+        "id": "audit-253",
+        "date": "2026-11-22",
+        "memberId": "m34",
+        "details": "",
+        "type": "signup",
+        "at": "2026-11-19T04:26:15.040Z"
+      },
+      {
+        "date": "2026-11-19",
+        "memberId": "m22",
+        "at": "2026-11-19T06:02:15.327Z",
+        "type": "signup",
+        "id": "audit-254",
+        "details": ""
+      },
+      {
+        "memberId": "m6",
+        "details": "",
+        "at": "2026-11-19T06:02:21.097Z",
+        "id": "audit-255",
+        "type": "signup",
+        "date": "2026-11-19"
+      },
+      {
+        "id": "audit-256",
+        "date": "2026-11-19",
+        "type": "signup_cancel",
+        "details": "",
+        "at": "2026-11-19T06:02:31.093Z",
+        "memberId": "m6"
+      },
+      {
+        "details": "",
+        "at": "2026-11-19T06:02:33.618Z",
+        "memberId": "m22",
+        "type": "signup_cancel",
+        "id": "audit-257",
+        "date": "2026-11-19"
+      },
+      {
+        "memberId": "m6",
+        "details": "",
+        "at": "2026-11-19T06:02:46.995Z",
+        "type": "signup",
+        "id": "audit-258",
+        "date": "2026-11-21"
+      },
+      {
+        "id": "audit-259",
+        "date": "2026-11-21",
+        "memberId": "m33",
+        "type": "signup",
+        "details": "",
+        "at": "2026-11-19T06:02:49.678Z"
+      },
+      {
+        "type": "signup",
+        "date": "2026-11-21",
+        "id": "audit-260",
+        "at": "2026-11-19T06:02:56.073Z",
+        "details": "",
+        "memberId": "m43"
+      },
+      {
+        "at": "2026-11-19T06:03:00.666Z",
+        "details": "",
+        "memberId": "member-goyounghoon-2026",
+        "date": "2026-11-21",
+        "type": "signup",
+        "id": "audit-261"
+      },
+      {
+        "at": "2026-11-19T06:24:30.404Z",
+        "memberId": "m24",
+        "id": "audit-262",
+        "date": "2026-11-21",
+        "details": "",
+        "type": "signup"
+      },
+      {
+        "details": "",
+        "date": "2026-11-19",
+        "memberId": "m20",
+        "id": "audit-263",
+        "type": "signup",
+        "at": "2026-11-19T06:43:17.638Z"
+      },
+      {
+        "id": "audit-264",
+        "details": "",
+        "memberId": "m20",
+        "date": "2026-11-21",
+        "at": "2026-11-19T06:43:51.144Z",
+        "type": "signup"
+      },
+      {
+        "type": "signup_cancel",
+        "id": "audit-265",
+        "date": "2026-11-19",
+        "at": "2026-11-19T07:07:08.772Z",
+        "details": "",
+        "memberId": "m20"
+      },
+      {
+        "type": "signup",
+        "at": "2026-11-20T11:40:13.945Z",
+        "date": "2026-11-20",
+        "memberId": "member-goyounghoon-2026",
+        "details": "",
+        "id": "audit-267"
+      },
+      {
+        "at": "2026-11-21T03:01:55.927Z",
+        "memberId": "m43",
+        "date": "2026-11-21",
+        "details": "",
+        "type": "signup_cancel",
+        "id": "audit-268"
+      },
+      {
+        "id": "audit-270",
+        "details": "",
+        "memberId": "m14",
+        "type": "signup",
+        "at": "2026-11-21T06:47:41.263Z",
+        "date": "2026-11-21"
+      },
+      {
+        "id": "audit-271",
+        "details": "",
+        "memberId": "m18",
+        "type": "signup",
+        "at": "2026-11-21T07:24:50.363Z",
+        "date": "2026-11-21"
+      },
+      {
+        "id": "audit-272",
+        "date": "2026-11-21",
+        "memberId": "m18",
+        "type": "signup_cancel",
+        "details": "",
+        "at": "2026-11-21T07:24:58.305Z"
+      },
+      {
+        "memberId": "m18",
+        "at": "2026-11-21T07:24:59.411Z",
+        "id": "audit-273",
+        "date": "2026-11-21",
+        "details": "",
+        "type": "signup"
+      },
+      {
+        "type": "signup",
+        "date": "2026-11-21",
+        "at": "2026-11-21T07:47:50.444Z",
+        "id": "audit-275",
+        "details": "",
+        "memberId": "m8"
+      },
+      {
+        "date": "2026-11-21",
+        "at": "2026-11-21T10:58:56.481Z",
+        "details": "",
+        "type": "actual_confirm",
+        "memberId": "m53",
+        "id": "audit-281"
+      },
+      {
+        "date": "2026-11-21",
+        "at": "2026-11-21T10:59:06.563Z",
+        "details": "",
+        "type": "actual_confirm",
+        "id": "audit-282",
+        "memberId": "member-goyounghoon-2026"
+      },
+      {
+        "type": "actual_confirm",
+        "id": "audit-283",
+        "date": "2026-11-21",
+        "details": "",
+        "memberId": "m4",
+        "at": "2026-11-21T10:59:07.425Z"
+      },
+      {
+        "at": "2026-11-21T10:59:08.737Z",
+        "memberId": "m6",
+        "date": "2026-11-21",
+        "details": "",
+        "type": "actual_confirm",
+        "id": "audit-284"
+      },
+      {
+        "id": "audit-285",
+        "details": "",
+        "memberId": "m8",
+        "date": "2026-11-21",
+        "type": "actual_confirm",
+        "at": "2026-11-21T10:59:09.500Z"
+      },
+      {
+        "id": "audit-286",
+        "memberId": "m14",
+        "details": "",
+        "date": "2026-11-21",
+        "at": "2026-11-21T10:59:10.053Z",
+        "type": "actual_confirm"
+      },
+      {
+        "memberId": "m18",
+        "id": "audit-287",
+        "type": "actual_confirm",
+        "at": "2026-11-21T10:59:11.825Z",
+        "details": "",
+        "date": "2026-11-21"
+      },
+      {
+        "id": "audit-288",
+        "memberId": "m20",
+        "type": "actual_confirm",
+        "details": "",
+        "date": "2026-11-21",
+        "at": "2026-11-21T10:59:12.552Z"
+      },
+      {
+        "details": "",
+        "memberId": "m22",
+        "at": "2026-11-21T10:59:13.991Z",
+        "id": "audit-289",
+        "type": "actual_confirm",
+        "date": "2026-11-21"
+      },
+      {
+        "type": "actual_confirm",
+        "date": "2026-11-21",
+        "at": "2026-11-21T10:59:15.527Z",
+        "id": "audit-290",
+        "details": "",
+        "memberId": "m28"
+      },
+      {
+        "id": "audit-291",
+        "details": "",
+        "type": "actual_confirm",
+        "memberId": "m33",
+        "at": "2026-11-21T10:59:16.368Z",
+        "date": "2026-11-21"
+      },
+      {
+        "at": "2026-11-21T10:59:17.138Z",
+        "memberId": "m34",
+        "date": "2026-11-21",
+        "id": "audit-292",
+        "type": "actual_confirm",
+        "details": ""
+      },
+      {
+        "details": "",
+        "at": "2026-11-22T01:38:04.348Z",
+        "type": "actual_confirm",
+        "memberId": "m24",
+        "id": "audit-300",
+        "date": "2026-11-21"
+      },
+      {
+        "memberId": "m53",
+        "id": "audit-304",
+        "details": "운영진 승인",
+        "at": "2026-11-22T02:12:16.075Z",
+        "date": "2026-11-21",
+        "type": "bonus_exception_paid"
+      },
+      {
+        "type": "bonus_exception_paid",
+        "date": "2026-11-21",
+        "at": "2026-11-22T02:12:18.348Z",
+        "details": "운영진 승인",
+        "id": "audit-306",
+        "memberId": "member-goyounghoon-2026"
+      },
+      {
+        "memberId": "m4",
+        "id": "audit-308",
+        "details": "운영진 승인",
+        "type": "bonus_exception_paid",
+        "at": "2026-11-22T02:12:19.980Z",
+        "date": "2026-11-21"
+      },
+      {
+        "at": "2026-11-22T02:12:22.454Z",
+        "memberId": "m6",
+        "date": "2026-11-21",
+        "details": "운영진 승인",
+        "type": "bonus_exception_paid",
+        "id": "audit-310"
+      },
+      {
+        "details": "운영진 승인",
+        "at": "2026-11-22T02:12:24.100Z",
+        "date": "2026-11-21",
+        "memberId": "m8",
+        "id": "audit-312",
+        "type": "bonus_exception_paid"
+      },
+      {
+        "type": "bonus_exception_paid",
+        "at": "2026-11-22T02:12:26.601Z",
+        "date": "2026-11-21",
+        "memberId": "m14",
+        "details": "운영진 승인",
+        "id": "audit-314"
+      },
+      {
+        "details": "운영진 승인",
+        "at": "2026-11-22T02:12:28.336Z",
+        "memberId": "m18",
+        "date": "2026-11-21",
+        "id": "audit-316",
+        "type": "bonus_exception_paid"
+      },
+      {
+        "date": "2026-11-21",
+        "details": "운영진 승인",
+        "at": "2026-11-22T02:12:30.174Z",
+        "type": "bonus_exception_paid",
+        "memberId": "m20",
+        "id": "audit-318"
+      },
+      {
+        "date": "2026-11-21",
+        "type": "bonus_exception_paid",
+        "at": "2026-11-22T02:12:32.672Z",
+        "id": "audit-320",
+        "details": "운영진 승인",
+        "memberId": "m22"
+      },
+      {
+        "id": "audit-322",
+        "memberId": "m24",
+        "details": "운영진 승인",
+        "type": "bonus_exception_paid",
+        "at": "2026-11-22T02:12:34.358Z",
+        "date": "2026-11-21"
+      },
+      {
+        "memberId": "m28",
+        "details": "운영진 승인",
+        "at": "2026-11-22T02:12:36.361Z",
+        "date": "2026-11-21",
+        "id": "audit-324",
+        "type": "bonus_exception_paid"
+      },
+      {
+        "at": "2026-11-22T02:12:38.170Z",
+        "details": "운영진 승인",
+        "date": "2026-11-21",
+        "id": "audit-326",
+        "memberId": "m33",
+        "type": "bonus_exception_paid"
+      },
+      {
+        "memberId": "m34",
+        "id": "audit-328",
+        "details": "운영진 승인",
+        "date": "2026-11-21",
+        "at": "2026-11-22T02:12:39.931Z",
+        "type": "bonus_exception_paid"
+      },
+      {
+        "type": "signup",
+        "details": "",
+        "date": "2026-11-28",
+        "at": "2026-11-22T02:27:32.348Z",
+        "memberId": "m17",
+        "id": "audit-329"
+      },
+      {
+        "memberId": "m22",
+        "at": "2026-11-22T05:14:40.340Z",
+        "details": "",
+        "date": "2026-11-22",
+        "id": "audit-330",
+        "type": "signup"
+      },
+      {
+        "memberId": "m16",
+        "details": "",
+        "type": "signup",
+        "id": "audit-331",
+        "date": "2026-11-22",
+        "at": "2026-11-22T07:01:09.704Z"
+      },
+      {
+        "id": "audit-333",
+        "details": "",
+        "type": "signup",
+        "at": "2026-11-22T14:22:02.721Z",
+        "memberId": "m23",
+        "date": "2026-11-24"
+      },
+      {
+        "at": "2026-11-23T01:40:23.672Z",
+        "type": "signup",
+        "details": "",
+        "id": "audit-334",
+        "memberId": "m14",
+        "date": "2026-11-28"
+      },
+      {
+        "id": "audit-335",
+        "memberId": "m18",
+        "details": "",
+        "type": "signup",
+        "date": "2026-11-24",
+        "at": "2026-11-23T01:41:24.947Z"
+      },
+      {
+        "id": "audit-336",
+        "details": "",
+        "memberId": "m18",
+        "date": "2026-11-28",
+        "type": "signup",
+        "at": "2026-11-23T01:41:35.575Z"
+      },
+      {
+        "at": "2026-11-23T01:48:16.628Z",
+        "type": "signup",
+        "details": "",
+        "id": "audit-337",
+        "memberId": "m43",
+        "date": "2026-11-25"
+      },
+      {
+        "at": "2026-11-23T01:48:29.321Z",
+        "date": "2026-11-28",
+        "id": "audit-338",
+        "memberId": "m43",
+        "details": "",
+        "type": "signup"
+      },
+      {
+        "date": "2026-11-25",
+        "type": "signup_cancel",
+        "at": "2026-11-23T01:56:20.606Z",
+        "id": "audit-339",
+        "memberId": "m17",
+        "details": ""
+      },
+      {
+        "type": "signup",
+        "details": "",
+        "date": "2026-11-28",
+        "at": "2026-11-23T03:35:55.308Z",
+        "id": "audit-340",
+        "memberId": "m20"
+      }
+    ]
+  }
+}

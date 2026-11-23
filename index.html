@@ -717,7 +717,11 @@ function mtcScoreFactor(g){
 function mtcCoinStake(g){
  return Number.isFinite(Number(g.coinStake)) && Number(g.coinStake)>0 ? Number(g.coinStake) : mtcNewCoinStake(Number(g.scoreA),Number(g.scoreB),g); // legacy: infer from recorded score; no historical balance mutation
 }
-function mtcNewCoinStake(a,b,g){return (Math.max(a,b)===6&&Math.min(a,b)===0?2:1)*(g?.tournamentId?2:1);}
+function mtcBaseCoinStake(a,b){return Math.max(a,b)===6&&Math.min(a,b)===0?2:1;}
+function mtcNewCoinStake(a,b,g){return mtcBaseCoinStake(a,b)*(g?.tournamentId?2:1);}
+function mtcNewLossStake(a,b,g){return mtcBaseCoinStake(a,b);}
+function mtcLossStake(g){return Number.isFinite(Number(g.coinLossStake))&&Number(g.coinLossStake)>0?Number(g.coinLossStake):mtcCoinStake(g);}
+function mtcCoinLabel(g){return `승자 각 +${mtcCoinStake(g)} / 패자 각 -${mtcLossStake(g)}`;}
 function mtcEloDelta(ra,rb,winner,scoreFactor){
  const ea=1/(1+Math.pow(10,(rb-ra)/400));
  return 32*((winner==='a'?1:0)-ea)*scoreFactor;
@@ -1026,20 +1030,20 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   const i=Number(b.dataset.leagueWin),m=t.matches[i];if(!m||m.gameId)return;
   const av=document.querySelector(`[data-league-a="${i}"]`)?.value,bv=document.querySelector(`[data-league-b="${i}"]`)?.value;
   if(av===''||bv===''||!Number.isInteger(Number(av))||!Number.isInteger(Number(bv))||Number(av)<0||Number(bv)<0||Number(av)>99||Number(bv)>99||Number(av)===Number(bv)){alert('유효한 스코어를 입력하세요.');return;}
-  const a=Number(av),c=Number(bv),winner=a>c?'a':'b',stake=mtcNewCoinStake(a,c,{tournamentId:t.id});
+  const a=Number(av),c=Number(bv),winner=a>c?'a':'b',stake=mtcNewCoinStake(a,c,{tournamentId:t.id}),lossStake=mtcNewLossStake(a,c,{tournamentId:t.id});
   if([...m.a,...m.b].some(id=>!person(id))){alert('회원 정보를 확인해 주세요.');return;}
-  if(!confirm(`${names(m[winner])} 승 (${a}:${c}) · 코인 ±${stake}개를 확정할까요?`))return;
-  const g={id:'g'+(++state.seq),date:t.date,a:[...m.a],b:[...m.b],court:m.court,winner,scoreA:a,scoreB:c,coinEnabled:true,ratingEnabled:true,coinStake:stake,tournamentId:t.id,leagueMatchIndex:i,settledAt:new Date().toISOString()};
+  if(!confirm(`${names(m[winner])} 승 (${a}:${c}) · 승자 +${stake} / 패자 -${lossStake}개를 확정할까요?`))return;
+  const g={id:'g'+(++state.seq),date:t.date,a:[...m.a],b:[...m.b],court:m.court,winner,scoreA:a,scoreB:c,coinEnabled:true,ratingEnabled:true,coinStake:stake,coinLossStake:lossStake,tournamentId:t.id,leagueMatchIndex:i,settledAt:new Date().toISOString()};
   state.games.push(g);m.gameId=g.id;
   for(const id of m[winner]){person(id).coins+=stake;person(id).wins++;}
-  for(const id of m[winner==='a'?'b':'a']){person(id).coins-=stake;person(id).losses++;}
+  for(const id of m[winner==='a'?'b':'a']){person(id).coins-=lossStake;person(id).losses++;}
   save({preserveAttendance:true});return;
  }
  if(b.dataset.leagueUndo){
   const t=tourById(tourSelected),g=state.games.find(x=>x.id===b.dataset.leagueUndo&&x.tournamentId===t?.id);if(!g||!['a','b'].includes(g.winner))return;
   if(!confirm('리그전 결과를 취소하고 코인·승패를 되돌릴까요?'))return;
-  const stake=mtcCoinStake(g);for(const id of g[g.winner]){person(id).coins-=stake;person(id).wins=Math.max(0,person(id).wins-1);}
-  for(const id of g[g.winner==='a'?'b':'a']){person(id).coins+=stake;person(id).losses=Math.max(0,person(id).losses-1);}
+  const stake=mtcCoinStake(g),lossStake=mtcLossStake(g);for(const id of g[g.winner]){person(id).coins-=stake;person(id).wins=Math.max(0,person(id).wins-1);}
+  for(const id of g[g.winner==='a'?'b':'a']){person(id).coins+=lossStake;person(id).losses=Math.max(0,person(id).losses-1);}
   const m=t.matches.find(x=>x.gameId===g.id);if(m)delete m.gameId;
   state.games=state.games.filter(x=>x.id!==g.id);save({preserveAttendance:true});return;
  }
@@ -1059,9 +1063,9 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
  if(b.id==='tourNextRound'){const t=tourById(tourSelected);if(t&&tourAdvance(t))save({preserveAttendance:true});return;}
  if(b.dataset.tourWin){const t=tourById(tourSelected);if(!t)return;const m=tourRoundMatches(t).find(x=>x.id===b.dataset.tourWin);if(!m||m.bye)return;
   const a=Number(document.querySelector(`[data-tour-a="${m.id}"]`)?.value),c=Number(document.querySelector(`[data-tour-b="${m.id}"]`)?.value);const ar=document.querySelector(`[data-tour-a="${m.id}"]`),br=document.querySelector(`[data-tour-b="${m.id}"]`);if(!ar?.value||!br?.value||!Number.isInteger(a)||!Number.isInteger(c)||a===c||a<0||c<0||a>99||c>99){alert('유효한 양 팀 스코어를 입력해 주세요.');return;}
-  const side=a>c?'a':'b';const teamWin=tourTeam(t,m[side==='a'?'teamA':'teamB']),teamLose=tourTeam(t,m[side==='a'?'teamB':'teamA']);const stake=mtcNewCoinStake(a,c,{tournamentId:t.id});if(teamLose.members.some(id=>!person(id))){alert('경기 참가자 정보를 확인해 주세요.');return;}
-  if(!confirm(`${names(teamWin.members)} 승리 (${a}:${c})로 확정할까요? 코인 ±${stake}개씩 정산됩니다.`))return;
-  const g=tourMakeGame(t,m);g.scoreA=a;g.scoreB=c;g.winner=side;g.coinStake=stake;g.settledAt=new Date().toISOString();for(const id of teamWin.members){person(id).coins+=stake;person(id).wins++;}for(const id of teamLose.members){person(id).coins-=stake;person(id).losses++;}save({preserveAttendance:true});return;
+  const side=a>c?'a':'b';const teamWin=tourTeam(t,m[side==='a'?'teamA':'teamB']),teamLose=tourTeam(t,m[side==='a'?'teamB':'teamA']);const stake=mtcNewCoinStake(a,c,{tournamentId:t.id}),lossStake=mtcNewLossStake(a,c,{tournamentId:t.id});if(teamLose.members.some(id=>!person(id))){alert('경기 참가자 정보를 확인해 주세요.');return;}
+  if(!confirm(`${names(teamWin.members)} 승리 (${a}:${c})로 확정할까요? 승자 각 +${stake}개 / 패자 각 -${lossStake}개로 정산됩니다.`))return;
+  const g=tourMakeGame(t,m);g.scoreA=a;g.scoreB=c;g.winner=side;g.coinStake=stake;g.coinLossStake=lossStake;g.settledAt=new Date().toISOString();for(const id of teamWin.members){person(id).coins+=stake;person(id).wins++;}for(const id of teamLose.members){person(id).coins-=lossStake;person(id).losses++;}save({preserveAttendance:true});return;
  }
 });
 let mtcNewsIndex=0,mtcNewsSignature='';
@@ -1391,8 +1395,8 @@ function matchCard(g,showUndo=false){
  const score=raw==null?'–':esc(raw);
  return `<div class="match-team ${win?'winner':lose?'loser':''}"><div class="team-label">${which.toUpperCase()}팀 ${win?'🏆':''}</div><div class="team-name">${esc(names(g[which]))}</div><div class="team-score">${score}</div>${winner?`<span class="result-badge">${win?'승리':isVoid?'취소':'패배'}</span>`:'<span class="result-badge">미확정</span>'}</div>`};
  const gameTypeLabel=gameTypeName(g);
- const actions=winner&&!isVoid?`<div class="match-actions"><button data-edit-type="${g.id}">⚙️ 경기 유형 수정</button><button data-edit-score="${g.id}">✏️ 점수 수정</button><button data-edit-result="${g.id}">🔁 승패·점수 수정</button>${g.coinEnabled!==false&&Math.max(Number(g.scoreA),Number(g.scoreB))===6&&Math.min(Number(g.scoreA),Number(g.scoreB))===0&&mtcCoinStake(g)===1?`<button data-fix-bagel="${g.id}" style="border:2px solid #c44;color:#9a2020;font-weight:700">🪙 6:0 코인 +1 추가 정산</button>`:''}${showUndo?`<button data-undo-game="${g.id}" title="정산을 되돌리고 경기 기록을 취소">기록 취소</button>`:''}</div>`:'';
- return `<article class="match-result ${isVoid?'is-void':''}"><div class="match-meta"><strong>${esc(g.date||'날짜 미상')}</strong><span>${esc(g.court||'코트 미상')} · ${esc(gameTypeLabel)}</span></div><div class="match-teams">${side('a')}<div class="match-versus">VS</div>${side('b')}</div><div class="result-caption">${isVoid?'취소된 경기':winner?`🏆 ${esc(names(g[winner]))} 승리 · ${esc(scoreText(g))} · ${g.coinEnabled===false?'코인 변동 없음':`승리팀 각 +${mtcCoinStake(g)} / 패배팀 각 -${mtcCoinStake(g)}`}`:'승패 미확정'}</div>${actions}</article>`;
+ const actions=winner&&!isVoid?`<div class="match-actions"><button data-edit-type="${g.id}">⚙️ 경기 유형 수정</button><button data-edit-score="${g.id}">✏️ 점수 수정</button><button data-edit-result="${g.id}">🔁 승패·점수 수정</button>${g.coinEnabled!==false&&Math.max(Number(g.scoreA),Number(g.scoreB))===6&&Math.min(Number(g.scoreA),Number(g.scoreB))===0&&!g.tournamentId&&mtcCoinStake(g)===1?`<button data-fix-bagel="${g.id}" style="border:2px solid #c44;color:#9a2020;font-weight:700">🪙 6:0 코인 +1 추가 정산</button>`:''}${showUndo?`<button data-undo-game="${g.id}" title="정산을 되돌리고 경기 기록을 취소">기록 취소</button>`:''}</div>`:'';
+ return `<article class="match-result ${isVoid?'is-void':''}"><div class="match-meta"><strong>${esc(g.date||'날짜 미상')}</strong><span>${esc(g.court||'코트 미상')} · ${esc(gameTypeLabel)}</span></div><div class="match-teams">${side('a')}<div class="match-versus">VS</div>${side('b')}</div><div class="result-caption">${isVoid?'취소된 경기':winner?`🏆 ${esc(names(g[winner]))} 승리 · ${esc(scoreText(g))} · ${g.coinEnabled===false?'코인 변동 없음':`${mtcCoinLabel(g)}`}`:'승패 미확정'}</div>${actions}</article>`;
 }
 function pairRepeat(a,b){return state.games.filter(g=>g.date===selectedDate&&g.winner).reduce((score,g)=>score+[g.a,g.b].filter(side=>side.includes(a)&&side.includes(b)).length,0)}
 function groupQuality(group){const vals=group.map(m=>ntrpValue(m));const known=vals.filter(v=>v!=null);const unknown=vals.length-known.length;return (known.length?Math.max(...known)-Math.min(...known):0)+unknown*0.7}
@@ -1404,18 +1408,18 @@ function mtcDailyReport(){
  const log=(state.ledger||[]).filter(x=>x.date===day&&!x.voided);
  const coinMap=new Map();
  const add=(id,qty)=>{if(!id||!Number.isFinite(qty)||qty===0)return;coinMap.set(id,(coinMap.get(id)||0)+qty)};
- for(const g of games){if(g.coinEnabled===false)continue;const stake=mtcCoinStake(g);for(const id of g[g.winner]||[])add(id,stake);for(const id of g[g.winner==='a'?'b':'a']||[])add(id,-stake)}
+ for(const g of games){if(g.coinEnabled===false)continue;const stake=mtcCoinStake(g);for(const id of g[g.winner]||[])add(id,stake);for(const id of g[g.winner==='a'?'b':'a']||[])add(id,-mtcLossStake(g))}
  for(const x of log){if(x.type==='attendance_bonus'||x.type==='manual_coin')add(x.memberId,Number(x.qty)||0);else if(!x.type||x.type==='loan')add(x.memberId,Number(x.qty)||0)}
  const sorted=[...coinMap].sort((a,b)=>String(person(a[0])?.name||a[0]).localeCompare(String(person(b[0])?.name||b[0]),'ko'));
  const escPrint=v=>esc(v==null?'':v);
- const gameRows=games.map((g,i)=>{const win=names(g[g.winner]),lose=names(g[g.winner==='a'?'b':'a']);const coin=g.coinEnabled===false?'코인 없음':`승자 각 +${mtcCoinStake(g)} / 패자 각 -${mtcCoinStake(g)}`;return `<tr><td>${i+1}</td><td>${escPrint(g.court||'-')}</td><td><b>${escPrint(win)}</b><br><span class="sub">vs ${escPrint(lose)}</span></td><td>${escPrint(scoreText(g))}</td><td>${escPrint(gameTypeName(g))}<br><span class="sub">${escPrint(coin)}</span></td></tr>`}).join('');
+ const gameRows=games.map((g,i)=>{const win=names(g[g.winner]),lose=names(g[g.winner==='a'?'b':'a']);const coin=g.coinEnabled===false?'코인 없음':`${mtcCoinLabel(g)}`;return `<tr><td>${i+1}</td><td>${escPrint(g.court||'-')}</td><td><b>${escPrint(win)}</b><br><span class="sub">vs ${escPrint(lose)}</span></td><td>${escPrint(scoreText(g))}</td><td>${escPrint(gameTypeName(g))}<br><span class="sub">${escPrint(coin)}</span></td></tr>`}).join('');
  const coinRows=sorted.map(([id,qty])=>`<tr><td>${escPrint(person(id)?.name||id)}</td><td class="${qty>0?'plus':qty<0?'minus':''}">${qty>0?'+':''}${qty}</td></tr>`).join('');
  const loanRows=log.filter(x=>!x.type||x.type==='loan').map(x=>`${escPrint(person(x.memberId)?.name||x.memberId)} +${Number(x.qty)||0}`).join(' · ');
  const bonusRows=log.filter(x=>x.type==='attendance_bonus').map(x=>escPrint(person(x.memberId)?.name||x.memberId)).join(' · ');
  const manualRows=log.filter(x=>x.type==='manual_coin').map(x=>`${escPrint(person(x.memberId)?.name||x.memberId)} ${Number(x.qty)>0?'+':''}${Number(x.qty)||0}`).join(' · ');
  const attending=Object.entries(state.sessions?.[day]?.attendance||{}).filter(([,v])=>v).map(([id])=>person(id)?.name).filter(Boolean);
  const weekday=['일','월','화','수','목','금','토'][new Date(day+'T12:00:00').getDay()];
- const matchCards=games.map((g,i)=>{const win=names(g[g.winner]),lose=names(g[g.winner==='a'?'b':'a']);return `<article class="match"><div class="match-head"><b>GAME ${String(i+1).padStart(2,'0')}</b><span>${escPrint(g.court||'코트 미지정')} · ${escPrint(gameTypeName(g))}</span></div><div class="versus"><div><small>WINNER</small><strong>${escPrint(win)}</strong></div><em>VS</em><div><small>OPPONENT</small><strong>${escPrint(lose)}</strong></div></div><div class="score">🏆 ${escPrint(scoreText(g))}${g.coinEnabled===false?' · 코인 정산 없음':` · 승리팀 각 +${mtcCoinStake(g)} / 패배팀 각 -${mtcCoinStake(g)}`}</div></article>`}).join('');
+ const matchCards=games.map((g,i)=>{const win=names(g[g.winner]),lose=names(g[g.winner==='a'?'b':'a']);return `<article class="match"><div class="match-head"><b>GAME ${String(i+1).padStart(2,'0')}</b><span>${escPrint(g.court||'코트 미지정')} · ${escPrint(gameTypeName(g))}</span></div><div class="versus"><div><small>WINNER</small><strong>${escPrint(win)}</strong></div><em>VS</em><div><small>OPPONENT</small><strong>${escPrint(lose)}</strong></div></div><div class="score">🏆 ${escPrint(scoreText(g))}${g.coinEnabled===false?' · 코인 정산 없음':` · ${mtcCoinLabel(g)}`}</div></article>`}).join('');
  const coinCards=sorted.map(([id,qty])=>`<div class="coin"><span>${escPrint(person(id)?.name||id)}</span><b class="${qty>0?'plus':qty<0?'minus':''}">${qty>0?'+':''}${qty} 🪙</b></div>`).join('');
  const attendeeNames=attending.map(n=>`<span class="attendee">${escPrint(n)}</span>`).join('');
  const html=`<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>모두의테니스 클럽데이 ${escPrint(day)}</title><style>
@@ -1619,10 +1623,10 @@ function applyGameTypeEdit(gameId, chosenType){
   if(!confirm(`경기 유형을 변경할까요?\n경기 유형: ${gameTypeName(g)} → ${({friendly:'🤝 친선전',official:'🏆 공식전',coin:'🪙 코인전'})[chosenType]}\n${settled?'확정된 경기의 코인·승패 통계를 재정산하고 레이팅을 다시 계산합니다.':'미확정 경기이므로 향후 정산 방식만 변경됩니다.'}`))return;
   if(settled&&oldCoin!==newCoin){
     const stake=newCoin?mtcNewCoinStake(g.scoreA,g.scoreB,g):mtcCoinStake(g);
-    const sign=newCoin?stake:-stake;
-    for(const id of winner)person(id).coins+=sign;
-    for(const id of loser)person(id).coins-=sign;
-    if(newCoin)g.coinStake=stake;
+    const lossStake=newCoin?mtcNewLossStake(g.scoreA,g.scoreB,g):mtcLossStake(g);
+    for(const id of winner)person(id).coins+=(newCoin?stake:-stake);
+    for(const id of loser)person(id).coins+=(newCoin?-lossStake:lossStake);
+    if(newCoin){g.coinStake=stake;g.coinLossStake=lossStake;}
   }
   if(settled&&oldRating!==newRating){
     const sign=newRating?1:-1;
@@ -1657,7 +1661,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
  if(b.dataset.actual){const id=b.dataset.actual,m=person(id);if(!m||selectedDate>dateLocal()||!state.sessions?.[selectedDate]?.attendance?.[id])return;const session=state.sessions[selectedDate];session.actualAttendance ||= {};const was=!!session.actualAttendance[id];if(was&&bonusEntry(id)){alert('출석 코인 지급을 먼저 취소하세요.');return;}session.actualAttendance[id]=!was;mtcAudit(was?'actual_unconfirm':'actual_confirm',id,selectedDate);msg(was?'실제 출석 확정 취소':'실제 출석 확정');save();return;}
  if(b.dataset.bonus){const m=person(b.dataset.bonus);if(!m||m.guest||!m.present){alert('해당 날짜에 실제 출석 체크된 정회원만 지급할 수 있습니다.');return;}if(bonusEntry(m.id)){alert('이미 이 날짜에 출석 코인을 지급했습니다.');return;}const check=saturdayCoinStatus(m.id);if(!actualPresent(selectedDate,m.id)){alert('실제 출석 확정 후 코인을 지급할 수 있습니다.');return;}if(!check.eligible){alert('출석 코인 지급 제외: '+check.label+' (신청 마감 '+check.policy.label+').');return;}if(!confirm(`${selectedDate} ${m.name} 회원에게 출석 코인 1개를 지급할까요?`))return;state.ledger.push({id:'b'+(++state.seq),type:'attendance_bonus',date:selectedDate,memberId:m.id,qty:1,signupAt:state.sessions?.[selectedDate]?.signupAt?.[m.id]||null,at:new Date().toISOString(),voided:false});m.coins+=1;mtcAudit('bonus_paid',m.id,selectedDate);msg(m.name+' 출석 코인 +1 지급 완료');save();return;}
  if(b.dataset.undoBonus){const x=state.ledger.find(z=>z.id===b.dataset.undoBonus&&z.type==='attendance_bonus'&&!z.voided);if(!x)return;const m=person(x.memberId);if(!m){alert('회원 정보를 확인해 주세요.');return;}if(!confirm(`${x.date} ${m.name} 회원의 출석 코인 +1 지급을 취소할까요?`))return;m.coins-=1;x.voided=true;x.voidedAt=new Date().toISOString();mtcAudit('bonus_undo',m.id,x.date);msg('출석 코인 지급 취소 완료');save();return;}
- if(b.dataset.win){const [id,side]=b.dataset.win.split(':'),g=state.games.find(x=>x.id===id);if(!g||g.winner)return;const aInput=document.querySelector(`[data-score-a="${id}"]`),bInput=document.querySelector(`[data-score-b="${id}"]`);const scoreA=Number(aInput?.value),scoreB=Number(bInput?.value);if(!aInput?.value.trim()||!bInput?.value.trim()||!Number.isInteger(scoreA)||!Number.isInteger(scoreB)||scoreA<0||scoreB<0||scoreA>99||scoreB>99||scoreA===scoreB){alert('A팀과 B팀의 게임 점수를 각각 입력해 주세요. 동점은 정산할 수 없습니다.');return;}if((scoreA>scoreB?'a':'b')!==side){alert('선택한 승리팀과 입력한 스코어가 일치하지 않습니다.');return;}if(!confirm(`${scoreA}:${scoreB} · ${side.toUpperCase()}팀 승리로 확정할까요? ${g.coinEnabled===false?'코인 정산 없음':''} ${g.ratingEnabled===false?'레이팅 및 전적 제외':''}`))return;g.scoreA=scoreA;g.scoreB=scoreB;const loser=side==='a'?g.b:g.a;const stake=mtcNewCoinStake(scoreA,scoreB,g);if(g.coinEnabled!==false&&loser.some(id=>!person(id))){msg('패배팀 회원 정보를 확인해 주세요.');return}g.winner=side;g.settledAt=new Date().toISOString();if(g.coinEnabled!==false){g.coinStake=stake;for(const id of g[side])person(id).coins+=stake;for(const id of loser)person(id).coins-=stake;}if(g.ratingEnabled!==false){for(const id of g[side])person(id).wins++;for(const id of loser)person(id).losses++;}msg('경기 결과 반영 완료');save()}
+ if(b.dataset.win){const [id,side]=b.dataset.win.split(':'),g=state.games.find(x=>x.id===id);if(!g||g.winner)return;const aInput=document.querySelector(`[data-score-a="${id}"]`),bInput=document.querySelector(`[data-score-b="${id}"]`);const scoreA=Number(aInput?.value),scoreB=Number(bInput?.value);if(!aInput?.value.trim()||!bInput?.value.trim()||!Number.isInteger(scoreA)||!Number.isInteger(scoreB)||scoreA<0||scoreB<0||scoreA>99||scoreB>99||scoreA===scoreB){alert('A팀과 B팀의 게임 점수를 각각 입력해 주세요. 동점은 정산할 수 없습니다.');return;}if((scoreA>scoreB?'a':'b')!==side){alert('선택한 승리팀과 입력한 스코어가 일치하지 않습니다.');return;}if(!confirm(`${scoreA}:${scoreB} · ${side.toUpperCase()}팀 승리로 확정할까요? ${g.coinEnabled===false?'코인 정산 없음':''} ${g.ratingEnabled===false?'레이팅 및 전적 제외':''}`))return;g.scoreA=scoreA;g.scoreB=scoreB;const loser=side==='a'?g.b:g.a;const stake=mtcNewCoinStake(scoreA,scoreB,g),lossStake=mtcNewLossStake(scoreA,scoreB,g);if(g.coinEnabled!==false&&loser.some(id=>!person(id))){msg('패배팀 회원 정보를 확인해 주세요.');return}g.winner=side;g.settledAt=new Date().toISOString();if(g.coinEnabled!==false){g.coinStake=stake;g.coinLossStake=lossStake;for(const id of g[side])person(id).coins+=stake;for(const id of loser)person(id).coins-=lossStake;}if(g.ratingEnabled!==false){for(const id of g[side])person(id).wins++;for(const id of loser)person(id).losses++;}msg('경기 결과 반영 완료');save()}
  if(b.dataset.editType){
   if(!localMode&&!remoteReady){alert('Firebase 연결이 완료된 후 수정하세요.');return;}
   const g=state.games.find(x=>x.id===b.dataset.editType);
@@ -1681,10 +1685,10 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   if(!confirm(`경기 유형을 변경할까요?\n경기 유형: ${gameTypeName(g)} → ${{'1':'🤝 친선전','2':'🏆 공식전','3':'🪙 코인전'}[raw.trim()]}\n${settled?'확정된 경기의 코인·승패 통계를 재정산하고 레이팅을 다시 계산합니다.':'미확정 경기이므로 향후 정산 방식만 변경됩니다.'}`))return;
   if(settled&&oldCoin!==newCoin){
     const stake=newCoin?mtcNewCoinStake(g.scoreA,g.scoreB,g):mtcCoinStake(g);
-    const sign=newCoin?stake:-stake;
-    for(const id of winner)person(id).coins+=sign;
-    for(const id of loser)person(id).coins-=sign;
-    if(newCoin)g.coinStake=stake;
+    const lossStake=newCoin?mtcNewLossStake(g.scoreA,g.scoreB,g):mtcLossStake(g);
+    for(const id of winner)person(id).coins+=(newCoin?stake:-stake);
+    for(const id of loser)person(id).coins+=(newCoin?-lossStake:lossStake);
+    if(newCoin){g.coinStake=stake;g.coinLossStake=lossStake;}
   }
   if(settled&&oldRating!==newRating){
     const sign=newRating?1:-1;
@@ -1706,19 +1710,19 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   if(!match||Number(match[1])===Number(match[2])){alert('0~99 사이의 게임 점수를 A:B 형식으로 입력하세요. 동점은 불가합니다.');return;}
   const a=Number(match[1]),bScore=Number(match[2]),next=a>bScore?'a':'b',prev=g.winner;
   if(g.scoreA===a&&g.scoreB===bScore){msg('변경된 내용이 없습니다.');return;}
-  const oldStake=g.coinEnabled!==false?mtcCoinStake(g):0;
-  const newStake=g.coinEnabled!==false?mtcNewCoinStake(a,bScore,g):0;
+  const oldStake=g.coinEnabled!==false?mtcCoinStake(g):0,oldLossStake=g.coinEnabled!==false?mtcLossStake(g):0;
+  const newStake=g.coinEnabled!==false?mtcNewCoinStake(a,bScore,g):0,newLossStake=g.coinEnabled!==false?mtcNewLossStake(a,bScore,g):0;
   const oldW=g[prev],oldL=g[prev==='a'?'b':'a'];
   const newW=g[next],newL=g[next==='a'?'b':'a'];
   const coinChanges=new Map();
   for(const id of oldW)coinChanges.set(id,(coinChanges.get(id)||0)-oldStake);
-  for(const id of oldL)coinChanges.set(id,(coinChanges.get(id)||0)+oldStake);
+  for(const id of oldL)coinChanges.set(id,(coinChanges.get(id)||0)+oldLossStake);
   for(const id of newW)coinChanges.set(id,(coinChanges.get(id)||0)+newStake);
-  for(const id of newL)coinChanges.set(id,(coinChanges.get(id)||0)-newStake);
+  for(const id of newL)coinChanges.set(id,(coinChanges.get(id)||0)-newLossStake);
   if([...coinChanges].some(([id,d])=>!person(id))){alert('정산 대상 회원을 확인해 주세요.');return;}
   if(!confirm(`스코어를 ${scoreText(g)} → ${a}:${bScore}으로 수정할까요?\\n${prev!==next?'승리팀 변경 및 ':''}코인 정산 차이와 레이팅을 다시 계산합니다.`))return;
   for(const [id,d] of coinChanges)person(id).coins+=d;
-  if(g.coinEnabled!==false)g.coinStake=newStake;
+  if(g.coinEnabled!==false){g.coinStake=newStake;g.coinLossStake=newLossStake;}
   if(prev!==next){
    for(const id of oldW){if(g.ratingEnabled!==false){const m=person(id);m.wins=Math.max(0,m.wins-1);m.losses=(m.losses||0)+1;}}
    for(const id of oldL){if(g.ratingEnabled!==false){const m=person(id);m.losses=Math.max(0,m.losses-1);m.wins=(m.wins||0)+1;}}
@@ -1755,15 +1759,15 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   const a=Number(aRaw),bScore=Number(bRaw);
   if((a>bScore?'a':'b')!==g.winner){alert('기존 승리팀과 점수가 일치하지 않습니다. 승패 자체를 바꾸려면 기존 경기 정산 취소 후 다시 등록해야 합니다.');return;}
   if(g.scoreA===a&&g.scoreB===bScore){msg('변경된 점수가 없습니다.');return;}
-  const oldStake=g.coinEnabled!==false?mtcCoinStake(g):0;
-  const newStake=g.coinEnabled!==false?mtcNewCoinStake(a,bScore,g):0;
-  const difference=newStake-oldStake;
+  const oldStake=g.coinEnabled!==false?mtcCoinStake(g):0,oldLossStake=g.coinEnabled!==false?mtcLossStake(g):0;
+  const newStake=g.coinEnabled!==false?mtcNewCoinStake(a,bScore,g):0,newLossStake=g.coinEnabled!==false?mtcNewLossStake(a,bScore,g):0;
+  const difference=newStake-oldStake,lossDifference=newLossStake-oldLossStake;
   const winners=g[g.winner],losers=g[g.winner==='a'?'b':'a'];
   if(difference>0&&losers.some(id=>!person(id))){alert('패배팀 회원 정보를 확인해 주세요.');return;}
   if(difference<0&&winners.some(id=>!person(id))){alert('승리팀 회원 정보를 확인해 주세요.');return;}
   if(!confirm(`${g.date} 경기 스코어를 ${g.scoreA??'?'}:${g.scoreB??'?'} → ${a}:${bScore}으로 변경할까요?\\n레이팅과 코인 차액을 다시 계산합니다.`))return;
-  if(difference){for(const id of winners)person(id).coins+=difference;for(const id of losers)person(id).coins-=difference;}
-  if(g.coinEnabled!==false)g.coinStake=newStake;
+  if(difference||lossDifference){for(const id of winners)person(id).coins+=difference;for(const id of losers)person(id).coins-=lossDifference;}
+  if(g.coinEnabled!==false){g.coinStake=newStake;g.coinLossStake=newLossStake;}
   g.scoreEdits ||= [];
   g.scoreEdits.push({fromA:g.scoreA??null,fromB:g.scoreB??null,toA:a,toB:bScore,at:new Date().toISOString()});
   g.scoreA=a;g.scoreB=bScore;
@@ -1775,7 +1779,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
   const win=g[g.winner],lose=g[g.winner==='a'?'b':'a'];
   if(win.some(id=>!person(id))||lose.some(id=>!person(id))){alert('경기 참가자 정보가 없어 자동 복구할 수 없습니다.');return;}
   for(const id of win){if(g.coinEnabled!==false)person(id).coins-=mtcCoinStake(g);if(g.ratingEnabled!==false)person(id).wins=Math.max(0,person(id).wins-1)}
-  for(const id of lose){if(g.coinEnabled!==false)person(id).coins+=mtcCoinStake(g);if(g.ratingEnabled!==false)person(id).losses=Math.max(0,person(id).losses-1)}
+  for(const id of lose){if(g.coinEnabled!==false)person(id).coins+=mtcLossStake(g);if(g.ratingEnabled!==false)person(id).losses=Math.max(0,person(id).losses-1)}
   state.games=state.games.filter(x=>x.id!==g.id);msg('경기 결과와 코인 정산을 취소했습니다.');save();}
  if(b.dataset.undoLoan){const entry=state.ledger.find(x=>x.id===b.dataset.undoLoan&&!x.voided);if(!entry)return;const m=person(entry.memberId);
   if(!m||m.loans<entry.qty){alert('대출 내역을 확인해 주세요.');return;}
